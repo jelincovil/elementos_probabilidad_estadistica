@@ -1,0 +1,1465 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo1 Operaciones de análisis exploratorio y resumen de datos | Introducción a la Probabilidad y la Estadística</title>
+  <meta name="description" content="Capítulo1 Operaciones de análisis exploratorio y resumen de datos | Introducción a la Probabilidad y la Estadística" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo1 Operaciones de análisis exploratorio y resumen de datos | Introducción a la Probabilidad y la Estadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo1 Operaciones de análisis exploratorio y resumen de datos | Introducción a la Probabilidad y la Estadística" />
+  
+  
+  
+
+<meta name="author" content="Dr. Jaime Lincovil C." />
+
+
+<meta name="date" content="2020-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="index.html"/>
+<link rel="next" href="prob.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Objetivos de la monografía</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dinámica-de-nuestra-comunicación"><i class="fa fa-check"></i>Dinámica de nuestra comunicación</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-de-la-monorafía"><i class="fa fa-check"></i>Organización de la monorafía</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Operaciones de análisis exploratorio y resumen de datos</a><ul>
+<li class="chapter" data-level="1.1" data-path="datos.html"><a href="datos.html#conceptos-elementales"><i class="fa fa-check"></i><b>1.1</b> Conceptos elementales</a></li>
+<li class="chapter" data-level="1.2" data-path="datos.html"><a href="datos.html#variables-observadas-en-experimentos"><i class="fa fa-check"></i><b>1.2</b> Variables observadas en experimentos</a></li>
+<li class="chapter" data-level="1.3" data-path="datos.html"><a href="datos.html#agrupamiento-de-variables"><i class="fa fa-check"></i><b>1.3</b> Agrupamiento de variables</a></li>
+<li class="chapter" data-level="1.4" data-path="datos.html"><a href="datos.html#operación-de-análisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>1.4</b> Operación de análisis exploratorio de datos</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="datos.html"><a href="datos.html#operaciones-de-exploración-grafica-de-los-datos-sin-grupos"><i class="fa fa-check"></i><b>1.4.1</b> Operaciones de exploración grafica de los datos: sin grupos</a></li>
+<li class="chapter" data-level="1.4.2" data-path="datos.html"><a href="datos.html#operaciones-de-exploración-gráfica-de-los-datos-por-grupos"><i class="fa fa-check"></i><b>1.4.2</b> Operaciones de exploración gráfica de los datos: por grupos</a></li>
+<li class="chapter" data-level="1.4.3" data-path="datos.html"><a href="datos.html#operación-de-analisis-de-frecuencias"><i class="fa fa-check"></i><b>1.4.3</b> Operación de analisis de frecuencias</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="datos.html"><a href="datos.html#operación-de-resumen-de-datos-univariados"><i class="fa fa-check"></i><b>1.5</b> Operación de resumen de datos univariados</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="datos.html"><a href="datos.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>1.5.1</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="1.5.2" data-path="datos.html"><a href="datos.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>1.5.2</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="1.5.3" data-path="datos.html"><a href="datos.html#percentiles-cuantiles-cuartiles-y-deciles"><i class="fa fa-check"></i><b>1.5.3</b> Percentiles, cuantiles, cuartiles y deciles</a></li>
+<li class="chapter" data-level="1.5.4" data-path="datos.html"><a href="datos.html#medidas-de-asimetría-y-curtosis"><i class="fa fa-check"></i><b>1.5.4</b> Medidas de asimetría y curtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="datos.html"><a href="datos.html#operación-de-resumen-de-datos-bivariados"><i class="fa fa-check"></i><b>1.6</b> Operación de resumen de datos bivariados</a></li>
+<li class="chapter" data-level="1.7" data-path="datos.html"><a href="datos.html#gráficos-de-dispersión"><i class="fa fa-check"></i><b>1.7</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="1.8" data-path="datos.html"><a href="datos.html#medidas-de-asociación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de asociación entre dos variables</a></li>
+<li class="chapter" data-level="1.9" data-path="datos.html"><a href="datos.html#recta-media-estimada"><i class="fa fa-check"></i><b>1.9</b> Recta media estimada</a></li>
+<li class="chapter" data-level="1.10" data-path="datos.html"><a href="datos.html#diagnostico-de-la-recta-lineal"><i class="fa fa-check"></i><b>1.10</b> Diagnostico de la recta lineal</a></li>
+<li class="chapter" data-level="1.11" data-path="datos.html"><a href="datos.html#análisis-de-asociación-entre-variables-categóricas"><i class="fa fa-check"></i><b>1.11</b> Análisis de asociación entre variables categóricas</a></li>
+<li class="chapter" data-level="1.12" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>1.12</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Calculo de probabilidades</a><ul>
+<li class="chapter" data-level="2.1" data-path="prob.html"><a href="prob.html#operaciones-con-eventos-posibles-de-experimentos"><i class="fa fa-check"></i><b>2.1</b> Operaciones con eventos posibles de experimentos</a></li>
+<li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#medida-de-probabilidad-y-experimentos-aleatorios"><i class="fa fa-check"></i><b>2.2</b> Medida de probabilidad y experimentos aleatorios</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#interpretación-frecuentista-de-una-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.2.1</b> Interpretación frecuentista de una medida de probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#propiedades-básicas-de-la-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Propiedades básicas de la medida de probabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="prob.html"><a href="prob.html#resultados-básicos-de-combinatoria"><i class="fa fa-check"></i><b>2.4</b> Resultados básicos de combinatoria</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias y sus distribuciones</a><ul>
+<li class="chapter" data-level="3.1" data-path="var.html"><a href="var.html#elementos-básicos"><i class="fa fa-check"></i><b>3.1</b> Elementos básicos</a></li>
+<li class="chapter" data-level="3.2" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-discreta"><i class="fa fa-check"></i><b>3.2</b> Distribuciones de probabilidad de variables aleatorias discreta</a></li>
+<li class="chapter" data-level="3.3" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-continuas."><i class="fa fa-check"></i><b>3.3</b> Distribuciones de probabilidad de variables aleatorias continuas.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> Distribuciones bidimensionales</a><ul>
+<li class="chapter" data-level="4.1" data-path="varbi.html"><a href="varbi.html#uno"><i class="fa fa-check"></i><b>4.1</b> Uno</a></li>
+<li class="chapter" data-level="4.2" data-path="varbi.html"><a href="varbi.html#dos"><i class="fa fa-check"></i><b>4.2</b> Dos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a><ul>
+<li class="chapter" data-level="5.1" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos"><i class="fa fa-check"></i><b>5.1</b> Valor esperado de modelos discretos</a></li>
+<li class="chapter" data-level="5.2" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos-1"><i class="fa fa-check"></i><b>5.2</b> Valor esperado de modelos discretos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ass.html"><a href="ass.html"><i class="fa fa-check"></i><b>6</b> Resultados asintóticos.</a></li>
+<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Funciones de muestras aleatorias</a></li>
+<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
+<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#propuesta-de-informe"><i class="fa fa-check"></i><b>8.1</b> Propuesta de informe</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> Estimadres intervalares</a></li>
+<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> Prueba/contraste de hipótesis</a></li>
+<li class="chapter" data-level="11" data-path="regre.html"><a href="regre.html"><i class="fa fa-check"></i><b>11</b> Regresión lineal</a></li>
+<li class="chapter" data-level="12" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>12</b> ANOVA de un factor.</a></li>
+<li class="chapter" data-level="" data-path="apendices-formulas-y-calculos-algebraicos.html"><a href="apendices-formulas-y-calculos-algebraicos.html"><i class="fa fa-check"></i>Apendices: formulas y calculos algebraicos</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a la Probabilidad y la Estadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="datos" class="section level1">
+<h1><span class="header-section-number">Capítulo1</span> Operaciones de análisis exploratorio y resumen de datos</h1>
+<div id="conceptos-elementales" class="section level2">
+<h2><span class="header-section-number">1.1</span> Conceptos elementales</h2>
+<p>En esta sección presento conceptos básicos para
+este
+curso.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-7" class="definition"><strong>Definición.1.1  </strong></span>(a) Una <strong>población</strong> es un conjunto de personas,
+objetos
+o eventos, de los
+cuales nos interesa estudiar algunas de sus
+características. (b) <strong>Medidas poblacionales</strong> son
+listas
+de mediciones de ciertas cantidades provenientes
+de cada
+individuo o elemento de la población. (c) Un
+<strong>parámetro
+poblacional</strong> es una característica general de la
+población.</p>
+</div>
+
+<p>Presento tres ejemplos de población, unidades
+poblacionales y parámetros poblacionales.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-8" class="example"><strong>Ejemplo.1.1  </strong></span>(a) <em>Población</em>: total de autos cuyos modelos
+salieron a
+la venta en un determinado intervalo de tiempo y
+funcionan en una determinada país. (b) <em>Medidas
+poblacionales</em>: razón de millas recorrida por
+galón de
+combustible, número de cilindro, caballos de
+fuerza, tipo
+de caja de cambios. (c) <em>Parámetro poblacional</em>:
+media
+poblacional de razón de millas recorrida por galón
+de
+combustible, media poblacional de caballos de
+fuerza y
+proporción de autos con caja de cambio automático.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-9" class="example"><strong>Ejemplo.1.2  </strong></span>(a) <em>Población</em>: individuos de una cierta comuna
+de una
+ciudad que poseen problemas de insulina.
+(b) <em>Medidas poblacionales</em>: presencia o no de
+menarquía
+(primera hemorragia menstrual de la mujer), edad,
+sexo,
+nivel de igf1 (factor de crecimiento insulínico
+tipo 1,),
+etapa de la pubertad y nivel testicular. (c)
+<em>Parámetro
+poblacional</em>: promedio de edad poblacional,
+frecuencias
+relativas de etapas de la pubertad poblacional y
+media
+poblacional de igf<span class="math inline">\(1\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-10" class="example"><strong>Ejemplo.1.3  </strong></span>(a) <em>Población</em>: pacientes de una determinada
+comunidad
+que reciben tres métodos diferentes de
+ventilación durante la anestesia. (b) <em>Medidas
+poblacionales</em>: concentración de folato
+(microgramos por litro) y tipo de ventilación
+recibida
+por los pacientes<a href="#fn1" class="footnote-ref" id="fnref1"><sup>1</sup></a>. <em>Parámetros poblacionales</em>:
+media
+de folato poblacional y proporciones de
+factores de niveles de ventilación.</p>
+</div>
+
+<p>Los conceptos de unidad de observación (o
+muestral),
+muestra y base de datos son presentados a
+continuación.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-11" class="definition"><strong>Definición.1.2  </strong></span>(a) <strong>Unidades de observaciones:</strong> es un grupo de
+elementos de una población de la cual es
+posible obtener información de manera conjunta.
+Comunmente es
+conocido como una <strong>muestra</strong> de la población. (b)
+Un
+<strong>experimento</strong> es una operación bien
+planificada y controlada que se realiza para
+obtener
+información parcial desde unidades de
+observación de una determinada población. (c) La
+información cuantificada o codificada derivada de
+un experimento es llamada de <strong>datos</strong>. (d)
+Una <strong>base de datos</strong> es una forma ordenada
+organizados la muestra de tal manera de que estos
+puedan
+ser trabajados por programas
+computacionales.
+</div>
+
+<p><strong>Nota</strong>: en general, el experimento debe ser
+realizado
+por un procedimiento que evite el sesgo
+personal. Esto podría lograrse utilizando algún
+<em>mecanismo aleatorio</em>. Sin embargo, esto no
+siempre es posible debido a problemas ético y
+legales.
+Esto ocurre en el caso de estudios en el
+área de la salud donde aplicar un mecanismo
+aleatorio
+podría poner en peligro la integridad de los
+pacientes. En este caso, el experimento se reduce un
+estudio de los datos disponibles.</p>
+<p>Presentamos algunos ejemplos.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-12" class="example"><strong>Ejemplo.1.4  </strong></span>(a) <em>Unidad de observación</em>: grupo de autos de una
+determinada ciudad. (b) <em>Experimento</em>: escoger
+autos de forma aleatoria de una determinada ciudad y
+medir razón de millas recorrida por galón de
+combustible, número de cilindro, caballos de fuerza, tipo
+de caja de cambios. (c) <em>Muestra</em>: lista de estos valores
+observados en la medición. (d) <em>Base de datos</em>: vector
+columna con los datos de
+una característica observada o matriz rectangular con
+toda la información codificada.
+</div>
+
+<p>Mostraremos un ejemplo de datos en forma de vector y
+matriz con la base de datos <em>mtcars</em> del
+paquete de <em>R</em> llamado <em>MASS</em>. Esta base de datos está en
+formato de <em>data frame</em> y fue publicado
+en <span class="math inline">\(1974\)</span> en la revista <em>Motor Trend US magazine</em>. La
+base <em>mtcars</em> contiene datos de <span class="math inline">\(32\)</span> autos
+de modelos diferentes. Por ejemplo, la razón de millas
+por galón de combustible (mpg) en forma de
+vector columna de los primeros y últimos valores</p>
+<p><span class="math display">\[\mbox{mpg}=(21.0 ; 21.0 ; 22.8 ; 21.4 ,\ldots, 27.3 ;
+26.0 ; 30.4 ; 15.8 ; 19.7 ; 15.0 ;
+21.4)^\top. \]</span></p>
+<p>En la siguiente matriz se presenta en la primera columna
+el modelo de los autos estudiados y en
+las restantes columnas las variables medidas para los <span class="math inline">\(6\)</span>
+primeros autos estudiados. Aquí, por
+ejemplo, “Mazda RX4” es el modelo del primer auto, cuya
+<em>mpg</em> o razón de millas por galón es
+igual a <span class="math inline">\(21\)</span> y su <em>cyl</em> o número de cilindros del motor
+es igual a <span class="math inline">\(6\)</span>.</p>
+<pre><code>##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1</code></pre>
+<p>Te presento un ejemplo en el area de la salud.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-15" class="example"><strong>Ejemplo.1.5  </strong></span>(a) <em>Unidad de observación</em>: pacientes de un determinado
+hospital. (b) <em>Experimento</em>: examen de
+laboratorio en donde se escogen individuos para medir:
+presencia o no de menarquía (primera
+hemorragia menstrual de la mujer), edad, sexo, nivel de
+igf<span class="math inline">\(1\)</span> (factor de crecimiento insulínico
+tipo <span class="math inline">\(1\)</span>,), etapa de la pubertad y nivel testicular. (c)
+<em>Muestra</em>: mediciones de estos valores.
+(d) <em>Base de datos</em>: vector columna con los datos de una
+característica observada o matriz
+rectangular con toda la información codificada.
+</div>
+
+<p>La siguiente base de datos llamada <em>juul2</em> proviene dal
+paquete <em>ISwR</em> del programa R. Contiene
+información de pacientes con problema de insulina. Aquín,
+por ejemplo, <em>age</em> contiene la edad de
+los pacientes y <em>menarche</em> presencia o no de menarquía
+(primera hemorragia menstrual de la
+mujer).</p>
+<pre><code>##     age height menarche sex igf1 tanner testvol weight
+## 1    NA     NA       NA  NA   90     NA      NA     NA
+## 2    NA     NA       NA  NA   88     NA      NA     NA
+## 3    NA     NA       NA  NA  164     NA      NA     NA
+## 4    NA     NA       NA  NA  166     NA      NA     NA
+## 5    NA     NA       NA  NA  131     NA      NA     NA
+## 6  0.17     NA       NA   1  101      1      NA     NA
+## 7  0.17     NA       NA   1   97      1      NA     NA
+## 8  0.17     NA       NA   1  106      1      NA     NA
+## 9  0.17     NA       NA   1  111      1      NA     NA
+## 10 0.17     NA       NA   1   79      1      NA     NA
+## 11 0.17     NA       NA   1   43      1      NA     NA
+## 12 0.17     NA       NA   1   64      1      NA     NA
+## 13 0.25     NA       NA   1   90      1      NA     NA
+## 14 0.25     NA       NA   1  141      1      NA     NA
+## 15 0.42     NA       NA   1   42      1      NA     NA</code></pre>
+<p>Es normal que al aplicar la medición ocurran errores o
+problemas con los instrumentos de medición.
+Las normas éticas científicas exigen no ocultar esto sino
+informarlas. Por ejemplo,
+un símbolo <strong>NA</strong> indica que el valor fue perdido. El
+símbolo <strong>NULL</strong> indica que el valor
+obtenido fue nulo o no tiene validez. Se simboliza por
+<strong>Inf</strong> para valores que salieron fuera de
+los límites de los valores de medición del instrumento.</p>
+<p>Presentamos otro ejemplo dentro del área de la salud.</p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-18" class="example"><strong>Ejemplo.1.6  </strong></span><em>Unidad de observación</em>: pacientes de un determinado
+hospital. <em>Experimento</em>: examen de
+laboratorio en donde se reciben pacientes y se les mide
+concentración de folato (microgramos por
+litro) y factores con niveles de N2O+O2. <em>Muestra</em>:
+lista de estos valores. <em>Base de datos</em>:
+vector o matriz rectangular con estos datos
+cuantificados.
+</div>
+
+<pre><code>##    folate ventilation
+## 1     243  N2O+O2,24h
+## 2     251  N2O+O2,24h
+## 3     275  N2O+O2,24h
+## 4     291  N2O+O2,24h
+## 5     347  N2O+O2,24h
+## 6     354  N2O+O2,24h
+## 7     380  N2O+O2,24h
+## 8     392  N2O+O2,24h
+## 9     206   N2O+O2,op
+## 10    210   N2O+O2,op</code></pre>
+<p>Podemos resumir el proceso de análisis de datos en la
+siguiente figura</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">knitr<span class="op">::</span><span class="kw">include_graphics</span>(<span class="st">&#39;Gran_Cuadro_Inferencia.pdf&#39;</span>)</a></code></pre></div>
+<p><embed src="Gran_Cuadro_Inferencia.pdf" /><!-- --></p>
+<p>Todo comienza con el interés por conocer atributos
+desconocidos de una determinada población. Aquí
+son llamados de parámetros poblacionales. Para <em>aprender</em>
+de estos parámetros se realiza un
+experimento y recopilar información. El siguiente paso es
+<em>explorar</em> las características generales
+de los datos. Luego buscaremos resumirlos para sacar
+conclusiones preliminares sobre los
+parámetros poblacionales.</p>
+</div>
+<div id="variables-observadas-en-experimentos" class="section level2">
+<h2><span class="header-section-number">1.2</span> Variables observadas en experimentos</h2>
+<p>Un elemento relevante de la planificación de un
+experimento científico es el conjunto de variables que
+será medido desde las unidades de observación.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-22" class="definition"><strong>Definición.1.3  </strong></span>(a) Una <strong>variable</strong> <span class="math inline">\(X\)</span> es una característica de interés
+que posee cada elemento de una población
+y que podemos medir. (b) Una variable es <strong>cuantitativa</strong>
+si sus valores son números y representan
+una cantidad. (c) Una variable es <strong>cualitativa</strong> si sus
+valores representan una cualidad, un
+atributo o una categoría. Se les llama también variables
+categóricas. (d) Una lista</p>
+<span class="math display">\[x_1, x_2, \ldots, x_n\]</span>
+de observaciones de una variable <span class="math inline">\(X\)</span> obtenidas al
+desarrollar un experimento es llamada de
+<strong>datos observados</strong> de <span class="math inline">\(X\)</span> extraída desde una lista
+de <span class="math inline">\(n\)</span> unidades de observación. El número <span class="math inline">\(n\)</span>
+será llamado de <strong>tamaño de los datos</strong>.
+</div>
+
+<p>Presentamos algunos ejemplos.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-23" class="example"><strong>Ejemplo.1.7  </strong></span>- Ejemplo de variables cuantitativas:</p>
+<pre><code>    - Razón de millas por galón de combustible. 
+    - Número de cilindros  de motores.
+    - Número de caballos de fuerza de motores.
+    - Peso en Kilogramos.
+    - Nivel de insulina en la sangre.
+    - Temperatura en grados Celsius (o Fahrenheit).
+    - Año de lanzamiento de un modelo de auto.</code></pre>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-24" class="example"><strong>Ejemplo.1.8  </strong></span>- Ejemplo de variables cualitativas</p>
+<pre><code>- Tipo de motor.
+- Modelo del auto.
+- Sexo.
+- Tipo de ventilación en pacientes.  </code></pre>
+</div>
+
+<p>En general, las variables de experimentos son
+clasificadas en dos tipo.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-25" class="definition"><strong>Definición.1.4  </strong></span>
+Tipos de variables cuantitativas. (a) <strong>Discreta:</strong> si
+el conjunto de todos sus posibles valores
+tiene un número finito de elementos, o bien es infinito,
+pero se pueden numerar uno por uno de acuerdo al conjunto
+de número naturales
+<span class="math inline">\(\{0,1,2,3,\ldots\}\)</span>. Noten que, esto implica que la
+variable puede asumir solamente un conjunto
+finito de valores dentro de un intervalo <span class="math inline">\((a,b)\)</span>. Una
+variable discreta puede asumir valores con
+decimales. (b) <strong>Continua:</strong> si puede tomar todos los
+valores posibles dentro de un intervalo de
+números reales, como por ejemplo <span class="math inline">\((a,b)\)</span> o <span class="math inline">\([a,b]\)</span>.</p>
+</div>
+
+<p>Presentamos algunos ejemplos.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-26" class="example"><strong>Ejemplo.1.9  </strong></span>- Ejemplo de variables discretas:</p>
+<pre><code>- Número de cilindros  de motores.
+- Número de caballos de fuerza de motores.
+- Una variable hipotética con valores: 0, 0.5, 1, 1.5, 2, 2.5, ...</code></pre>
+<p>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Ejemplo.1.10  </strong></span>- Ejemplo de variables continuas:</p>
+<pre><code>- Razón de millas por galón de combustible. 
+- Peso en Kilogramos.
+- Nivel de insulina en la sangre.
+- Temperatura en grados Celsius (o Fahrenheit).</code></pre>
+</div>
+
+<p>Luego de obtener los resultados de un experimento, el
+investigador debe codificar los resultados para poder
+construir la base de datos. En el caso de variables
+cualitativas, esto es hecho clasificándola en dos tipos
+de escala de medición.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-28" class="definition"><strong>Definición.1.5  </strong></span>Escalas de mediciones de variables cualitativas. (a)
+<strong>Escala nominal:</strong> si sus valores son
+etiquetas o atributos y no existe un orden jerárquico
+entre ellos. (b) <strong>Escala ordinal:</strong> si sus
+valores son etiquetas o atributos pero existe un cierto
+orden jerárquico entre ellos.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Ejemplo.1.11  </strong></span>- Ejemplo de variables cualitativas en escala nominal:</p>
+<pre><code>- Tipo de motor.
+- Sexo.
+- Tipo de ventilación en pacientes.  
+- Idioma.
+- Nacionalidad.</code></pre>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-30" class="example"><strong>Ejemplo.1.12  </strong></span>- Ejemplo de variables cualitativas ordinal:</p>
+<pre><code>- Grupo etario: lactante, niños, adolescente, adulto
+y tercera edad.
+- Clasificación de productos tecnológicos: básico,
+gama media y gamma alta. 
+- Posición de llegada en una competencia.
+- Talla de ropa: S, M, L, etc. 
+- Tipo de ventilación en pacientes.   </code></pre>
+</div>
+
+<p>Las variables cuantitativas también son clasificadas
+según su escala de medición.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-31" class="definition"><strong>Definición.1.6  </strong></span><strong>Escala de intervalo:</strong> existe una noción de distancia
+entre los valores de la variable y no
+existe necesariamente el valor natural cero como
+indicador de ausencia de algo. En este caso el
+cero u otro valor representa un punto de cambio de
+“nivel”. En general, la escala una variable en
+escala de intervalo es establecido vía consensos
+científicos o de instituciones para estandarizar
+procesos.</p>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-32" class="definition"><strong>Definición.1.7  </strong></span><strong>Escala de razón</strong> si los valores de la variable tienen
+un sentido físico de <em>intensidad</em> y
+existe el cero indicando ausencia de valor. En este caso
+el cero es el origen de los valores a ser
+medidos.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Ejemplo.1.13  </strong></span>- Ejemplo de variables cuantitativas medidas en escala de
+intervalo:</p>
+<pre><code>- Escala de notas: de 0 a 7, de 0 a 10,
+utilizando letras con números. 
+- Puntaje PSU.
+- El pH,  una medida de acidez o alcalinidad de 
+una sustancia.
+- Temperatura en grados Celsius (o Fahrenheit):
+puede asumir valores positivos, negativos
+y en particular ser igual a 0.</code></pre>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Ejemplo.1.14  </strong></span>- Ejemplo de variables cuantitativas medidos en escala de
+razón:</p>
+<pre><code>    - Razón de millas por galón de combustible. 
+    - Número de cilindros  de motores.
+    - Número de caballos de fuerza de motores.
+    - Peso en Kilogramos.
+    - Nivel de insulina en la sangre.</code></pre>
+</div>
+
+</div>
+<div id="agrupamiento-de-variables" class="section level2">
+<h2><span class="header-section-number">1.3</span> Agrupamiento de variables</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-35" class="definition"><strong>Definición.1.8  </strong></span>(a) Una <strong>clase</strong> es un agrupamiento de <em>categorías</em> en
+el caso de variables cualitativas, o de
+<em>intervalos numéricos</em> en el caso de variables
+cuantitativas. (b) Una <strong>marca de clase</strong> es un
+dato que representa a una clase. En el caso de los
+intervalos la marcha de clase es el punto medio
+de los intervalos que se obtiene con el promedio de los
+extremos.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-36" class="example"><strong>Ejemplo.1.15  </strong></span>Consideremos los valores de las variables <em>mpg</em> de la
+base de datos <em>mtcars</em>. Clasificando los
+valores en intervalos de largo <span class="math inline">\(4.4\)</span> mil millas por galón
+obtenemos los intervalos</p>
+<p><span class="math display">\[ [0 ; 4.4), [4.4 ; 8.8), [8.8 ; 13.2) [13.2 ; 17.6),
+[17.6 ; 22.0), [22.0 ; 26.4), [26.4 ; 30.08] \]</span></p>
+<p>La marca de clase para el intervalo <span class="math inline">\([13.2 ; 17.6)\)</span> es
+el punto <span class="math inline">\(15.4\)</span>. Analogamente para los
+otros casos.</p>
+</div>
+
+</div>
+<div id="operación-de-análisis-exploratorio-de-datos" class="section level2">
+<h2><span class="header-section-number">1.4</span> Operación de análisis exploratorio de datos</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-37" class="definition"><strong>Definición.1.9  </strong></span>La <strong>estadística descriptiva</strong> es la area de la
+<strong>Estadistica</strong> que se preocupada de la
+aplicación de operaciones que ayudan a describir, mostrar
+y resumir, la información de un conjunto
+de datos.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-38" class="definition"><strong>Definición.1.10  </strong></span>La parte de la Estadística Descriptiva que utiliza
+herramientas para <strong>visualizar</strong>
+caracteristicas generales de los datos es llamada de
+“Analisis exploratorio de Datos”. Tales
+herramientas son llamadas de <strong>operaciones
+exploratorias</strong>.</p>
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-39" class="example"><strong>Ejemplo.1.16  </strong></span>Ejemplo de operaciones exploratoias son construir: tablas
+de frecuencias, graficos de tallos y
+hojas, histogramas, diagrama de caja y bigotes, diagrama
+de dispersión, etc.
+</div>
+
+<div id="operaciones-de-exploración-grafica-de-los-datos-sin-grupos" class="section level3">
+<h3><span class="header-section-number">1.4.1</span> Operaciones de exploración grafica de los datos: sin grupos</h3>
+<p>Los gráficos estadísticos nos entregarán información
+representada en el plano cartesiano bi o
+tridimensional de los valores de la variable <span class="math inline">\(X\)</span> que
+acumula las mayores frecuencia y como se
+distribuyen los otros datos en torno de estos valores
+centrales, entre otros.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-41" class="definition"><strong>Definición.1.11  </strong></span>
+<strong>Gráfico de tallos y hojas:</strong> su aspecto es muy similar al de un
+histograma dibujado horizontalmente. A los dígitos del primer
+decimal de los números que aparecen listados en la parte
+<em>derecha</em> de <span class="math inline">\(|\)</span> del diagrama se les llama <strong>hojas</strong> y a la parte
+izquierda de la parte no decimal se le llama <strong>tallo</strong>.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-42" class="definition"><strong>Definición.1.12  </strong></span><strong>Gráfico circular o de torta:</strong> para variables cualitativas o
+bien para
+variables cuantitativas agrupadas,
+se pueden elaborar gráficas de pastel, también llamadas
+pie charts. Estas son gráficas circulares divididas en sectores
+que permiten comparar visualmente
+las frecuencias porcentuales de los valores observados de
+una variable.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-43" class="definition"><strong>Definición.1.13  </strong></span>
+<strong>Gráfico de barras:</strong> las gráficas de barra ayudan a visualizar
+los valores de una variable que
+ocurren con mayor o menor frecuencia y a comparar
+cualitativamente estas
+frecuencias.</p>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-44" class="definition"><strong>Definición.1.14  </strong></span><strong>Histograma::</strong> un histograma es una gráfica muy similar a una
+gráfica de barras. Adquiere este nombre cuando existe un orden
+entre los valores de la variable a graficar. Nuevamente, para cada
+valor, categoría o clase de la variable, se asocia una barra
+cuya altura es la frecuencia con la que se observa la
+categoría.
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-45" class="definition"><strong>Definición.1.15  </strong></span><strong>Boxplot:</strong> para representar los datos con base en valores que
+dividan los datos en partes estratégicas es
+adecuado usar un gráfico de tallos y hojas. Para su
+diseño es necesario el valor mínimo, el primer
+(C1), segundo (C2), tercer cuartil (C3) y el máximo de
+los datos. La caja es formada por C1 y C3
+en cuyo centro se encuentra C2 (la mediana.)</p>
+</div>
+
+<p>Presento algunos ejemplos de transformaciones de los datos mpg en
+gráficos.</p>
+<pre><code>## 
+##   The decimal point is at the |
+## 
+##   10 | 44
+##   12 | 3
+##   14 | 3702258
+##   16 | 438
+##   18 | 17227
+##   20 | 00445
+##   22 | 88
+##   24 | 4
+##   26 | 03
+##   28 | 
+##   30 | 44
+##   32 | 49</code></pre>
+<p><strong>Interpretación:</strong> el valor más frecuente de los valores observados
+de <em>mpg</em> son las medidas cuya parte entera es <span class="math inline">\(14\)</span>. En menor cantidad,
+pero también frecuentes son los valores con parte entera igual a <span class="math inline">\(18\)</span>
+y <span class="math inline">\(20\)</span>.</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-47-1.png" width="672" /></p>
+<p><strong>Interpretación:</strong> dentro de la base de datos mtcars, los autos con
+<span class="math inline">\(8\)</span> y <span class="math inline">\(4\)</span> ciclos son los más frecuentes.</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-48-1.png" width="672" /></p>
+<p><strong>Interpretación:</strong> en la base de datos <em>mtcars</em> los autos con cambio
+de velocidad automático (<span class="math inline">\(0\)</span>) es mayor que los autos con cambios
+manual (<span class="math inline">\(1\)</span>). Los autos cambio de velocidad automático suman un mayor
+número de cilindros que los autos con cambios manuales. Las altas
+frecuencias de mpg se concentran en torno a <span class="math inline">\(20\)</span> millas por galón.</p>
+</div>
+<div id="operaciones-de-exploración-gráfica-de-los-datos-por-grupos" class="section level3">
+<h3><span class="header-section-number">1.4.2</span> Operaciones de exploración gráfica de los datos: por grupos</h3>
+<p>Los gráficos por grupos nos ayudarán a comparar las
+características de los datos separados por unidades
+muestrales con alguna característica en común.</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-49-1.png" width="672" />
+<strong>Interpretación</strong>: Los autos con <span class="math inline">\(4\)</span> cilindros tienen
+un mayor nivel
+de <em>mpg</em> que los otros casos (ver media representado por
+el punto
+morado). Los autos con <span class="math inline">\(4\)</span> engranajes tienen mayor
+niveles de <em>mpg</em>.
+Los autos con <span class="math inline">\(8\)</span> cilindros concentran altas frecuencias
+en niveles
+más bajos que los de <span class="math inline">\(4\)</span> y <span class="math inline">\(6\)</span> cilindros.</p>
+</div>
+<div id="operación-de-analisis-de-frecuencias" class="section level3">
+<h3><span class="header-section-number">1.4.3</span> Operación de analisis de frecuencias</h3>
+<p>Una forma de resumir los datos es través del conteo de
+número de veces en las cuales aparecen
+ciertas observaciones en los datos.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-50" class="definition"><strong>Definición.1.16  </strong></span>Consideremos una muestra <span class="math inline">\(x_1, \ldots, x_n\)</span> de <span class="math inline">\(n\)</span>
+valores en donde <span class="math inline">\(x_i\)</span> representa la <span class="math inline">\(i\)</span>-ésima
+observación.</p>
+<ul>
+<li><p>La <strong>frecuencia absoluta</strong> de <span class="math inline">\(x_i\)</span>, simbolizado por
+<span class="math inline">\(f_i\)</span>, es el número de veces que su valor
+se repite en la muestra.</p></li>
+<li><p>La <strong>frecuencia absoluta acumulada</strong> de <span class="math inline">\(x_i\)</span>,
+simbolizado por <span class="math inline">\(F_i\)</span> , es la suma</p></li>
+</ul>
+<p><span class="math display">\[F_i = \sum_{j: x_j \leq x_i} f_j,\]</span>
+es decir la suma de las frecuencias absolutas de todos
+los valores menores o iguales a <span class="math inline">\(x_i\)</span>.</p>
+<ul>
+<li><p>La <strong>frecuencia relativa</strong> de <span class="math inline">\(x_i\)</span> es el porcentaje
+<span class="math inline">\(h_i= (f_i/n)\times 100\)</span>, es decir el
+porcentaje de la frecuencia absoluta en el total de la
+muestra.</p></li>
+<li><p>La <strong>frecuencia relativa acumulada</strong> de <span class="math inline">\(x_i\)</span> es la
+suma</p></li>
+</ul>
+<p><span class="math display">\[H_i = \sum_{j: x_j \leq x_i} h_j,\]</span></p>
+<p>es decir la suma de los frecuencias relativas de todos
+los valores
+menores o iguales a <span class="math inline">\(x_i\)</span>.</p>
+</div>
+
+<p>Las frecuencias <span class="math inline">\(h_i\)</span> y <span class="math inline">\(H_i\)</span> también pueden ser
+calculado con valores sobre el intervalo <span class="math inline">\([0,1]\)</span> con
+interpretaciones equivalentes a los porcentajes en la
+escala <span class="math inline">\([0\% ; 100\%]\)</span>.</p>
+<p>Una forma de resumir los valores de la variable <em>mpg</em> es
+mediante una operación que los transforme en tablas de
+frecuencia por los valores puntuales o por intervalo de
+clase.</p>
+<p>En el primer caso presentamos una tabla de frecuencia de
+los valores puntuales.</p>
+<div class="sourceCode" id="cb14"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb14-1" data-line-number="1"><span class="kw">freqs</span>(mtcars<span class="op">$</span>mpg)</a></code></pre></div>
+<pre><code>##    data fi Fi    hi      Hi
+## 1  10.4  2  2 6.250   6.250
+## 2  13.3  1  3 3.125   9.375
+## 3  14.3  1  4 3.125  12.500
+## 4  14.7  1  5 3.125  15.625
+## 5  15.0  1  6 3.125  18.750
+## 6  15.2  2  8 6.250  25.000
+## 7  15.5  1  9 3.125  28.125
+## 8  15.8  1 10 3.125  31.250
+## 9  16.4  1 11 3.125  34.375
+## 10 17.3  1 12 3.125  37.500
+## 11 17.8  1 13 3.125  40.625
+## 12 18.1  1 14 3.125  43.750
+## 13 18.7  1 15 3.125  46.875
+## 14 19.2  2 17 6.250  53.125
+## 15 19.7  1 18 3.125  56.250
+## 16 21.0  2 20 6.250  62.500
+## 17 21.4  2 22 6.250  68.750
+## 18 21.5  1 23 3.125  71.875
+## 19 22.8  2 25 6.250  78.125
+## 20 24.4  1 26 3.125  81.250
+## 21 26.0  1 27 3.125  84.375
+## 22 27.3  1 28 3.125  87.500
+## 23 30.4  2 30 6.250  93.750
+## 24 32.4  1 31 3.125  96.875
+## 25 33.9  1 32 3.125 100.000</code></pre>
+<p><strong>Interpretación:</strong> El <span class="math inline">\(25\%\)</span> de los medidas de <em>mpg</em> en
+la muestra son menores o igual a <span class="math inline">\(15.2\)</span> millas por
+galón.
+Aproximadamente el <span class="math inline">\(53.13\%\)</span> de los medidas de <em>mpg</em> son
+menores a <span class="math inline">\(19.2\)</span> millas por galón. Aproximadamente el
+<span class="math inline">\(78.13\%\)</span> de los medidas de <em>mpg</em> son menores a <span class="math inline">\(22.8\)</span>
+millas por galón.</p>
+<p>En segundo lugar, presentamos una tabla de frecuencia
+de los los intervalos presentados anteriormente.</p>
+<pre><code>##   marca fi Fi     hi      Hi
+## 1   2.2  0  0  0.000   0.000
+## 2   6.6  0  0  0.000   0.000
+## 3  11.0  2  2  6.250   6.250
+## 4  15.4 10 12 31.250  37.500
+## 5  19.8 11 23 34.375  71.875
+## 6  24.2  4 27 12.500  84.375
+## 7  30.4  5 32 15.625 100.000</code></pre>
+<p><strong>Interpretación:</strong></p>
+</div>
+</div>
+<div id="operación-de-resumen-de-datos-univariados" class="section level2">
+<h2><span class="header-section-number">1.5</span> Operación de resumen de datos univariados</h2>
+<div id="medidas-de-tendencia-central" class="section level3">
+<h3><span class="header-section-number">1.5.1</span> Medidas de tendencia central</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-54" class="definition"><strong>Definición.1.17  </strong></span>La media o <strong>media</strong> aritmética es simplemente el
+<em>promedio</em> de la muestra
+<span class="math inline">\(x_1, \ldots , x_n\)</span> simbolizado por <span class="math inline">\(\bar{x}_n\)</span> y dada
+por:</p>
+<p><span class="math display">\[\bar{x}_n = \frac{1}{n} \sum_{i=1}^n x_i . \]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-55" class="definition"><strong>Definición.1.18  </strong></span>
+La <strong>moda</strong> es el valor que aparece con mayor frecuencia
+en el conjunto de
+datos, si lo hubiera. En general, los datos pueden ser
+uni, bi o multimodales (varias modas).</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-56" class="definition"><strong>Definición.1.19  </strong></span>
+Simbolisemos por <span class="math inline">\(x_{(k)}\)</span> el valor de la muestra
+ordenada que esta en el <span class="math inline">\(k\)</span>-ésimo lugar. La
+<strong>mediana</strong> es el dato ordenado de en medio, esto es:</p>
+<ol style="list-style-type: lower-alpha">
+<li><p>Si el número de datos <span class="math inline">\(n\)</span> es par, entonces existen
+dos datos ordenados de en medio y la
+mediana es el promedio de estos dos números, esto es
+<span class="math inline">\((x_{(n/2)} + x_{(n/2)+1})/2\)</span>.</p></li>
+<li>Si el número de datos <span class="math inline">\(n\)</span> es impar, entonces el dato
+ordenado de en medio es <span class="math inline">\(x_{(n-1)/2}\)</span> y
+esta es la mediana.</li>
+</ol>
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-57" class="example"><strong>Ejemplo.1.17  </strong></span>Presentamos la media, moda y mediana de la los datos
+<em>hp</em> (caballos de fuerza) de la base de datos
+<em>mtcars</em>: <span class="math inline">\(\bar{x}_n= 146.7\)</span> ; Mediana <span class="math inline">\(= 123\)</span> ; Moda
+<span class="math inline">\(=(110, 175, 180)\)</span> los cuales con una
+frecuencia absoluta iguala <span class="math inline">\(3\)</span>.<br />
+
+</div>
+
+</div>
+<div id="medidas-de-dispersión" class="section level3">
+<h3><span class="header-section-number">1.5.2</span> Medidas de dispersión</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-58" class="definition"><strong>Definición.1.20  </strong></span>
+La <strong>varianza</strong> <span class="math inline">\(s_x^2\)</span> es un promedio de la distancia
+al cuadrado de cada uno de los
+datos <span class="math inline">\(x_i\)</span> respecto de la media <span class="math inline">\(\bar{x}_n\)</span> y es la
+medida de dispersión más comúnmente
+usada calculada por:</p>
+<p><span class="math display">\[s_x^2 = \frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x}_n)^2.
+  \]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-59" class="definition"><strong>Definición.1.21  </strong></span>
+A la raíz cuadrada positiva de la varianza se le llama
+<strong>desviación estándar</strong> o
+desviación típica, y se le simboliza por la letra
+<span class="math inline">\(s_x^2\)</span>. Así, para su cálculo se usa la
+siguiente fórmula:</p>
+<p><span class="math display">\[s_x = \sqrt{ \frac{1}{n}\sum_{i=1}^{n} (x_i - 
+                  \bar{x}_n)^2}.  \]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-60" class="definition"><strong>Definición.1.22  </strong></span>
+Al promedio de los valores absolutos de las diferencias
+entre los datos y la
+media se le llama <strong>desviación media</strong>. Más
+específicamente, supongamos que <span class="math inline">\(\bar{x}_n\)</span>
+es la media de los datos numéricos <span class="math inline">\(x1, \ldots , x_n\)</span>,
+entonces la desviación media
+se denota por <span class="math inline">\(dm_x\)</span> y se define como el siguiente
+promedio</p>
+<p><span class="math display">\[\mbox{dm}_x = \frac{1}{n}\sum_{i=1}^{n} |x_i -
+     \bar{x}_n|.  \]</span></p>
+</div>
+
+
+<div class="remark">
+<p> <span class="remark"><em>Enfasis.</em></span> 
+Cuando en <span class="math inline">\(s_x^2\)</span>, <span class="math inline">\(s_x\)</span> y <span class="math inline">\(dm_x\)</span> dividimos por <span class="math inline">\((n-1)\)</span>
+en lugar de n, decimos que <span class="math inline">\(s_x^2\)</span>,
+<span class="math inline">\(s_x\)</span> y dm son las versiones <strong>modificadas</strong> de la
+variancia, desviación estandar y dm.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-62" class="definition"><strong>Definición.1.23  </strong></span>
+Ahora definiremos el rango de una colección de números
+<span class="math inline">\(x_1, \ldots, x_n\)</span>. Para
+calcular esta cantidad es necesario identificar el dato
+más pequeño <span class="math inline">\(x_{(1)}\)</span> y el
+dato más grande <span class="math inline">\(x_{(n)}\)</span>. El rango de la colección de
+números dada se denota
+por Ran y es simplemente el dato mayor menos el dato
+menor:</p>
+<p><span class="math display">\[ \mbox{Ran} = x_{(n)} - x_{(1)}.   \]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-63" class="definition"><strong>Definición.1.24  </strong></span>
+Sea <span class="math inline">\(x_1, \ldots , x_n\)</span> una colección de <span class="math inline">\(n\)</span>
+observaciones de una variable cuantitativa.
+Sea <span class="math inline">\(\bar{x}_n\)</span> su media y sea <span class="math inline">\(s_x\)</span> su desviación
+estándar. Al cociente de variación se le llama
+coeficiente de variación y se le denota por <span class="math inline">\(cv_x\)</span>,
+suponiendo por supuesto que <span class="math inline">\(\bar{x}_n \neq 0\)</span>. Es decir:
+<span class="math display">\[ cv_x = \frac{s_x}{\bar{x}_n} \times 100.\]</span></p>
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-64" class="example"><strong>Ejemplo.1.18  </strong></span>Presentamos las anteriores medidas de dispersión para
+los datos <em>hp</em> (caballos de fuerza) de la
+base de datos <em>mtcars</em>: <span class="math inline">\(s_x^2 = 4700.87\)</span>; <span class="math inline">\(s_x =68.56\)</span>;
+<span class="math inline">\(dm_x= 56.48\)</span>, Ran<span class="math inline">\(= 283\)</span> y <span class="math inline">\(cv_x= 46.74\)</span>.
+</div>
+
+</div>
+<div id="percentiles-cuantiles-cuartiles-y-deciles" class="section level3">
+<h3><span class="header-section-number">1.5.3</span> Percentiles, cuantiles, cuartiles y deciles</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-65" class="definition"><strong>Definición.1.25  </strong></span>
+El valor númerico de los datos ordenados que deja a su
+izquierda (o son menores que) el <span class="math inline">\(p \times 100\%\)</span> de los datos es llamado de <strong>percentiles</strong> de
+orden a <span class="math inline">\(p\times 100\)</span>, para una proporción
+<span class="math inline">\(p\in (0,1)\)</span>. El equivalente a un percentil de orden
+<span class="math inline">\(p\times 100\)</span> es el <strong>cuantil</strong> de orden <span class="math inline">\(p\)</span>, el cual es
+el
+valores de la muestra que deja a su izquerda la
+proporción <span class="math inline">\(p\)</span> de los datos menores a el. Percentiles y
+cuantiles son valores equivalentes. en este texto nos
+trabajaremos con el termino PERCENTIL.</p>
+<p>Los percentiles de orden <span class="math inline">\(0.25\%\)</span>, <span class="math inline">\(0.50\%\)</span> y <span class="math inline">\(0.75\%\)</span>
+son llamos de <strong>primer cuartil</strong> simbolizado por <span class="math inline">\(C_1\)</span>,
+<strong>segundo cuartil</strong> simbolizado por <span class="math inline">\(C_2\)</span> y <strong>tercer
+cuartil</strong> simbolizdo por <span class="math inline">\(C_3\)</span>, respectivamente. Los
+<strong>cuartiles</strong>
+dividen a los datos ordenados en <span class="math inline">\(4\)</span> partes con
+aproximadamente el
+mismo porcentaje de datos.</p>
+<p>Cuando <span class="math inline">\(p = 0.1, 0.2, \ldots , 0.9\)</span>, a los percentiles
+correspondientes se les llama <strong>deciles</strong>. Los
+<strong>deciles</strong> dividen a
+los datos ordenados en <span class="math inline">\(4\)</span> partes con aproximadamente el
+mismo
+porcentaje de datos.</p>
+<p>En otras ocasiones se requiere dividir al conjunto de
+datos en cien porcentajes iguales, y
+entonces cuando <span class="math inline">\(p = 0.01, 0.02, \ldots , 0.99\)</span> a los
+cuantiles correspondientes se les llama
+percentiles.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-66" class="example"><strong>Ejemplo.1.19  </strong></span>Presentamos los valores extremos y los cuartiles de la
+variable <span class="math inline">\(hp\)</span>.
+<span class="math inline">\(x_{(1)}= 52\)</span>, <span class="math inline">\(Q_1= 96.5\)</span>, <span class="math inline">\(Q_2 = 123\)</span> , <span class="math inline">\(Q_3 = 180\)</span> y
+<span class="math inline">\(x_{(n)}= 335\)</span>.</p>
+</div>
+
+</div>
+<div id="medidas-de-asimetría-y-curtosis" class="section level3">
+<h3><span class="header-section-number">1.5.4</span> Medidas de asimetría y curtosis</h3>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-67" class="definition"><strong>Definición.1.26  </strong></span>La cantidad que llamaremos <strong>coeficiente de asimetría</strong>
+<span class="math inline">\(\kappa\)</span> (en inglés <em>skewness</em>)
+es una medida de la asimetría (falta de simetría) de un
+conjunto de datos dados por:
+<span class="math display">\[ \kappa = \frac{1}{n \times s_x^3} \sum_{i=1}^n (x_i -
+                                      \bar{x}_m)^3. \]</span></p>
+<p>Si <span class="math inline">\(\kappa &lt; 0\)</span>, la distribución de frecuencias es
+<strong>asimétrica a la izquerda</strong>. Si <span class="math inline">\(\kappa &gt;0\)</span>,
+la distribución de frecuencias es <strong>asimétrica a la
+derecha</strong>. Si <span class="math inline">\(\kappa=0\)</span>, la distribución de
+frecuencias es <strong>simétrica</strong>.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-68" class="definition"><strong>Definición.1.27  </strong></span>
+Sea <span class="math inline">\(x_1, \ldots , x_n\)</span> una colección de datos numéricos
+con media <span class="math inline">\(\bar{x}_n\)</span> y desviación
+estándar <span class="math inline">\(s_x\)</span>. La <strong>curtosis</strong>, que denotaremos por la
+letra <span class="math inline">\(\nu\)</span>, es un número que
+se define de la siguiente manera:</p>
+<p><span class="math display">\[ \nu =  \frac{1}{n \times s_x^4} \sum_{i=1}^n (x_i -
+                                      \bar{x}_m)^4.\]</span></p>
+Si <span class="math inline">\(\nu&lt;0\)</span>, la distribución de frecuencias es
+<strong>platicúrtica</strong>, decaimiento lento, colas largas.
+Si <span class="math inline">\(\nu&gt;0\)</span>, la distribución de frecuencias
+<strong>leptocúrtica</strong>, decaimiento rápido, colas cortas. Si
+<span class="math inline">\(\nu=0\)</span>, la distribución de frecuencias es
+<strong>mesocúrtica</strong>, frecuencia aproximada por la densidad
+Gaussiana.
+</div>
+
+<p>La siguiente figura muestra seis gráficos demostrativos de los
+posibles casos de formas de asimetria y curtosis que podrian tomar los
+datos representados histogramas.</p>
+<pre><code>## Loading required package: stats4</code></pre>
+<pre><code>## 
+## Attaching package: &#39;sn&#39;</code></pre>
+<pre><code>## The following object is masked from &#39;package:stats&#39;:
+## 
+##     sd</code></pre>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-69-1.png" width="672" /></p>
+
+<div class="example">
+<span id="exm:unnamed-chunk-70" class="example"><strong>Ejemplo.1.20  </strong></span>Coeficiente de asimetría y curtosis para los datos
+<span class="math inline">\(hp\)</span> de la base <em>mtcars</em> son <span class="math inline">\(\kappa = 0.73\)</span>
+(asimetría a la derecha) y <span class="math inline">\(\nu = -0.135\)</span>
+(platocúrtica), respectivamente.
+</div>
+
+<p>Vemos esto en un histograma</p>
+<div class="sourceCode" id="cb20"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb20-1" data-line-number="1"><span class="kw">hist</span>(mtcars<span class="op">$</span>hp, <span class="dt">main =</span> <span class="st">&quot;Histograma para hp&quot;</span>, <span class="dt">xlab =</span></a>
+<a class="sourceLine" id="cb20-2" data-line-number="2">       <span class="st">&quot;hp&quot;</span>, <span class="dt">col =</span> <span class="st">&quot;gray&quot;</span> )</a></code></pre></div>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-71-1.png" width="672" /></p>
+</div>
+</div>
+<div id="operación-de-resumen-de-datos-bivariados" class="section level2">
+<h2><span class="header-section-number">1.6</span> Operación de resumen de datos bivariados</h2>
+<p>En esta sección presentaron un análisis de asociación de
+dos tipos: correlación lineal entre dos variables
+continuas y analisis de
+asociación entre dos variables categóricas.</p>
+</div>
+<div id="gráficos-de-dispersión" class="section level2">
+<h2><span class="header-section-number">1.7</span> Gráficos de dispersión</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-72" class="definition"><strong>Definición.1.28  </strong></span>Sea <span class="math inline">\((x_1, y_1), \ldots, (x_n, y_n)\)</span> una muestra
+de tamaño <span class="math inline">\(n\)</span> de
+datos pareados en que <span class="math inline">\((x_i,y_i)\)</span> fueron
+observados desde una
+misma unidad o individuo para las variables <span class="math inline">\(X\)</span> e
+<span class="math inline">\(Y\)</span>,
+respectivamente. Un <strong>gráfico de dispersión</strong> para
+esta muestra es
+la representación de estos puntos en el plano
+Cartesiano. En
+general, el objetivo es determinar si existe
+alguna relación
+funcional <span class="math inline">\(y=f(x)\)</span> evidenciada por los datos.</p>
+</div>
+
+<p>Presentamos ejemplos de posibles tendencia de
+asociaciones entre variables.</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-73-1.png" width="672" /></p>
+<p><strong>Interpretación:</strong> La figura (A) muestra un caso
+donde no existe una clara asociación entre las
+variables. La figura (B) muestra una fuerte
+asociación lineal (directamente proporcional). La
+figura (C) muestra una fuerta asociación linea
+negativa (inversamente proporcional). La figura
+(D) muestra un caso de asociación NO LINEAL del
+tipo inversa.</p>
+<p>Presentamos una matriz de correlaciones para las
+variables mpg,
+disp, drat y wt la base de datos <em>mtcars</em>. Este
+tipo de gráfico es útil para identificar posibles
+relaciones lineales o no lineales entre variables
+de una base de datos.</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-74-1.png" width="672" /></p>
+<p>Notamos una asociación lineal entre mpg (millas
+recorridas por galón lleno) y drat<a href="#fn2" class="footnote-ref" id="fnref2"><sup>2</sup></a> (revoluciones del eje)la
+cual exploramos
+de forma especifica a seguir.</p>
+<pre><code>## `geom_smooth()` using formula &#39;y ~ x&#39;</code></pre>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-75-1.png" width="672" /></p>
+<p>Unos de los objetivos consiste en determinar la
+fórmula de la
+recta que pasa por “en medio de los puntos”.</p>
+</div>
+<div id="medidas-de-asociación-entre-dos-variables" class="section level2">
+<h2><span class="header-section-number">1.8</span> Medidas de asociación entre dos variables</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-76" class="definition"><strong>Definición.1.29  </strong></span>Sea <span class="math inline">\(\bar{x}_n\)</span> y <span class="math inline">\(\bar{y}_n\)</span> la
+media de los datos observados de X e Y,
+respectivamente. La
+covarianza entre estas dos variables es un
+número que se denota por cov<span class="math inline">\((x,y)\)</span> calculado por:</p>
+<p><span class="math display">\[ \operatorname{cov}(x,y)=\frac{1}{n}\sum_{i=1}^
+{n}\left(x_{i}-
+ \bar{x}\right)\left(y_{i}-\bar{y}\right). \]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-77" class="definition"><strong>Definición.1.30  </strong></span>El <strong>coeficiente de correlación muestral</strong> entre
+estas dos
+variables <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span> es un número que se denota
+por <span class="math inline">\(r(x, y)=r\)</span>.
+Este
+coeficiente se define de la siguiente forma.
+<span class="math display">\[r(x,y)= r =\frac{\operatorname{cov}(x,y)}{\sqrt
+  { s_x^2  \times s_y^2}} \mbox{ donde
+    } -1 &lt; r &lt; 1.\]</span>
+El coeficiente <span class="math inline">\(r\)</span> mide la asociación lineal entre
+los datos
+observados de <span class="math inline">\(X\)</span> e <span class="math inline">\(Y\)</span>.
+Si <span class="math inline">\(r = 0\)</span>, decimos que <strong>no existe</strong> asociación
+lineal entre
+los datos. Si <span class="math inline">\(r&lt;0\)</span>, decimos que existe una
+<strong>correlaciónlineal
+negativa</strong> o inversamente proporcional entre los
+datos. Si, <span class="math inline">\(r &gt; 0\)</span>, decimos que existe una <strong>correlación lineal
+positiva</strong> entre
+los datos o directamente proporcional.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-78" class="example"><strong>Ejemplo.1.21  </strong></span>
+Para los datos de mpg y drat, la covariancia es
+<span class="math inline">\(2.20\)</span> y el
+coeficiente <span class="math inline">\(r=0.68\)</span> es decir existe una
+asociación lineal
+positiva (o directamente proporcional) en mpg y
+drat.
+Interpretación: si los valores de mpg crecen,
+también lo hace
+drat. Si los valores de mpg decrecen, también lo
+hacen drat.</p>
+</div>
+
+</div>
+<div id="recta-media-estimada" class="section level2">
+<h2><span class="header-section-number">1.9</span> Recta media estimada</h2>
+<p>Consideremos un par de variables, una de las
+cuales será denominada variable de entrada, y la
+otra, variable de respuesta.
+Supongamos que para un valor dado, <span class="math inline">\(x\)</span>, de la
+variable de
+entrada, la variable de respuesta, <span class="math inline">\(y\)</span>, se puede
+expresar en la forma</p>
+<p><span class="math display">\[ Y = \beta_0 + \beta_1 x + e.\]</span>
+Los coeficientes <span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> son
+llamados los
+parámetros del modelo. Se asume que la variable
+<span class="math inline">\(e\)</span>, denominada
+error aleatorio, es una variable aleatoria con
+media <span class="math inline">\(0\)</span>, es
+decir, asume valores muy cercano a <span class="math inline">\(0\)</span>.</p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-79" class="definition"><strong>Definición.1.31  </strong></span>La relación entre la variable de <strong><em>respuesta
+(dependiente,output)</em></strong>, <span class="math inline">\(Y\)</span>, y la variable de
+<strong><em>entrada
+(independiente, input)</em></strong>, <span class="math inline">\(x\)</span>, especificadas
+ambas en la anterior
+ecuación, se denomina regresión lineal simple.
+</div>
+
+<p>Para los pares de datos dados <span class="math inline">\((x_i, y_i), i = 1, . . . , n,\)</span> los
+estimadores de (por) mínimos cuadrados son los
+valores de
+<span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> que hacen lo más pequeño
+posible.</p>
+<p><span class="math display">\[ \sum_{i=1}^{n}
+\epsilon_{i}^{2}=\sum_{i=1}^{n}\left(y_{i}-
+\beta_0-\beta_1
+x_{i}\right)^{2} \]</span></p>
+<p>lo más pequeño posible.</p>
+<p>Se puede demostrar que los estimadores de mínimos
+cuadrados de
+<span class="math inline">\(\beta_0\)</span> y <span class="math inline">\(\beta_1\)</span> dados por</p>
+<p><span class="math display">\[
+\hat{\beta}_0=\frac{\sum_{i=1}^{n}\left(x_{i}-
+\bar{x}\right)\left(y_
+{i}-\bar{y}\right)}{\sum_{i=1}^{n}\left(x_{i}-
+\bar{x}\right)^{2}}
+\text{ y } 
+\hat{\beta}_1=\bar{y}-\hat{\beta} \bar{x}
+\]</span></p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-80" class="definition"><strong>Definición.1.32  </strong></span>La recta
+<span class="math display">\[ \widehat{y} = \widehat{\beta}_0 +
+\widehat{\beta}_1x.\]</span>
+se denomina <strong>recta de regresión media estimada</strong>:
+<span class="math inline">\(\widehat{\beta}_1\)</span> es la pendiente y
+<span class="math inline">\(\widehat{\beta}_0\)</span> es el
+intercepto constante (o término independiente) de
+la recta.
+</div>
+
+<p><strong>Interpretación:</strong> Para valores cercanos a cero
+de <span class="math inline">\(x\)</span>, observamos un valore medio cercano a
+<span class="math inline">\(\widehat{\beta_0}\)</span> de <span class="math inline">\(y\)</span>. Por cada incremento
+(o decrecimo) de <span class="math inline">\(x\)</span>, observamos un incremento (o
+decrecimo) medio de <span class="math inline">\(\widehat{\beta_1}\)</span> unidades
+en <span class="math inline">\(y\)</span>.</p>
+<p>Preveer una nueva observación de las variables respuesta
+<span class="math inline">\(y_{n+1}\)</span> dado una variable de entrada <span class="math inline">\(x_{n+1}\)</span> es
+posible directamente simplemente evaluando la ecuación
+de la recta, es decir:</p>
+<p><span class="math display">\[ \widehat{y}_{n+1} = \widehat{\beta}_0 +
+\widehat{\beta}_1x_{n+1}.
+\]</span></p>
+</div>
+<div id="diagnostico-de-la-recta-lineal" class="section level2">
+<h2><span class="header-section-number">1.10</span> Diagnostico de la recta lineal</h2>
+</div>
+<div id="análisis-de-asociación-entre-variables-categóricas" class="section level2">
+<h2><span class="header-section-number">1.11</span> Análisis de asociación entre variables categóricas</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-81" class="definition"><strong>Definición.1.33  </strong></span>Una <strong>tabla de contingencia:</strong> contiene las frecuencias
+conjuntas observadas en la muestra de pares de atributos
+expresadas por las unidades muestrales.
+</div>
+
+<p>Presentamos ejemplos de dos formas que podria tomar una
+tabla de contingencia de dimensión <span class="math inline">\(2\times 3\)</span>.</p>
+
+
+<p><strong>Relación entre categorias de variables nominales</strong>: la probabilidad de que una categria <span class="math inline">\(A\)</span> ocurra es condicional (depende) o no depende (independiente) de otra categoria <span class="math inline">\(B\)</span>.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-82" class="definition"><strong>Definición.1.34  </strong></span>Estadística <strong>chi-cuadrado</strong> es dada por para una tabla de congencia de
+<span class="math inline">\(2\times 3\)</span> es dada por:</p>
+<p><span class="math display">\[\begin{equation*}
+ Q= \sum_{i=1}^2 \sum_{j=1}^3 \frac{(N_{ij} - np_{i+}p_{+j})^2
+  }{np_{i+}p_{+j} }
+\end{equation*}\]</span></p>
+<p>en que <span class="math inline">\(Q&gt;0\)</span>.</p>
+<p><strong>Coeficiente de contingencia</strong> de Pearson es dado por:</p>
+<p><span class="math display">\[\begin{equation*}
+C= \sqrt{  \frac{Q}{Q+n}}  \in \left[0, \sqrt{\frac{k-1}{k}} \right]
+\mbox{en que } k = \min \{s,r \} .
+\end{equation*}\]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-83" class="definition"><strong>Definición.1.35  </strong></span>
+<strong>Coeficiente de contingencia</strong> de Pearson CORREGIDO es dado por:</p>
+<p><span class="math display">\[\begin{equation*}
+C^{\prime}= \sqrt{\frac{k}{k-1}}\times C \in [0,1].
+\end{equation*}\]</span></p>
+<p>Un <span class="math inline">\(C^{&#39;}\)</span> cercano a <span class="math inline">\(0\)</span> indica características independientes. <span class="math inline">\(C&#39;\)</span>
+cerca de <span class="math inline">\(1\)</span> señala una mayor medida de dependencia entre las
+características.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-84" class="example"><strong>Ejemplo.1.22  </strong></span>
+Consideremos la base de datos <em>mtcars</em> y las variables nominales vs (tipo
+de motor en forma de v o recto) y am (cambio automatico o manual). Para
+este caso obtenemos un <span class="math inline">\(C&#39;=0.235\)</span>. Es decir, la probabilidad de que un
+auto escogido al azar sea automatico o mecánico no depende de la forma de
+su motor.</p>
+</div>
+
+</div>
+<div id="ejercicios" class="section level2">
+<h2><span class="header-section-number">1.12</span> Ejercicios</h2>
+<ol style="list-style-type: decimal">
+<li><p>texto.</p></li>
+<li><p>texto.</p></li>
+<li><p>Texto.</p></li>
+</ol>
+
+</div>
+</div>
+<div class="footnotes">
+<hr />
+<ol start="1">
+<li id="fn1"><p>(i) $ +
+2$, <span class="math inline">\(24\)</span>h: <span class="math inline">\(50\%\)</span> de óxido nitroso y
+<span class="math inline">\(50\%\)</span> de
+oxígeno, de forma continua durante <span class="math inline">\(24\)</span>
+horas; (ii) N2O + O2, op: <span class="math inline">\(50\%\)</span> de óxido nitroso
+y
+<span class="math inline">\(50\%\)</span> de oxígeno, solo durante el
+funcionamiento; (iii) <span class="math inline">\(O2.24h\)</span>: sin óxido nitroso
+pero
+entre un <span class="math inline">\(35\%\)</span> y un <span class="math inline">\(50\%\)</span> de oxígeno
+durante <span class="math inline">\(24\)</span> horas<a href="datos.html#fnref1" class="footnote-back">↩</a></p></li>
+<li id="fn2"><p>La relación del eje
+es el número de revoluciones que el eje de salida o el
+eje de transmisión necesita hacer para hacer girar el
+eje una vuelta completa.<a href="datos.html#fnref2" class="footnote-back">↩</a></p></li>
+</ol>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="prob.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introduccion_prob_estad_bookdown.pdf", "Introduccion_prob_estad_bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

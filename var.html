@@ -1,0 +1,613 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo3 Variables aleatorias y sus distribuciones | Introducción a la Probabilidad y la Estadística</title>
+  <meta name="description" content="Capítulo3 Variables aleatorias y sus distribuciones | Introducción a la Probabilidad y la Estadística" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo3 Variables aleatorias y sus distribuciones | Introducción a la Probabilidad y la Estadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo3 Variables aleatorias y sus distribuciones | Introducción a la Probabilidad y la Estadística" />
+  
+  
+  
+
+<meta name="author" content="Dr. Jaime Lincovil C." />
+
+
+<meta name="date" content="2020-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="prob.html"/>
+<link rel="next" href="varbi.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Objetivos de la monografía</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dinámica-de-nuestra-comunicación"><i class="fa fa-check"></i>Dinámica de nuestra comunicación</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-de-la-monorafía"><i class="fa fa-check"></i>Organización de la monorafía</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Operaciones de análisis exploratorio y resumen de datos</a><ul>
+<li class="chapter" data-level="1.1" data-path="datos.html"><a href="datos.html#conceptos-elementales"><i class="fa fa-check"></i><b>1.1</b> Conceptos elementales</a></li>
+<li class="chapter" data-level="1.2" data-path="datos.html"><a href="datos.html#variables-observadas-en-experimentos"><i class="fa fa-check"></i><b>1.2</b> Variables observadas en experimentos</a></li>
+<li class="chapter" data-level="1.3" data-path="datos.html"><a href="datos.html#agrupamiento-de-variables"><i class="fa fa-check"></i><b>1.3</b> Agrupamiento de variables</a></li>
+<li class="chapter" data-level="1.4" data-path="datos.html"><a href="datos.html#operación-de-análisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>1.4</b> Operación de análisis exploratorio de datos</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="datos.html"><a href="datos.html#operaciones-de-exploración-grafica-de-los-datos-sin-grupos"><i class="fa fa-check"></i><b>1.4.1</b> Operaciones de exploración grafica de los datos: sin grupos</a></li>
+<li class="chapter" data-level="1.4.2" data-path="datos.html"><a href="datos.html#operaciones-de-exploración-gráfica-de-los-datos-por-grupos"><i class="fa fa-check"></i><b>1.4.2</b> Operaciones de exploración gráfica de los datos: por grupos</a></li>
+<li class="chapter" data-level="1.4.3" data-path="datos.html"><a href="datos.html#operación-de-analisis-de-frecuencias"><i class="fa fa-check"></i><b>1.4.3</b> Operación de analisis de frecuencias</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="datos.html"><a href="datos.html#operación-de-resumen-de-datos-univariados"><i class="fa fa-check"></i><b>1.5</b> Operación de resumen de datos univariados</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="datos.html"><a href="datos.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>1.5.1</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="1.5.2" data-path="datos.html"><a href="datos.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>1.5.2</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="1.5.3" data-path="datos.html"><a href="datos.html#percentiles-cuantiles-cuartiles-y-deciles"><i class="fa fa-check"></i><b>1.5.3</b> Percentiles, cuantiles, cuartiles y deciles</a></li>
+<li class="chapter" data-level="1.5.4" data-path="datos.html"><a href="datos.html#medidas-de-asimetría-y-curtosis"><i class="fa fa-check"></i><b>1.5.4</b> Medidas de asimetría y curtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="datos.html"><a href="datos.html#operación-de-resumen-de-datos-bivariados"><i class="fa fa-check"></i><b>1.6</b> Operación de resumen de datos bivariados</a></li>
+<li class="chapter" data-level="1.7" data-path="datos.html"><a href="datos.html#gráficos-de-dispersión"><i class="fa fa-check"></i><b>1.7</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="1.8" data-path="datos.html"><a href="datos.html#medidas-de-asociación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de asociación entre dos variables</a></li>
+<li class="chapter" data-level="1.9" data-path="datos.html"><a href="datos.html#recta-media-estimada"><i class="fa fa-check"></i><b>1.9</b> Recta media estimada</a></li>
+<li class="chapter" data-level="1.10" data-path="datos.html"><a href="datos.html#diagnostico-de-la-recta-lineal"><i class="fa fa-check"></i><b>1.10</b> Diagnostico de la recta lineal</a></li>
+<li class="chapter" data-level="1.11" data-path="datos.html"><a href="datos.html#análisis-de-asociación-entre-variables-categóricas"><i class="fa fa-check"></i><b>1.11</b> Análisis de asociación entre variables categóricas</a></li>
+<li class="chapter" data-level="1.12" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>1.12</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Calculo de probabilidades</a><ul>
+<li class="chapter" data-level="2.1" data-path="prob.html"><a href="prob.html#operaciones-con-eventos-posibles-de-experimentos"><i class="fa fa-check"></i><b>2.1</b> Operaciones con eventos posibles de experimentos</a></li>
+<li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#medida-de-probabilidad-y-experimentos-aleatorios"><i class="fa fa-check"></i><b>2.2</b> Medida de probabilidad y experimentos aleatorios</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#interpretación-frecuentista-de-una-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.2.1</b> Interpretación frecuentista de una medida de probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#propiedades-básicas-de-la-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Propiedades básicas de la medida de probabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="prob.html"><a href="prob.html#resultados-básicos-de-combinatoria"><i class="fa fa-check"></i><b>2.4</b> Resultados básicos de combinatoria</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias y sus distribuciones</a><ul>
+<li class="chapter" data-level="3.1" data-path="var.html"><a href="var.html#elementos-básicos"><i class="fa fa-check"></i><b>3.1</b> Elementos básicos</a></li>
+<li class="chapter" data-level="3.2" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-discreta"><i class="fa fa-check"></i><b>3.2</b> Distribuciones de probabilidad de variables aleatorias discreta</a></li>
+<li class="chapter" data-level="3.3" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-continuas."><i class="fa fa-check"></i><b>3.3</b> Distribuciones de probabilidad de variables aleatorias continuas.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> Distribuciones bidimensionales</a><ul>
+<li class="chapter" data-level="4.1" data-path="varbi.html"><a href="varbi.html#uno"><i class="fa fa-check"></i><b>4.1</b> Uno</a></li>
+<li class="chapter" data-level="4.2" data-path="varbi.html"><a href="varbi.html#dos"><i class="fa fa-check"></i><b>4.2</b> Dos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a><ul>
+<li class="chapter" data-level="5.1" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos"><i class="fa fa-check"></i><b>5.1</b> Valor esperado de modelos discretos</a></li>
+<li class="chapter" data-level="5.2" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos-1"><i class="fa fa-check"></i><b>5.2</b> Valor esperado de modelos discretos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ass.html"><a href="ass.html"><i class="fa fa-check"></i><b>6</b> Resultados asintóticos.</a></li>
+<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Funciones de muestras aleatorias</a></li>
+<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
+<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#propuesta-de-informe"><i class="fa fa-check"></i><b>8.1</b> Propuesta de informe</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> Estimadres intervalares</a></li>
+<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> Prueba/contraste de hipótesis</a></li>
+<li class="chapter" data-level="11" data-path="regre.html"><a href="regre.html"><i class="fa fa-check"></i><b>11</b> Regresión lineal</a></li>
+<li class="chapter" data-level="12" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>12</b> ANOVA de un factor.</a></li>
+<li class="chapter" data-level="" data-path="apendices-formulas-y-calculos-algebraicos.html"><a href="apendices-formulas-y-calculos-algebraicos.html"><i class="fa fa-check"></i>Apendices: formulas y calculos algebraicos</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a la Probabilidad y la Estadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="var" class="section level1">
+<h1><span class="header-section-number">Capítulo3</span> Variables aleatorias y sus distribuciones</h1>
+<div id="elementos-básicos" class="section level2">
+<h2><span class="header-section-number">3.1</span> Elementos básicos</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-100" class="definition"><strong>Definición.3.1  </strong></span>Sea <span class="math inline">\(S\)</span> el espacio muestral de un experimento. Una función <span class="math inline">\(X\)</span> con valores reales que le otorga a cada elemento de <span class="math inline">\(S\)</span> un valor numérico es <strong>variable aleatoria</strong>. El conjunto de todos los valores posibles que puede asumir <span class="math inline">\(X\)</span> es llamado de espacio muestral de <span class="math inline">\(X\)</span> y es denotado por <span class="math inline">\(\mathcal{X}\)</span>. Usaremos la notación <span class="math inline">\(X:S\to \mathcal{X}\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-101" class="example"><strong>Ejemplo.3.1  </strong></span>
+- <span class="math inline">\(X_1\)</span>: número de caras que resultan al lanzar <span class="math inline">\(10\)</span> veces un
+monedas al aire.</p>
+<ul>
+<li><p><span class="math inline">\(X_2\)</span>: el número de seis al lanzar un dado <span class="math inline">\(15\)</span> veces.</p></li>
+<li><p><span class="math inline">\(X_3\)</span>: el número de accidentes por semana que ocurren una
+empresa.</p></li>
+<li><span class="math inline">\(X_4\)</span>: el consumo de leña por casas en una ciudad.</li>
+</ul>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-102" class="definition"><strong>Definición.3.2  </strong></span>
+La función de densidad <span class="math inline">\(f\)</span> para una variable aleatoria
+continua <span class="math inline">\(X\)</span> cuyo espacio muestral es <span class="math inline">\(\mathcal{X}\)</span> es
+una función que modela la variabilidad de los posibles
+valores de <span class="math inline">\(X\)</span> y nos ayuda a calcular la probabilidad de
+que ella asuma determinados valores. Esta función
+satisface las siguientes propiedades.</p>
+<ul>
+<li><span class="math inline">\(f(x)\geq 0\)</span> para todo <span class="math inline">\(x\)</span>.</li>
+<li><span class="math inline">\(\int_{\mathcal{X}}f(x)dx=1\)</span>.</li>
+</ul>
+<p>La probabilidad de que <span class="math inline">\(X\in (a,b)\)</span> es el área bajo la
+curva de <span class="math inline">\(f\)</span> limitado al intervalo <span class="math inline">\((a,b)\)</span>.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-103" class="definition"><strong>Definición.3.3  </strong></span>
+Por otro lado, la función de probabilidad <span class="math inline">\(p\)</span> para una
+variable aleatoria discreta <span class="math inline">\(X\)</span> cuyo espacio muestral es
+<span class="math inline">\(\mathcal{X}\)</span> es una función que modela la variabilidad
+de los posibles valores de <span class="math inline">\(X\)</span> y nos ayuda a calcular la
+probabilidad de que ella asuma determinados valores.
+Esta función satisface las siguientes propiedades.</p>
+<ul>
+<li><span class="math inline">\(p(x)\geq 0\)</span> para todo <span class="math inline">\(x\)</span>.</li>
+<li><span class="math inline">\(\sum_{x\in \mathcal{X}}p(x)=1\)</span>.</li>
+</ul>
+<p>La probabilidad de que <span class="math inline">\(X\in \{a_1, \ldots, a_k \}\)</span> es
+la suma <span class="math inline">\(\sum_{x \in \{a_1, \ldots, a_k \}}p(x)\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-104" class="example"><strong>Ejemplo.3.2  </strong></span>
+Consideremos la función de densidad <span class="math inline">\(f\)</span> dada por
+<span class="math display">\[f(x)= \frac{1}{\pi(1+x^2)}, \quad x\in R, \]</span></p>
+<p>en que <span class="math inline">\(\pi\)</span> es la constante pi.</p>
+<p>La función de densidad <span class="math inline">\(p\)</span> dada por
+<span class="math display">\[p(x)=(1-1/6)^{x-1}1/6, \quad x=1,2,\ldots. \]</span></p>
+</div>
+
+<p>Cuando <span class="math inline">\(f\)</span> o <span class="math inline">\(p\)</span> esta totalmente especificada, ambas son
+llamados de <strong>modelo de probabilidad</strong> para <span class="math inline">\(X\)</span>. Cuando <span class="math inline">\(f\)</span> o
+<span class="math inline">\(p\)</span> depende una constante <span class="math inline">\(\theta\)</span> asumida como
+desconocida, entonces ellas son llamadas de <strong>modelo
+estadístico</strong> para <span class="math inline">\(X\)</span>. El objetivo de los métodos de
+inferencia es determinar valores plausibles de <span class="math inline">\(\theta\)</span>
+desde una muestra observada.</p>
+<p>En el último caso <span class="math inline">\(f(x)\)</span> es representada por
+<span class="math inline">\(f(x;\theta)\)</span> indicando que <span class="math inline">\(f\)</span> es una función de <span class="math inline">\(x\)</span>
+para un valor de <span class="math inline">\(\theta\)</span> que debe ser especificado. En el
+caso discreto, <span class="math inline">\(p(x)\)</span> es representado por <span class="math inline">\(p(x;\theta)\)</span>.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-105" class="definition"><strong>Definición.3.4  </strong></span>
+La función de distribución acumulada de una variable
+aleatoria <span class="math inline">\(X\)</span> es la funcion <span class="math inline">\(F(x)= \mbox{Prob}(X\leq x)\)</span>, en
+el caso
+continuo, es definida por
+<span class="math display">\[ F(x)= \int_{-\infty}^x f(t;\theta)dt \]</span>
+y en el caso discreto
+<span class="math display">\[ F(x)=\sum_{t=-\infty}^{x}p(t;\theta).\]</span></p>
+<p>Propiedades de <span class="math inline">\(F(x)\)</span>:</p>
+<ul>
+<li>Pr<span class="math inline">\((a&lt;X&lt;b) = F(b)- F(a)\)</span>,</li>
+<li>Pr<span class="math inline">\((X&gt;a) = 1- F(a)\)</span>,</li>
+<li><span class="math inline">\(\lim_{x\to + \infty}F(x) =1\)</span>,<br />
+</li>
+<li><span class="math inline">\(\lim_{x\to - \infty}F(x)=0\)</span>.</li>
+</ul>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-106" class="example"><strong>Ejemplo.3.3  </strong></span>Para la función f y P antes presentadas, las respectivas funciones de
+probabilidad acumulada son,</p>
+<p><span class="math display">\[F(x)= \int_{-\infty}^{x} \frac{1}{\pi(1+t^2)} dt \]</span>
+y
+<span class="math display">\[ F(x)= \sum_{t= 0}^{x} (1-\pi)^{t-1}\pi  \]</span></p>
+<p>respectivamente.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-107" class="definition"><strong>Definición.3.5  </strong></span>
+Una variable aleatoria <span class="math inline">\(X\)</span> es <strong>discreta</strong> si el conjunto de
+sus posibles
+resultados <span class="math inline">\(\mathcal{X}\)</span> es finito o puede ser enumerados en
+la forma
+<span class="math inline">\(\{a_1,a_2,\ldots, a_n, \ldots\}\)</span>. Una variable aleatoria <span class="math inline">\(X\)</span>
+es <strong>continua</strong> si existe una función de densidad para ella.</p>
+</div>
+
+</div>
+<div id="distribuciones-de-probabilidad-de-variables-aleatorias-discreta" class="section level2">
+<h2><span class="header-section-number">3.2</span> Distribuciones de probabilidad de variables aleatorias discreta</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-108" class="definition"><strong>Definición.3.6  </strong></span>
+Una variable aleatoria <strong>Bernoulli</strong> es una indicadora de la
+ocurrencia de evento <span class="math inline">\(A \subseteq S\)</span>. Es decir, <span class="math inline">\(X=1\)</span> cuando
+<span class="math inline">\(\omega \in A\)</span> (ocurre <span class="math inline">\(A\)</span>) con probabilidad <span class="math inline">\(p\)</span> y <span class="math inline">\(X=0\)</span>
+cuando <span class="math inline">\(\omega \notin A\)</span> (no ocurre <span class="math inline">\(A\)</span>) con probabilidad
+<span class="math inline">\(p\)</span>. Esto se representa por <span class="math inline">\(X \sim \mbox{Bernoulli}(p)\)</span>.</p>
+<p>La función de probabilidad de <span class="math inline">\(X\)</span> es:
+<span class="math display">\[p(x;\theta)= \theta^{x}(1-\theta)^{x-1} \mbox{ para } x=0,1
+  \mbox{ y } \theta \in (0,1). \]</span></p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-109" class="example"><strong>Ejemplo.3.4  </strong></span>
+Consideremos el experimento del lanzamiento de una moneda al
+aire. Sea <span class="math inline">\(X=1\)</span> cuando obtenemos una cara con
+probabilidad <span class="math inline">\(p=1/2\)</span> y <span class="math inline">\(X=0\)</span> cuando obtenemos un sello con
+probabilidad <span class="math inline">\(1-1/2\)</span>.</p>
+<p>Consideremos el experimento del lanzamiento de un dado al
+aire. Sea <span class="math inline">\(X=1\)</span> cuando obtenemos una seis con
+probabilidad <span class="math inline">\(p=1/6\)</span> y <span class="math inline">\(X=0\)</span> cuando no con
+probabilidad <span class="math inline">\(1-1/6\)</span>.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-110" class="definition"><strong>Definición.3.7  </strong></span>
+Considere una repetición de mismo experimento <span class="math inline">\(n\)</span> y sea
+<span class="math inline">\(X_1, X_2, \ldots,X_n\)</span> una secuencia independiente de
+variables Bernoulli, en que <span class="math inline">\(X_i=1\)</span> cuando <span class="math inline">\(\omega \in A\)</span> con
+probabilidad <span class="math inline">\(\theta\)</span> para <span class="math inline">\(i=1, \ldots, n\)</span>. Una variable
+<strong>Binomial</strong> <span class="math inline">\(Z\)</span> es el número de caso a favor de <span class="math inline">\(A\)</span> al
+repetir el experimento <span class="math inline">\(n\)</span> veces, es decir:</p>
+<p><span class="math display">\[ Z = \sum_{i=1}^n X_i . \]</span></p>
+<p>Esto se representa por <span class="math inline">\(Z \sim \mbox{Binomial}(n,\theta)\)</span>. Su
+función de probabilidades es:</p>
+<p><span class="math display">\[ p(z;n,\theta)=\frac{n!}{z!(n-z)!}\theta^{z}(1-\theta)^{n-
+    z}.    \]</span></p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-111" class="example"><strong>Ejemplo.3.5  </strong></span>
+En primer caso, considere el experimento de lanzar una moneda
+<span class="math inline">\(n=15\)</span> veces y observar los lanzamientos de cara. Sea
+<span class="math inline">\(X_1=x_1,\ldots, X_n=x_n\)</span> las indicadoras de observar este
+evento en cada repetición. Luego <span class="math inline">\(Z= \sum_{i=1}^{15}x_i\)</span> es
+el número de caras observar al lanzar la moneda <span class="math inline">\(15\)</span> veces.
+En este caso <span class="math inline">\(Z \sim \mbox{Binomial}(15, 1/2)\)</span></p>
+<p>En segundo caso, considere el experimento de lanzar un dado
+<span class="math inline">\(n=20\)</span> veces y observar los números un seis. Sea
+<span class="math inline">\(X_1=x_1,\ldots, X_n=x_n\)</span> las indicadoras de observar este
+evento en cada repetición. Luego <span class="math inline">\(Z= \sum_{i=1}^{20}x_i\)</span> es
+el número de seis que observamos al lanzar el dado <span class="math inline">\(20\)</span>
+veces. En este caso <span class="math inline">\(Z \sim \mbox{Binomial}(20, 1/6)\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-112" class="example"><strong>Ejemplo.3.6  </strong></span>
+Distribución multinomial (pendiente).</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-113" class="example"><strong>Ejemplo.3.7  </strong></span>
+Cuando <span class="math inline">\(X\)</span> es una variable que mide el número eventos que
+ocurren en un determinado intervalo de tiempo <span class="math inline">\([c,c+t]\)</span> de
+longitud <span class="math inline">\(t\)</span>. Sobre ciertas suposiciones, una de las opciones es
+el modelo de <strong>Poisson</strong> con un promedio de ocurrencias por
+intervalo igual a <span class="math inline">\(\lambda\)</span>.</p>
+<p>Una variable Poisson tiene función de probabilidad dada por:</p>
+<p><span class="math display">\[ p(x;\lambda)=\frac{ \mbox{e}^{-\lambda}\lambda^{x} }{x!}
+   \mbox{ para } x\in \mathbb{N} \mbox{ y } \lambda &gt;0. \]</span></p>
+<p>y función de distribución acumulada dada por:</p>
+<p><span class="math display">\[F(x; \lambda)= \sum_{k=0}^{x}
+  \frac{\mbox{e}^{-\lambda}\lambda^{k}}{k!}.   \]</span></p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-114" class="example"><strong>Ejemplo.3.8  </strong></span>
+- <span class="math inline">\(X\)</span>: número de accidentes por semana que ocurren en una
+industria papelera. Para <span class="math inline">\(\lambda=3\)</span>, si observamos repetidas
+observaciones de <span class="math inline">\(X\)</span>, luego observaríamos en promedio <span class="math inline">\(3\)</span>
+accidentes por semana.</p>
+<ul>
+<li><p><span class="math inline">\(X\)</span>: número de accidentes en una carretera por día. Para
+<span class="math inline">\(\lambda=4\)</span>, si observamos repetidas observaciones de <span class="math inline">\(X\)</span>, luego
+observaríamos <span class="math inline">\(4\)</span> accidentes en la carretera por día.</p></li>
+<li><p><span class="math inline">\(X\)</span>: número de partículas por minuto que emite una
+sustancia radiactiva. Para <span class="math inline">\(\lambda=17\)</span>, si observamos
+repetidas observaciones de <span class="math inline">\(X\)</span>, luego observaríamos en promedio
+<span class="math inline">\(17\)</span> partículas por minuto.</p></li>
+</ul>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-115" class="example"><strong>Ejemplo.3.9  </strong></span>
+Distribución geométrica (pendiente).</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-116" class="example"><strong>Ejemplo.3.10  </strong></span>
+Distribución binomial negativa (pendiente).</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-117" class="example"><strong>Ejemplo.3.11  </strong></span>
+Distribución hipergeométrica (pendiente).</p>
+</div>
+
+</div>
+<div id="distribuciones-de-probabilidad-de-variables-aleatorias-continuas." class="section level2">
+<h2><span class="header-section-number">3.3</span> Distribuciones de probabilidad de variables aleatorias continuas.</h2>
+<p>En esta sección presentamos algunos modelos para variables
+aleatorias continuas.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-118" class="example"><strong>Ejemplo.3.12  </strong></span>
+Una variable <span class="math inline">\(X&gt;0\)</span> sigue un modelo <strong>Exponencial</strong> con taza de
+concentración <span class="math inline">\(1/\lambda\)</span> cuando su función de densidad es dada
+por:</p>
+<p><span class="math display">\[ f(x;\lambda)= \lambda \mbox{e}^{-x\lambda}, \mbox{ para }
+     x&gt;0,\ \lambda&gt;0.     \]</span></p>
+<p>La taza de concentración <span class="math inline">\(1/\lambda\)</span> indica el promedio de tiempo
+medio de <span class="math inline">\(X\)</span>. El parámetro de decaimiento <span class="math inline">\(\lambda\)</span> nos indica la
+forma de la densidad en el sentido de que indica que tan rápido decae
+(va hacia cero) la cola izquierda de <span class="math inline">\(f(x;\lambda)\)</span>.</p>
+<p>Su función de probabilidad acumulada es dada por:</p>
+<p><span class="math display">\[F(x;\lambda)= \int_{-\infty}^{x} \lambda \mbox{e}^{-t\lambda}dt=
+    1- \mbox{e}^{-x\lambda}.   \]</span></p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-119" class="example"><strong>Ejemplo.3.13  </strong></span>
+Una variable aleatoria se suele considerar Exponencial cuando esta
+es contínua y mide el tiempo de “vida” o de “duración” de vida
+útil de objetos. Por ejemplo:</p>
+<ul>
+<li><p><span class="math inline">\(X\)</span>: tiempo de funcionamiento de una máquina procesadora
+de leche en miles de horas. Para <span class="math inline">\(\lambda= 1/10\)</span>, si
+observásemos repetidos tiempos de funcionamiento de
+muchas máquinas del mismo tipo, observaríamos un promedio
+de <span class="math inline">\(10\)</span> mil horas.</p></li>
+<li><p><span class="math inline">\(X\)</span>: tiempo de vida de circuitos eléctricos en miles de horas.
+Para <span class="math inline">\(\lambda=1/5\)</span>, si observásemos repetidos
+tiempos de vida de circuitos, observaríamos un promedio
+de <span class="math inline">\(5\)</span> mil horas.</p></li>
+<li><span class="math inline">\(X\)</span>: tiempos de llegada en minutos de clientes a una fila de
+banco. Para <span class="math inline">\(\lambda= 1/4\)</span>, si observásemos una gran
+cantidad de observaciones de esta, observaríamos un
+promedio de <span class="math inline">\(4\)</span> minutos.</li>
+</ul>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-120" class="definition"><strong>Definición.3.8  </strong></span>
+Una variable normal <span class="math inline">\(X\)</span> se usa para modelar variables límites o
+aproximadamente simetricas. Su función de densidad es dada por</p>
+<p><span class="math display">\[ f(x;\mu, \sigma) =
+\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x -
+\mu)^2}{2\sigma^2}  \right],  \]</span></p>
+<p>donde <span class="math inline">\(\mu \in \mathbb{R}\)</span> es el parámetro posición,
+<span class="math inline">\(\sigma&gt;0\)</span> es la varianza y <span class="math inline">\(x\in \mathbb{R}\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-121" class="example"><strong>Ejemplo.3.14  </strong></span>
+- <span class="math inline">\(X\)</span>: puntajes de pruebas estandarizadas.</p>
+<ul>
+<li><span class="math inline">\(X\)</span>: promedios de variables con más de <span class="math inline">\(30\)</span> datos observados.</li>
+</ul>
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-122" class="example"><strong>Ejemplo.3.15  </strong></span>Distribución Beta.
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-123" class="example"><strong>Ejemplo.3.16  </strong></span>
+Distribución Gumbel.</p>
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-124" class="example"><strong>Ejemplo.3.17  </strong></span>Distribución Weibull.
+</div>
+
+
+<div class="example">
+<span id="exm:unnamed-chunk-125" class="example"><strong>Ejemplo.3.18  </strong></span>Distribución uniforme.
+</div>
+
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="prob.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="varbi.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introduccion_prob_estad_bookdown.pdf", "Introduccion_prob_estad_bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

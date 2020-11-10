@@ -1,0 +1,505 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>Capítulo2 Calculo de probabilidades | Introducción a la Probabilidad y la Estadística</title>
+  <meta name="description" content="Capítulo2 Calculo de probabilidades | Introducción a la Probabilidad y la Estadística" />
+  <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="Capítulo2 Calculo de probabilidades | Introducción a la Probabilidad y la Estadística" />
+  <meta property="og:type" content="book" />
+  
+  
+  
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="Capítulo2 Calculo de probabilidades | Introducción a la Probabilidad y la Estadística" />
+  
+  
+  
+
+<meta name="author" content="Dr. Jaime Lincovil C." />
+
+
+<meta name="date" content="2020-11-10" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="datos.html"/>
+<link rel="next" href="var.html"/>
+<script src="libs/jquery-2.2.3/jquery.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+
+
+
+<style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; left: -4em; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
+
+<link rel="stylesheet" href="style.css" type="text/css" />
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li><a href="./">A Minimal Book Example</a></li>
+
+<li class="divider"></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Objetivos de la monografía</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dinámica-de-nuestra-comunicación"><i class="fa fa-check"></i>Dinámica de nuestra comunicación</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-de-la-monorafía"><i class="fa fa-check"></i>Organización de la monorafía</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Operaciones de análisis exploratorio y resumen de datos</a><ul>
+<li class="chapter" data-level="1.1" data-path="datos.html"><a href="datos.html#conceptos-elementales"><i class="fa fa-check"></i><b>1.1</b> Conceptos elementales</a></li>
+<li class="chapter" data-level="1.2" data-path="datos.html"><a href="datos.html#variables-observadas-en-experimentos"><i class="fa fa-check"></i><b>1.2</b> Variables observadas en experimentos</a></li>
+<li class="chapter" data-level="1.3" data-path="datos.html"><a href="datos.html#agrupamiento-de-variables"><i class="fa fa-check"></i><b>1.3</b> Agrupamiento de variables</a></li>
+<li class="chapter" data-level="1.4" data-path="datos.html"><a href="datos.html#operación-de-análisis-exploratorio-de-datos"><i class="fa fa-check"></i><b>1.4</b> Operación de análisis exploratorio de datos</a><ul>
+<li class="chapter" data-level="1.4.1" data-path="datos.html"><a href="datos.html#operaciones-de-exploración-grafica-de-los-datos-sin-grupos"><i class="fa fa-check"></i><b>1.4.1</b> Operaciones de exploración grafica de los datos: sin grupos</a></li>
+<li class="chapter" data-level="1.4.2" data-path="datos.html"><a href="datos.html#operaciones-de-exploración-gráfica-de-los-datos-por-grupos"><i class="fa fa-check"></i><b>1.4.2</b> Operaciones de exploración gráfica de los datos: por grupos</a></li>
+<li class="chapter" data-level="1.4.3" data-path="datos.html"><a href="datos.html#operación-de-analisis-de-frecuencias"><i class="fa fa-check"></i><b>1.4.3</b> Operación de analisis de frecuencias</a></li>
+</ul></li>
+<li class="chapter" data-level="1.5" data-path="datos.html"><a href="datos.html#operación-de-resumen-de-datos-univariados"><i class="fa fa-check"></i><b>1.5</b> Operación de resumen de datos univariados</a><ul>
+<li class="chapter" data-level="1.5.1" data-path="datos.html"><a href="datos.html#medidas-de-tendencia-central"><i class="fa fa-check"></i><b>1.5.1</b> Medidas de tendencia central</a></li>
+<li class="chapter" data-level="1.5.2" data-path="datos.html"><a href="datos.html#medidas-de-dispersión"><i class="fa fa-check"></i><b>1.5.2</b> Medidas de dispersión</a></li>
+<li class="chapter" data-level="1.5.3" data-path="datos.html"><a href="datos.html#percentiles-cuantiles-cuartiles-y-deciles"><i class="fa fa-check"></i><b>1.5.3</b> Percentiles, cuantiles, cuartiles y deciles</a></li>
+<li class="chapter" data-level="1.5.4" data-path="datos.html"><a href="datos.html#medidas-de-asimetría-y-curtosis"><i class="fa fa-check"></i><b>1.5.4</b> Medidas de asimetría y curtosis</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="datos.html"><a href="datos.html#operación-de-resumen-de-datos-bivariados"><i class="fa fa-check"></i><b>1.6</b> Operación de resumen de datos bivariados</a></li>
+<li class="chapter" data-level="1.7" data-path="datos.html"><a href="datos.html#gráficos-de-dispersión"><i class="fa fa-check"></i><b>1.7</b> Gráficos de dispersión</a></li>
+<li class="chapter" data-level="1.8" data-path="datos.html"><a href="datos.html#medidas-de-asociación-entre-dos-variables"><i class="fa fa-check"></i><b>1.8</b> Medidas de asociación entre dos variables</a></li>
+<li class="chapter" data-level="1.9" data-path="datos.html"><a href="datos.html#recta-media-estimada"><i class="fa fa-check"></i><b>1.9</b> Recta media estimada</a></li>
+<li class="chapter" data-level="1.10" data-path="datos.html"><a href="datos.html#diagnostico-de-la-recta-lineal"><i class="fa fa-check"></i><b>1.10</b> Diagnostico de la recta lineal</a></li>
+<li class="chapter" data-level="1.11" data-path="datos.html"><a href="datos.html#análisis-de-asociación-entre-variables-categóricas"><i class="fa fa-check"></i><b>1.11</b> Análisis de asociación entre variables categóricas</a></li>
+<li class="chapter" data-level="1.12" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>1.12</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Calculo de probabilidades</a><ul>
+<li class="chapter" data-level="2.1" data-path="prob.html"><a href="prob.html#operaciones-con-eventos-posibles-de-experimentos"><i class="fa fa-check"></i><b>2.1</b> Operaciones con eventos posibles de experimentos</a></li>
+<li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#medida-de-probabilidad-y-experimentos-aleatorios"><i class="fa fa-check"></i><b>2.2</b> Medida de probabilidad y experimentos aleatorios</a><ul>
+<li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#interpretación-frecuentista-de-una-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.2.1</b> Interpretación frecuentista de una medida de probabilidad</a></li>
+</ul></li>
+<li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#propiedades-básicas-de-la-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Propiedades básicas de la medida de probabilidad</a></li>
+<li class="chapter" data-level="2.4" data-path="prob.html"><a href="prob.html#resultados-básicos-de-combinatoria"><i class="fa fa-check"></i><b>2.4</b> Resultados básicos de combinatoria</a></li>
+</ul></li>
+<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias y sus distribuciones</a><ul>
+<li class="chapter" data-level="3.1" data-path="var.html"><a href="var.html#elementos-básicos"><i class="fa fa-check"></i><b>3.1</b> Elementos básicos</a></li>
+<li class="chapter" data-level="3.2" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-discreta"><i class="fa fa-check"></i><b>3.2</b> Distribuciones de probabilidad de variables aleatorias discreta</a></li>
+<li class="chapter" data-level="3.3" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-continuas."><i class="fa fa-check"></i><b>3.3</b> Distribuciones de probabilidad de variables aleatorias continuas.</a></li>
+</ul></li>
+<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> Distribuciones bidimensionales</a><ul>
+<li class="chapter" data-level="4.1" data-path="varbi.html"><a href="varbi.html#uno"><i class="fa fa-check"></i><b>4.1</b> Uno</a></li>
+<li class="chapter" data-level="4.2" data-path="varbi.html"><a href="varbi.html#dos"><i class="fa fa-check"></i><b>4.2</b> Dos</a></li>
+</ul></li>
+<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a><ul>
+<li class="chapter" data-level="5.1" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos"><i class="fa fa-check"></i><b>5.1</b> Valor esperado de modelos discretos</a></li>
+<li class="chapter" data-level="5.2" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos-1"><i class="fa fa-check"></i><b>5.2</b> Valor esperado de modelos discretos</a></li>
+</ul></li>
+<li class="chapter" data-level="6" data-path="ass.html"><a href="ass.html"><i class="fa fa-check"></i><b>6</b> Resultados asintóticos.</a></li>
+<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Funciones de muestras aleatorias</a></li>
+<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
+<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#propuesta-de-informe"><i class="fa fa-check"></i><b>8.1</b> Propuesta de informe</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> Estimadres intervalares</a></li>
+<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> Prueba/contraste de hipótesis</a></li>
+<li class="chapter" data-level="11" data-path="regre.html"><a href="regre.html"><i class="fa fa-check"></i><b>11</b> Regresión lineal</a></li>
+<li class="chapter" data-level="12" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>12</b> ANOVA de un factor.</a></li>
+<li class="chapter" data-level="" data-path="apendices-formulas-y-calculos-algebraicos.html"><a href="apendices-formulas-y-calculos-algebraicos.html"><i class="fa fa-check"></i>Apendices: formulas y calculos algebraicos</a></li>
+<li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
+<li class="divider"></li>
+<li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
+
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a la Probabilidad y la Estadística</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="prob" class="section level1">
+<h1><span class="header-section-number">Capítulo2</span> Calculo de probabilidades</h1>
+<div id="operaciones-con-eventos-posibles-de-experimentos" class="section level2">
+<h2><span class="header-section-number">2.1</span> Operaciones con eventos posibles de experimentos</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-85" class="definition"><strong>Definición.2.1  </strong></span>
+<strong>Experimento científico</strong>: es un experimento que se
+ejecuta controlando
+las circunstancias del entorno de manera de que este sea
+<strong>replicable</strong> y
+que las propiedades de los resultados posibles se
+mantengan constantes.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-86" class="definition"><strong>Definición.2.2  </strong></span>
+El <strong>espacio muestral</strong> de un experimento es el conjunto
+(propuesto por el
+investigador) que incluye todos los posibles resultados
+de un experimento. Un caso que forma parte del espacio
+muestral es llamado de <strong>evento posible</strong> del
+experimento.
+Un <strong>evento elemental</strong> es un evento mínimo que puede de
+ocurrir.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-87" class="example"><strong>Ejemplo.2.1  </strong></span>
+Considere el experimento que consiste en lanzar un dado de seis caras al
+aire sobre una superficie plana y observar la cara superior para registrar
+el número que muestre. Incertidumbre: el dado podría mostrar un número del
+uno al seis. El espacio muestral son los números del <span class="math inline">\(1\)</span> al <span class="math inline">\(6\)</span>. Ejemplo
+de eventos obtenemos un número par, obtenemos un número impar, obtenemos
+un 5 y obtenemos un múltiplo de <span class="math inline">\(3\)</span>. Un evento imposible seria
+obtenemos un número mayor a 7. Un evento elemental es obtenemos el número <span class="math inline">\(5\)</span>.</p>
+</div>
+
+<p>Una herramienta para representar eventos de un experimento es la teoría
+ingenua de conjuntos. Usaremos la letra <span class="math inline">\(S\)</span> para representar el espacio
+muestral. Un evento elemental es simbolizado por <span class="math inline">\(\omega \in S\)</span>. Un evento
+<span class="math inline">\(A\)</span> del experimento será un subconjunto de <span class="math inline">\(S\)</span>, es decir <span class="math inline">\(A\subseteq S\)</span>.
+Los eventos se pueden describir por <em>extensión</em> o por <em>comprensión</em>.</p>
+<p>Presentamos un ejemplo:</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-88" class="example"><strong>Ejemplo.2.2  </strong></span>
+- Por compresión: <span class="math inline">\(\omega\in S\)</span> tal que <span class="math inline">\(\omega=1,\ldots, 6\)</span>. Un evento
+<span class="math inline">\(\omega \in A\)</span> siempre que <span class="math inline">\(\omega=2,4,6\)</span> (números pares). Evento elemental
+<span class="math inline">\(\omega \in B\)</span> siempre que <span class="math inline">\(\omega=5\)</span>. Otra forma de escribir <span class="math inline">\(S\)</span> por comprensión es</p>
+<p><span class="math display">\[S =\{\omega: \omega=1,\ldots,6 \} . \]</span></p>
+<ul>
+<li>Por extensión: <span class="math inline">\(S=\{1,2,3,4,5,6\}\)</span>, <span class="math inline">\(A= \{2, 4, 6 \}\)</span> y <span class="math inline">\(B=\{5\}\)</span>.</li>
+</ul>
+</div>
+
+<p>Operaciones con eventos (conjuntos). Las operaciones de eventos de un
+experimento son transformaciones de uno o más eventos en otros eventos del
+experimento. Consideramos las siguientes:</p>
+<ul>
+<li>La union de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, simbolizado por <span class="math inline">\(A\cup B\)</span>, transforma <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span> en
+el evento <span class="math inline">\(A\cup B\)</span> que contiene todos los eventos elementales de <span class="math inline">\(A\)</span> y
+<span class="math inline">\(B\)</span> juntos. Es decir,</li>
+</ul>
+<p><span class="math display">\[A \cup B = \{\omega \in S: \omega \in A \mbox{ o también } \omega \in B
+\}. \]</span></p>
+<ul>
+<li>La intersección de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>, simbolizado por <span class="math inline">\(A \cap B\)</span>, transforma <span class="math inline">\(A\)</span>
+y <span class="math inline">\(B\)</span> en el evento <span class="math inline">\(A\cap B\)</span> que contiene todos los eventos elementales
+en común de <span class="math inline">\(A\)</span> y <span class="math inline">\(B\)</span>.</li>
+</ul>
+<p><span class="math display">\[A \cap B = \{\omega \in S: \omega \in A \mbox{ y a su vez } \omega \in B
+\}. \]</span></p>
+<ul>
+<li>El complemento de A, simbolizado por <span class="math inline">\(A^c\)</span>, transforma <span class="math inline">\(A\)</span> en el evento
+<span class="math inline">\(A^c\)</span> que contiene todos los eventos elementales que no están en <span class="math inline">\(A\)</span>, pero
+si están en <span class="math inline">\(S\)</span>.</li>
+</ul>
+<p><span class="math display">\[ A^c = \{\omega\in S: \omega \notin A \}. \]</span></p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-89" class="definition"><strong>Definición.2.3  </strong></span>
+Una lista <span class="math inline">\(A_1, \ldots, A_k\)</span> de eventos de <span class="math inline">\(S\)</span> , simbolizada por
+<span class="math inline">\(\mathcal{A}\)</span> es llamada de una <strong>clase de eventos</strong> de <span class="math inline">\(S\)</span>.
+La clase <span class="math inline">\(\mathcal{A}\)</span> es una álgebra de sucesos si cumple las siguientes
+condiciones:</p>
+<ul>
+<li><p><span class="math inline">\(S \in \mathcal{A}\)</span>.</p></li>
+<li><p>Todas las uniones finitas de eventos de <span class="math inline">\(S\)</span> estan también en <span class="math inline">\(S\)</span>.</p></li>
+<li>El complemento de todos los eventos de <span class="math inline">\(S\)</span> también están en <span class="math inline">\(S\)</span>.</li>
+</ul>
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-90" class="definition"><strong>Definición.2.4  </strong></span>Sigma álgebra de Borel (pendiente).
+</div>
+
+</div>
+<div id="medida-de-probabilidad-y-experimentos-aleatorios" class="section level2">
+<h2><span class="header-section-number">2.2</span> Medida de probabilidad y experimentos aleatorios</h2>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-91" class="definition"><strong>Definición.2.5  </strong></span>
+Sea <span class="math inline">\(\mathcal{A}\)</span> una álgebra de eventos de <span class="math inline">\(S\)</span>. Una función <span class="math inline">\(\mbox{Pr}: \mathcal{A}\to [0,1]\)</span> que le asigna a cada evento de <span class="math inline">\(\mathcal{A}\)</span> un
+número dentro del intervalo <span class="math inline">\([0,1]\)</span> es llamada de <strong>medida de
+probabilidad finita</strong> siempre que satisfaga las siguientes condiciones:</p>
+<ul>
+<li><p>1 <span class="math inline">\(\mbox{Pr}(A)\geq 0\)</span>.</p></li>
+<li><p>2 <span class="math inline">\(\mbox{Pr}(S) =1\)</span>.</p></li>
+<li><p>3 <span class="math inline">\(A_1,\ldots, A_n\in \mathcal{A}\)</span> disjuntos (<span class="math inline">\(2\)</span> a <span class="math inline">\(2\)</span>), entonces</p>
+<span class="math display">\[ \mbox{Pr}\left(\bigcup_{k=1}^{n} A_k \right)=
+\sum_{k=1}^{n}\mbox{Pr}(A_k). \]</span></li>
+</ul>
+</div>
+
+<p>Una medida de probabilidad es una operación que mide la incertidumbre del
+evento <span class="math inline">\(A\)</span> en un número en <span class="math inline">\([0,1]\)</span>. Esta medida le da el máximo valor
+al espacio muestral. La suma de probabilidades de eventos disjuntos es la
+probabilidad de las uniones.</p>
+<p>Propiedades de la medida de probabilidad. Una medida de probabilidad que
+satisface 1 a 3 satisface las siguientes propiedades:</p>
+<ul>
+<li>Pr<span class="math inline">\((A \cup B)\)</span>= Pr<span class="math inline">\((A)\)</span>+ <span class="math inline">\(\mbox{Pr}(B)\)</span> - Pr<span class="math inline">\((A\cap B)\)</span>.</li>
+<li>Pr<span class="math inline">\((A^c)= 1-\mbox{Pr}(A)\)</span>.</li>
+</ul>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-92" class="definition"><strong>Definición.2.6  </strong></span>
+Sea <span class="math inline">\(A\)</span> un evento de un experimento con espacio muestral <span class="math inline">\(S\)</span> de
+con un número de eventos elementales finito. Se define la <strong>probabilidad
+clásica</strong> del evento <span class="math inline">\(A\)</span> como
+el cociente</p>
+<p><span class="math display">\[\mbox{Pr}(A)=\frac{ \mbox{Número de casos a favor de } A}{ \mbox{Número
+  de casos totales (a favor de $S$)}}.\]</span></p>
+<p>Este cálculo de probabilidad también es conocida como la <strong>regla de
+Laplace</strong>.</p>
+</div>
+
+<p><strong>Principio de razón insuficiente:</strong> sino tenemos información previa o no
+queremos asumir un sesgo personal sobre la incertidumbre de una propiedad
+muestral, entonces debemos asignar la <em>misma probabilidad</em> a cada evento
+puntual de <span class="math inline">\(\Omega\)</span>. La medida de probabilidad de un evento <span class="math inline">\(A\)</span> es la razón
+entre el número de casos a favor de <span class="math inline">\(A\)</span> y el número tal de casos posibles.</p>
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-93" class="definition"><strong>Definición.2.7  </strong></span>
+Un <strong>modelo de probabilidad</strong> para un experimento es
+formado por el espacio muestral <span class="math inline">\(S\)</span>, una álgebra
+<span class="math inline">\(\mathcal{A}\)</span> de eventos de <span class="math inline">\(S\)</span> y
+una medida de probabilidad de Pr. Esto puede ser
+representado por la tripla <span class="math inline">\((S, \mathcal{A}, \mbox{Pr})\)</span></p>
+<p>Un <strong>experimento aleatorio</strong> es un <em>experimento</em> si y
+solmente si en cuya construcción tiene asociado una
+medida de probabilidad
+para sus eventos.</p>
+</div>
+
+<div id="interpretación-frecuentista-de-una-medida-de-probabilidad" class="section level3">
+<h3><span class="header-section-number">2.2.1</span> Interpretación frecuentista de una medida de probabilidad</h3>
+<p>Supongamos que repetimos un mismo experimento
+secuencialmente. Los primeros <span class="math inline">\(n\)</span> resultados posibles
+son representados por <span class="math inline">\(\omega_1 , \omega_2, \ldots, \omega_n\)</span> y que <span class="math inline">\(\mathbb{I}_A (\omega_i)= 1\)</span>
+cuando <span class="math inline">\(\omega_i \in A\)</span>. Luego, según la interpretación
+frecuentista, para un máximo de diferencia absoluta
+<span class="math inline">\(\epsilon\)</span> siempre va a existir un momento de repetición
+<span class="math inline">\(n_0\)</span> del experimento tal que:</p>
+<p><span class="math display">\[\big | 1/n\sum_{i=1}^{n} \mathbb{I}_A(\omega_i) -
+\mbox{Pr}(A)\big |
+&lt; \epsilon, \forall n\geq n_0\]</span>.</p>
+<p>Es decir, a partir de una repetición finita del
+experimento, la diferencia entre <span class="math inline">\(\mbox{Pr}(A)\)</span> y
+<span class="math inline">\(1/n\sum_{i=1}^{n} \mathbb{I}_A(\omega_i)\)</span> es tan
+pequeña
+como querramos. Es decir Pr<span class="math inline">\((A)\)</span> es el <strong>límite de las
+frecuencias relativas</strong> de observar eventos elementales
+de <span class="math inline">\(A\)</span> en la replicación secuencial de un mismo
+experimento.</p>
+</div>
+</div>
+<div id="propiedades-básicas-de-la-medida-de-probabilidad" class="section level2">
+<h2><span class="header-section-number">2.3</span> Propiedades básicas de la medida de probabilidad</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-94" class="definition"><strong>Definición.2.8  </strong></span>Probabilidad conjunta, marginal y condicional.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-95" class="definition"><strong>Definición.2.9  </strong></span>Eventos estocasticamente independientes.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-96" class="definition"><strong>Definición.2.10  </strong></span>Probabilidad total.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-97" class="definition"><strong>Definición.2.11  </strong></span>Teorema de Bayes.
+</div>
+
+</div>
+<div id="resultados-básicos-de-combinatoria" class="section level2">
+<h2><span class="header-section-number">2.4</span> Resultados básicos de combinatoria</h2>
+
+<div class="definition">
+<span id="def:unnamed-chunk-98" class="definition"><strong>Definición.2.12  </strong></span>Principio básico del conteo.
+</div>
+
+
+<div class="definition">
+<span id="def:unnamed-chunk-99" class="definition"><strong>Definición.2.13  </strong></span>Principio básico del conteo generalizado.
+</div>
+
+
+</div>
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="datos.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="var.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/lunr.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": {
+"github": false,
+"facebook": true,
+"twitter": true,
+"linkedin": false,
+"weibo": false,
+"instapaper": false,
+"vk": false,
+"all": ["facebook", "twitter", "linkedin", "weibo", "instapaper"]
+},
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["Introduccion_prob_estad_bookdown.pdf", "Introduccion_prob_estad_bookdown.epub"],
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://mathjax.rstudio.com/latest/MathJax.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>

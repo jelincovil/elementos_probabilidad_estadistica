@@ -1,0 +1,2256 @@
+\PassOptionsToPackage{unicode=true}{hyperref} % options for packages loaded elsewhere
+\PassOptionsToPackage{hyphens}{url}
+%
+\documentclass[]{book}
+\usepackage{lmodern}
+\usepackage{amssymb,amsmath}
+\usepackage{ifxetex,ifluatex}
+\usepackage{fixltx2e} % provides \textsubscript
+\ifnum 0\ifxetex 1\fi\ifluatex 1\fi=0 % if pdftex
+  \usepackage[T1]{fontenc}
+  \usepackage[utf8]{inputenc}
+  \usepackage{textcomp} % provides euro and other symbols
+\else % if luatex or xelatex
+  \usepackage{unicode-math}
+  \defaultfontfeatures{Ligatures=TeX,Scale=MatchLowercase}
+\fi
+% use upquote if available, for straight quotes in verbatim environments
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+% use microtype if available
+\IfFileExists{microtype.sty}{%
+\usepackage[]{microtype}
+\UseMicrotypeSet[protrusion]{basicmath} % disable protrusion for tt fonts
+}{}
+\IfFileExists{parskip.sty}{%
+\usepackage{parskip}
+}{% else
+\setlength{\parindent}{0pt}
+\setlength{\parskip}{6pt plus 2pt minus 1pt}
+}
+\usepackage{hyperref}
+\hypersetup{
+            pdftitle={Introducción a la Probabilidad y la Estadística},
+            pdfauthor={Dr.~Jaime Lincovil C.},
+            pdfborder={0 0 0},
+            breaklinks=true}
+\urlstyle{same}  % don't use monospace font for urls
+\usepackage{color}
+\usepackage{fancyvrb}
+\newcommand{\VerbBar}{|}
+\newcommand{\VERB}{\Verb[commandchars=\\\{\}]}
+\DefineVerbatimEnvironment{Highlighting}{Verbatim}{commandchars=\\\{\}}
+% Add ',fontsize=\small' for more characters per line
+\usepackage{framed}
+\definecolor{shadecolor}{RGB}{248,248,248}
+\newenvironment{Shaded}{\begin{snugshade}}{\end{snugshade}}
+\newcommand{\AlertTok}[1]{\textcolor[rgb]{0.94,0.16,0.16}{#1}}
+\newcommand{\AnnotationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\AttributeTok}[1]{\textcolor[rgb]{0.77,0.63,0.00}{#1}}
+\newcommand{\BaseNTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\BuiltInTok}[1]{#1}
+\newcommand{\CharTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\CommentTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\CommentVarTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ConstantTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ControlFlowTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\DataTypeTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{#1}}
+\newcommand{\DecValTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\DocumentationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\ErrorTok}[1]{\textcolor[rgb]{0.64,0.00,0.00}{\textbf{#1}}}
+\newcommand{\ExtensionTok}[1]{#1}
+\newcommand{\FloatTok}[1]{\textcolor[rgb]{0.00,0.00,0.81}{#1}}
+\newcommand{\FunctionTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\ImportTok}[1]{#1}
+\newcommand{\InformationTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\newcommand{\KeywordTok}[1]{\textcolor[rgb]{0.13,0.29,0.53}{\textbf{#1}}}
+\newcommand{\NormalTok}[1]{#1}
+\newcommand{\OperatorTok}[1]{\textcolor[rgb]{0.81,0.36,0.00}{\textbf{#1}}}
+\newcommand{\OtherTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{#1}}
+\newcommand{\PreprocessorTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textit{#1}}}
+\newcommand{\RegionMarkerTok}[1]{#1}
+\newcommand{\SpecialCharTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\SpecialStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\StringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\VariableTok}[1]{\textcolor[rgb]{0.00,0.00,0.00}{#1}}
+\newcommand{\VerbatimStringTok}[1]{\textcolor[rgb]{0.31,0.60,0.02}{#1}}
+\newcommand{\WarningTok}[1]{\textcolor[rgb]{0.56,0.35,0.01}{\textbf{\textit{#1}}}}
+\usepackage{longtable,booktabs}
+% Fix footnotes in tables (requires footnote package)
+\IfFileExists{footnote.sty}{\usepackage{footnote}\makesavenoteenv{longtable}}{}
+\usepackage{graphicx,grffile}
+\makeatletter
+\def\maxwidth{\ifdim\Gin@nat@width>\linewidth\linewidth\else\Gin@nat@width\fi}
+\def\maxheight{\ifdim\Gin@nat@height>\textheight\textheight\else\Gin@nat@height\fi}
+\makeatother
+% Scale images if necessary, so that they will not overflow the page
+% margins by default, and it is still possible to overwrite the defaults
+% using explicit options in \includegraphics[width, height, ...]{}
+\setkeys{Gin}{width=\maxwidth,height=\maxheight,keepaspectratio}
+\setlength{\emergencystretch}{3em}  % prevent overfull lines
+\providecommand{\tightlist}{%
+  \setlength{\itemsep}{0pt}\setlength{\parskip}{0pt}}
+\setcounter{secnumdepth}{5}
+% Redefines (sub)paragraphs to behave more like sections
+\ifx\paragraph\undefined\else
+\let\oldparagraph\paragraph
+\renewcommand{\paragraph}[1]{\oldparagraph{#1}\mbox{}}
+\fi
+\ifx\subparagraph\undefined\else
+\let\oldsubparagraph\subparagraph
+\renewcommand{\subparagraph}[1]{\oldsubparagraph{#1}\mbox{}}
+\fi
+
+% set default figure placement to htbp
+\makeatletter
+\def\fps@figure{htbp}
+\makeatother
+
+\usepackage{booktabs}
+\usepackage[utf8]{inputenc}
+\usepackage[spanish]{babel}
+\selectlanguage{spanish}
+\usepackage{amsthm}
+\usepackage{graphicx}
+%\theoremstyle{plain} 
+%\newtheorem{observacion}{Observación}
+%\newtheorem{interpretacion}{Interpretación}
+%\newtheorem{definition}{Definicion} 
+%\newtheorem{ejem}{Ejemplos}
+%\newtheorem{teo}{Teorema}
+%\newtheorem{lema}{Lema}
+\usepackage[]{natbib}
+\bibliographystyle{apalike}
+
+\title{Introducción a la Probabilidad y la Estadística}
+\author{Dr.~Jaime Lincovil C.}
+\date{2020-11-08}
+
+\usepackage{amsthm}
+\newtheorem{theorem}{Teorema.}[chapter]
+\newtheorem{lemma}{Lema.}[chapter]
+\newtheorem{corollary}{Corolario.}[chapter]
+\newtheorem{proposition}{Proposición.}[chapter]
+\newtheorem{conjecture}{Conjetura.}[chapter]
+\theoremstyle{definition}
+\newtheorem{definition}{Definición.}[chapter]
+\theoremstyle{definition}
+\newtheorem{example}{Ejemplo.}[chapter]
+\theoremstyle{definition}
+\newtheorem{exercise}{Ejercicio.}[chapter]
+\theoremstyle{remark}
+\newtheorem*{remark}{Enfasis}
+\newtheorem*{solution}{Solución}
+\begin{document}
+\maketitle
+
+{
+\setcounter{tocdepth}{1}
+\tableofcontents
+}
+\hypertarget{objetivos-de-la-monografuxeda}{%
+\chapter*{Objetivos de la monografía}\label{objetivos-de-la-monografuxeda}}
+\addcontentsline{toc}{chapter}{Objetivos de la monografía}
+
+\hypertarget{dinuxe1mica-de-nuestra-comunicaciuxf3n}{%
+\section*{Dinámica de nuestra comunicación}\label{dinuxe1mica-de-nuestra-comunicaciuxf3n}}
+\addcontentsline{toc}{section}{Dinámica de nuestra comunicación}
+
+Proceso (operaciones) de inferencia estadística.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-1}{}{\label{def:unnamed-chunk-1} }Una \textbf{operación} Op aplicada sobre un objeto \(A\) lo transforma en
+un único objeto \(B\). La aplicación de Op
+sobre \(A\) produciendo \(B\) es simbolizado por:
+\[\mbox{Op}(A)=B.\]
+
+Una \textbf{lista de aplicaciones operaciones} \(\mbox{Op}_1, \ldots, \mbox{Op}_n\) aplicadas sobre \(A\) de forma secuencial e
+independintes produciendo \(B_1, \ldots, B_n\) es simbolizado por
+
+\[ \mbox{Op}_1 (A)=B_1, \ldots, \mbox{Op}_n (A) = B_n.  \]
+\end{definition}
+
+Formalmente, una operación Op puede ser representada por una
+función:
+
+\[
+\begin{aligned}
+\mbox{Op}: \mbox{Dom} \to \mbox{Rec}, & \\
+A \mapsto \mbox{Op}(A),&
+\end{aligned}
+\]
+en donde Dom y Rec son el dominio y recorrido de Op,
+respectivamente.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-2}{}{\label{exm:unnamed-chunk-2} }Considere la operación de división por \(2\) simbolizada por
+\(\mbox{Op}_1\) y exponencializacion \(\{ \}^2\) simbolizada por
+\(\mbox{Op}_2\). Luego \(\mbox{Op}_1\) y \(\mbox{Op}_2\) aplicadas sobre
+el número \(A=10\) produce:
+\[ \mbox{Op}_1(10) = 5/2= 5  \]\\
+y
+\[ \mbox{Op}_1(10) =10^2 =100.  \]
+
+Es decir, \(\mbox{Op}_1\) transforma \(10\) en \(5\) y \(\mbox{Op}_1\)
+transforma \(10\) en \(100\).
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-3}{}{\label{def:unnamed-chunk-3} }La \textbf{aplicación compuesta de dos operaciones} \(\mbox{Op}_1\) y
+\(\mbox{Op}_2\) sobre \(A\) es la composición
+\[ \mbox{Op}_2 \big(\mbox{Op}_1 (A)\big). 
+  \]
+Dado que \(\mbox{Op}_1\) y \(\mbox{Op}_2\) son funciones, formalmente,
+esta aplicación secuencial de estas sobre \(A\) es la composición de
+funciones \(\mbox{Op}_2 \circ \mbox{Op}_1(A)\).
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-4}{}{\label{exm:unnamed-chunk-4} }La aplicación secuencial de las aplicaciones \(/2\) y y luego
+\(\{\}^2\) sobre \(10\) es
+\[ \{\}^2 \rightarrow ( /2 \rightarrow 10)= (10/2)^2= 25.  \]
+\end{example}
+
+En este trabajo estaremos interesados en \textbf{operaciones
+estadísticas}, es decir, operaciones transformen \textbf{datos} en
+resumenes, gráficos e inferencias. Mencionamos aquellas que serán
+de nuestro interes.
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  Ejecutar la planificación de un experimento de tal manera de\\
+  obtener información parcial \(x\) de un fenomeno de interes. La
+  información \(x\) puede ser registrad como un vector o una matriz.
+\item
+  Cuantificar la incertidumbre de un evento \(A\) que podría
+  ocurrir al ejecutar un experimento, simbolizado por ``Prob\((A)\)''.
+\item
+  Estructurar datos \(x\), simbolizado por ``Estr \((x)\)''.
+\item
+  Explorar los datos \(x\), simbolizado por ``Plot \((x)\)''.
+\item
+  Resumir los datos \(x\), simbolizado por ``Res \((x)\)''.
+\item
+  Estimar un parámetros poblacionales \(\theta\) en base a la
+  muesra \(x\), simbolizado por ``\(\widehat{\theta}(x)\)''.
+\item
+  Predecir nuevas observaciones del experimento a partir de \(x\),
+  simbolizado por ``Pred\((x)\)''.
+\item
+  Contrastar hipótesis \(H_0\) contra \(H_1\).
+\end{enumerate}
+
+\hypertarget{organizaciuxf3n-de-la-monorafuxeda}{%
+\section*{Organización de la monorafía}\label{organizaciuxf3n-de-la-monorafuxeda}}
+\addcontentsline{toc}{section}{Organización de la monorafía}
+
+El Capitulo \(1\) presenta los elementos básicos de análisis
+exploratorio y resumen de datos uni y bivariado.
+
+\hypertarget{datos}{%
+\chapter{Operaciones de análisis exploratorio y resumen de datos}\label{datos}}
+
+\hypertarget{conceptos-elementales}{%
+\section{Conceptos elementales}\label{conceptos-elementales}}
+
+En esta sección presento conceptos básicos para
+este
+curso.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-7}{}{\label{def:unnamed-chunk-7} }(a) Una \textbf{población} es un conjunto de personas,
+objetos
+o eventos, de los
+cuales nos interesa estudiar algunas de sus
+características. (b) \textbf{Medidas poblacionales} son
+listas
+de mediciones de ciertas cantidades provenientes
+de cada
+individuo o elemento de la población. (c) Un
+\textbf{parámetro
+poblacional} es una característica general de la
+población.
+\end{definition}
+
+Presento tres ejemplos de población, unidades
+poblacionales y parámetros poblacionales.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-8}{}{\label{exm:unnamed-chunk-8} }(a) \emph{Población}: total de autos cuyos modelos
+salieron a
+la venta en un determinado intervalo de tiempo y
+funcionan en una determinada país. (b) \emph{Medidas
+poblacionales}: razón de millas recorrida por
+galón de
+combustible, número de cilindro, caballos de
+fuerza, tipo
+de caja de cambios. (c) \emph{Parámetro poblacional}:
+media
+poblacional de razón de millas recorrida por galón
+de
+combustible, media poblacional de caballos de
+fuerza y
+proporción de autos con caja de cambio automático.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-9}{}{\label{exm:unnamed-chunk-9} }(a) \emph{Población}: individuos de una cierta comuna
+de una
+ciudad que poseen problemas de insulina.
+(b) \emph{Medidas poblacionales}: presencia o no de
+menarquía
+(primera hemorragia menstrual de la mujer), edad,
+sexo,
+nivel de igf1 (factor de crecimiento insulínico
+tipo 1,),
+etapa de la pubertad y nivel testicular. (c)
+\emph{Parámetro
+poblacional}: promedio de edad poblacional,
+frecuencias
+relativas de etapas de la pubertad poblacional y
+media
+poblacional de igf\(1\).
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-10}{}{\label{exm:unnamed-chunk-10} }(a) \emph{Población}: pacientes de una determinada
+comunidad
+que reciben tres métodos diferentes de
+ventilación durante la anestesia. (b) \emph{Medidas
+poblacionales}: concentración de folato
+(microgramos por litro) y tipo de ventilación
+recibida
+por los pacientes\footnote{(i) \$\mbox{N$2$O} +
+  \mbox{O}2\$, \(24\)h: \(50\%\) de óxido nitroso y
+  \(50\%\) de
+  oxígeno, de forma continua durante \(24\)
+  horas; (ii) N2O + O2, op: \(50\%\) de óxido nitroso
+  y
+  \(50\%\) de oxígeno, solo durante el
+  funcionamiento; (iii) \(O2.24h\): sin óxido nitroso
+  pero
+  entre un \(35\%\) y un \(50\%\) de oxígeno
+  durante \(24\) horas}. \emph{Parámetros poblacionales}:
+media
+de folato poblacional y proporciones de
+factores de niveles de ventilación.
+\end{example}
+
+Los conceptos de unidad de observación (o
+muestral),
+muestra y base de datos son presentados a
+continuación.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-11}{}{\label{def:unnamed-chunk-11} }(a) \textbf{Unidades de observaciones:} es un grupo de
+elementos de una población de la cual es
+posible obtener información de manera conjunta.
+Comunmente es
+conocido como una \textbf{muestra} de la población. (b)
+Un
+\textbf{experimento} es una operación bien
+planificada y controlada que se realiza para
+obtener
+información parcial desde unidades de
+observación de una determinada población. (c) La
+información cuantificada o codificada derivada de
+un experimento es llamada de \textbf{datos}. (d)
+Una \textbf{base de datos} es una forma ordenada
+organizados la muestra de tal manera de que estos
+puedan
+ser trabajados por programas
+computacionales.
+\end{definition}
+
+\textbf{Nota}: en general, el experimento debe ser
+realizado
+por un procedimiento que evite el sesgo
+personal. Esto podría lograrse utilizando algún
+\emph{mecanismo aleatorio}. Sin embargo, esto no
+siempre es posible debido a problemas ético y
+legales.
+Esto ocurre en el caso de estudios en el
+área de la salud donde aplicar un mecanismo
+aleatorio
+podría poner en peligro la integridad de los
+pacientes. En este caso, el experimento se reduce un
+estudio de los datos disponibles.
+
+Presentamos algunos ejemplos.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-12}{}{\label{exm:unnamed-chunk-12} }(a) \emph{Unidad de observación}: grupo de autos de una
+determinada ciudad. (b) \emph{Experimento}: escoger
+autos de forma aleatoria de una determinada ciudad y
+medir razón de millas recorrida por galón de
+combustible, número de cilindro, caballos de fuerza, tipo
+de caja de cambios. (c) \emph{Muestra}: lista de estos valores
+observados en la medición. (d) \emph{Base de datos}: vector
+columna con los datos de
+una característica observada o matriz rectangular con
+toda la información codificada.
+\end{example}
+
+Mostraremos un ejemplo de datos en forma de vector y
+matriz con la base de datos \emph{mtcars} del
+paquete de \emph{R} llamado \emph{MASS}. Esta base de datos está en
+formato de \emph{data frame} y fue publicado
+en \(1974\) en la revista \emph{Motor Trend US magazine}. La
+base \emph{mtcars} contiene datos de \(32\) autos
+de modelos diferentes. Por ejemplo, la razón de millas
+por galón de combustible (mpg) en forma de
+vector columna de los primeros y últimos valores
+
+\[\mbox{mpg}=(21.0 ; 21.0 ; 22.8 ; 21.4 ,\ldots, 27.3 ;
+26.0 ; 30.4 ; 15.8 ; 19.7 ; 15.0 ;
+21.4)^\top. \]
+
+En la siguiente matriz se presenta en la primera columna
+el modelo de los autos estudiados y en
+las restantes columnas las variables medidas para los \(6\)
+primeros autos estudiados. Aquí, por
+ejemplo, ``Mazda RX4'' es el modelo del primer auto, cuya
+\emph{mpg} o razón de millas por galón es
+igual a \(21\) y su \emph{cyl} o número de cilindros del motor
+es igual a \(6\).
+
+\begin{verbatim}
+##                    mpg cyl disp  hp drat    wt  qsec vs am gear carb
+## Mazda RX4         21.0   6  160 110 3.90 2.620 16.46  0  1    4    4
+## Mazda RX4 Wag     21.0   6  160 110 3.90 2.875 17.02  0  1    4    4
+## Datsun 710        22.8   4  108  93 3.85 2.320 18.61  1  1    4    1
+## Hornet 4 Drive    21.4   6  258 110 3.08 3.215 19.44  1  0    3    1
+## Hornet Sportabout 18.7   8  360 175 3.15 3.440 17.02  0  0    3    2
+## Valiant           18.1   6  225 105 2.76 3.460 20.22  1  0    3    1
+\end{verbatim}
+
+Te presento un ejemplo en el area de la salud.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-15}{}{\label{exm:unnamed-chunk-15} }(a) \emph{Unidad de observación}: pacientes de un determinado
+hospital. (b) \emph{Experimento}: examen de
+laboratorio en donde se escogen individuos para medir:
+presencia o no de menarquía (primera
+hemorragia menstrual de la mujer), edad, sexo, nivel de
+igf\(1\) (factor de crecimiento insulínico
+tipo \(1\),), etapa de la pubertad y nivel testicular. (c)
+\emph{Muestra}: mediciones de estos valores.
+(d) \emph{Base de datos}: vector columna con los datos de una
+característica observada o matriz
+rectangular con toda la información codificada.
+\end{example}
+
+La siguiente base de datos llamada \emph{juul2} proviene dal
+paquete \emph{ISwR} del programa R. Contiene
+información de pacientes con problema de insulina. Aquín,
+por ejemplo, \emph{age} contiene la edad de
+los pacientes y \emph{menarche} presencia o no de menarquía
+(primera hemorragia menstrual de la
+mujer).
+
+\begin{verbatim}
+##     age height menarche sex igf1 tanner testvol weight
+## 1    NA     NA       NA  NA   90     NA      NA     NA
+## 2    NA     NA       NA  NA   88     NA      NA     NA
+## 3    NA     NA       NA  NA  164     NA      NA     NA
+## 4    NA     NA       NA  NA  166     NA      NA     NA
+## 5    NA     NA       NA  NA  131     NA      NA     NA
+## 6  0.17     NA       NA   1  101      1      NA     NA
+## 7  0.17     NA       NA   1   97      1      NA     NA
+## 8  0.17     NA       NA   1  106      1      NA     NA
+## 9  0.17     NA       NA   1  111      1      NA     NA
+## 10 0.17     NA       NA   1   79      1      NA     NA
+## 11 0.17     NA       NA   1   43      1      NA     NA
+## 12 0.17     NA       NA   1   64      1      NA     NA
+## 13 0.25     NA       NA   1   90      1      NA     NA
+## 14 0.25     NA       NA   1  141      1      NA     NA
+## 15 0.42     NA       NA   1   42      1      NA     NA
+\end{verbatim}
+
+Es normal que al aplicar la medición ocurran errores o
+problemas con los instrumentos de medición.
+Las normas éticas científicas exigen no ocultar esto sino
+informarlas. Por ejemplo,
+un símbolo \textbf{NA} indica que el valor fue perdido. El
+símbolo \textbf{NULL} indica que el valor
+obtenido fue nulo o no tiene validez. Se simboliza por
+\textbf{Inf} para valores que salieron fuera de
+los límites de los valores de medición del instrumento.
+
+Presentamos otro ejemplo dentro del área de la salud.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-18}{}{\label{exm:unnamed-chunk-18} }\emph{Unidad de observación}: pacientes de un determinado
+hospital. \emph{Experimento}: examen de
+laboratorio en donde se reciben pacientes y se les mide
+concentración de folato (microgramos por
+litro) y factores con niveles de N2O+O2. \emph{Muestra}:
+lista de estos valores. \emph{Base de datos}:
+vector o matriz rectangular con estos datos
+cuantificados.\\
+\end{example}
+
+\begin{verbatim}
+##    folate ventilation
+## 1     243  N2O+O2,24h
+## 2     251  N2O+O2,24h
+## 3     275  N2O+O2,24h
+## 4     291  N2O+O2,24h
+## 5     347  N2O+O2,24h
+## 6     354  N2O+O2,24h
+## 7     380  N2O+O2,24h
+## 8     392  N2O+O2,24h
+## 9     206   N2O+O2,op
+## 10    210   N2O+O2,op
+\end{verbatim}
+
+Podemos resumir el proceso de análisis de datos en la
+siguiente figura
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\NormalTok{knitr}\OperatorTok{::}\KeywordTok{include_graphics}\NormalTok{(}\StringTok{'Gran_Cuadro_Inferencia.pdf'}\NormalTok{)}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Gran_Cuadro_Inferencia.pdf}
+
+Todo comienza con el interés por conocer atributos
+desconocidos de una determinada población. Aquí
+son llamados de parámetros poblacionales. Para \emph{aprender}
+de estos parámetros se realiza un
+experimento y recopilar información. El siguiente paso es
+\emph{explorar} las características generales
+de los datos. Luego buscaremos resumirlos para sacar
+conclusiones preliminares sobre los
+parámetros poblacionales.
+
+\hypertarget{variables-observadas-en-experimentos}{%
+\section{Variables observadas en experimentos}\label{variables-observadas-en-experimentos}}
+
+Un elemento relevante de la planificación de un
+experimento científico es el conjunto de variables que
+será medido desde las unidades de observación.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-22}{}{\label{def:unnamed-chunk-22} }(a) Una \textbf{variable} \(X\) es una característica de interés
+que posee cada elemento de una población
+y que podemos medir. (b) Una variable es \textbf{cuantitativa}
+si sus valores son números y representan
+una cantidad. (c) Una variable es \textbf{cualitativa} si sus
+valores representan una cualidad, un
+atributo o una categoría. Se les llama también variables
+categóricas. (d) Una lista
+
+\[x_1, x_2, \ldots, x_n\]
+de observaciones de una variable \(X\) obtenidas al
+desarrollar un experimento es llamada de
+\textbf{datos observados} de \(X\) extraída desde una lista
+de \(n\) unidades de observación. El número \(n\)
+será llamado de \textbf{tamaño de los datos}.
+\end{definition}
+
+Presentamos algunos ejemplos.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-23}{}{\label{exm:unnamed-chunk-23} }- Ejemplo de variables cuantitativas:
+
+\begin{verbatim}
+    - Razón de millas por galón de combustible. 
+    - Número de cilindros  de motores.
+    - Número de caballos de fuerza de motores.
+    - Peso en Kilogramos.
+    - Nivel de insulina en la sangre.
+    - Temperatura en grados Celsius (o Fahrenheit).
+    - Año de lanzamiento de un modelo de auto.
+\end{verbatim}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-24}{}{\label{exm:unnamed-chunk-24} }- Ejemplo de variables cualitativas
+
+\begin{verbatim}
+- Tipo de motor.
+- Modelo del auto.
+- Sexo.
+- Tipo de ventilación en pacientes.  
+\end{verbatim}
+\end{example}
+
+En general, las variables de experimentos son
+clasificadas en dos tipo.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-25}{}{\label{def:unnamed-chunk-25} }
+Tipos de variables cuantitativas. (a) \textbf{Discreta:} si
+el conjunto de todos sus posibles valores
+tiene un número finito de elementos, o bien es infinito,
+pero se pueden numerar uno por uno de acuerdo al conjunto
+de número naturales
+\(\{0,1,2,3,\ldots\}\). Noten que, esto implica que la
+variable puede asumir solamente un conjunto
+finito de valores dentro de un intervalo \((a,b)\). Una
+variable discreta puede asumir valores con
+decimales. (b) \textbf{Continua:} si puede tomar todos los
+valores posibles dentro de un intervalo de
+números reales, como por ejemplo \((a,b)\) o \([a,b]\).
+\end{definition}
+
+Presentamos algunos ejemplos.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-26}{}{\label{exm:unnamed-chunk-26} }- Ejemplo de variables discretas:
+
+\begin{verbatim}
+- Número de cilindros  de motores.
+- Número de caballos de fuerza de motores.
+- Una variable hipotética con valores: 0, 0.5, 1, 1.5, 2, 2.5, ...
+\end{verbatim}
+
+.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-27}{}{\label{exm:unnamed-chunk-27} }- Ejemplo de variables continuas:
+
+\begin{verbatim}
+- Razón de millas por galón de combustible. 
+- Peso en Kilogramos.
+- Nivel de insulina en la sangre.
+- Temperatura en grados Celsius (o Fahrenheit).
+\end{verbatim}
+\end{example}
+
+Luego de obtener los resultados de un experimento, el
+investigador debe codificar los resultados para poder
+construir la base de datos. En el caso de variables
+cualitativas, esto es hecho clasificándola en dos tipos
+de escala de medición.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-28}{}{\label{def:unnamed-chunk-28} }Escalas de mediciones de variables cualitativas. (a)
+\textbf{Escala nominal:} si sus valores son
+etiquetas o atributos y no existe un orden jerárquico
+entre ellos. (b) \textbf{Escala ordinal:} si sus
+valores son etiquetas o atributos pero existe un cierto
+orden jerárquico entre ellos.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-29}{}{\label{exm:unnamed-chunk-29} }- Ejemplo de variables cualitativas en escala nominal:
+
+\begin{verbatim}
+- Tipo de motor.
+- Sexo.
+- Tipo de ventilación en pacientes.  
+- Idioma.
+- Nacionalidad.
+\end{verbatim}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-30}{}{\label{exm:unnamed-chunk-30} }- Ejemplo de variables cualitativas ordinal:
+
+\begin{verbatim}
+- Grupo etario: lactante, niños, adolescente, adulto
+y tercera edad.
+- Clasificación de productos tecnológicos: básico,
+gama media y gamma alta. 
+- Posición de llegada en una competencia.
+- Talla de ropa: S, M, L, etc. 
+- Tipo de ventilación en pacientes.   
+\end{verbatim}
+\end{example}
+
+Las variables cuantitativas también son clasificadas
+según su escala de medición.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-31}{}{\label{def:unnamed-chunk-31} }\textbf{Escala de intervalo:} existe una noción de distancia
+entre los valores de la variable y no
+existe necesariamente el valor natural cero como
+indicador de ausencia de algo. En este caso el
+cero u otro valor representa un punto de cambio de
+``nivel''. En general, la escala una variable en
+escala de intervalo es establecido vía consensos
+científicos o de instituciones para estandarizar
+procesos.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-32}{}{\label{def:unnamed-chunk-32} }\textbf{Escala de razón} si los valores de la variable tienen
+un sentido físico de \emph{intensidad} y
+existe el cero indicando ausencia de valor. En este caso
+el cero es el origen de los valores a ser
+medidos.\\
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-33}{}{\label{exm:unnamed-chunk-33} }- Ejemplo de variables cuantitativas medidas en escala de
+intervalo:
+
+\begin{verbatim}
+- Escala de notas: de 0 a 7, de 0 a 10,
+utilizando letras con números. 
+- Puntaje PSU.
+- El pH,  una medida de acidez o alcalinidad de 
+una sustancia.
+- Temperatura en grados Celsius (o Fahrenheit):
+puede asumir valores positivos, negativos
+y en particular ser igual a 0.
+\end{verbatim}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-34}{}{\label{exm:unnamed-chunk-34} }- Ejemplo de variables cuantitativas medidos en escala de
+razón:
+
+\begin{verbatim}
+    - Razón de millas por galón de combustible. 
+    - Número de cilindros  de motores.
+    - Número de caballos de fuerza de motores.
+    - Peso en Kilogramos.
+    - Nivel de insulina en la sangre.
+\end{verbatim}
+\end{example}
+
+\hypertarget{agrupamiento-de-variables}{%
+\section{Agrupamiento de variables}\label{agrupamiento-de-variables}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-35}{}{\label{def:unnamed-chunk-35} }(a) Una \textbf{clase} es un agrupamiento de \emph{categorías} en
+el caso de variables cualitativas, o de
+\emph{intervalos numéricos} en el caso de variables
+cuantitativas. (b) Una \textbf{marca de clase} es un
+dato que representa a una clase. En el caso de los
+intervalos la marcha de clase es el punto medio
+de los intervalos que se obtiene con el promedio de los
+extremos.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-36}{}{\label{exm:unnamed-chunk-36} }Consideremos los valores de las variables \emph{mpg} de la
+base de datos \emph{mtcars}. Clasificando los
+valores en intervalos de largo \(4.4\) mil millas por galón
+obtenemos los intervalos
+
+\[ [0 ; 4.4), [4.4 ; 8.8), [8.8 ; 13.2) [13.2 ; 17.6),
+[17.6 ; 22.0), [22.0 ; 26.4), [26.4 ; 30.08] \]
+
+La marca de clase para el intervalo \([13.2 ; 17.6)\) es
+el punto \(15.4\). Analogamente para los
+otros casos.
+\end{example}
+
+\hypertarget{operaciuxf3n-de-anuxe1lisis-exploratorio-de-datos}{%
+\section{Operación de análisis exploratorio de datos}\label{operaciuxf3n-de-anuxe1lisis-exploratorio-de-datos}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-37}{}{\label{def:unnamed-chunk-37} }La \textbf{estadística descriptiva} es la area de la
+\textbf{Estadistica} que se preocupada de la
+aplicación de operaciones que ayudan a describir, mostrar
+y resumir, la información de un conjunto
+de datos.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-38}{}{\label{def:unnamed-chunk-38} }La parte de la Estadística Descriptiva que utiliza
+herramientas para \textbf{visualizar}
+caracteristicas generales de los datos es llamada de
+``Analisis exploratorio de Datos''. Tales
+herramientas son llamadas de \textbf{operaciones
+exploratorias}.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-39}{}{\label{exm:unnamed-chunk-39} }Ejemplo de operaciones exploratoias son construir: tablas
+de frecuencias, graficos de tallos y
+hojas, histogramas, diagrama de caja y bigotes, diagrama
+de dispersión, etc.
+\end{example}
+
+\hypertarget{operaciones-de-exploraciuxf3n-grafica-de-los-datos-sin-grupos}{%
+\subsection{Operaciones de exploración grafica de los datos: sin grupos}\label{operaciones-de-exploraciuxf3n-grafica-de-los-datos-sin-grupos}}
+
+Los gráficos estadísticos nos entregarán información
+representada en el plano cartesiano bi o
+tridimensional de los valores de la variable \(X\) que
+acumula las mayores frecuencia y como se
+distribuyen los otros datos en torno de estos valores
+centrales, entre otros.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-41}{}{\label{def:unnamed-chunk-41} }
+\textbf{Gráfico de tallos y hojas:} su aspecto es muy similar al de un
+histograma dibujado horizontalmente. A los dígitos del primer
+decimal de los números que aparecen listados en la parte
+\emph{derecha} de \(|\) del diagrama se les llama \textbf{hojas} y a la parte
+izquierda de la parte no decimal se le llama \textbf{tallo}.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-42}{}{\label{def:unnamed-chunk-42} }\textbf{Gráfico circular o de torta:} para variables cualitativas o
+bien para
+variables cuantitativas agrupadas,
+se pueden elaborar gráficas de pastel, también llamadas
+pie charts. Estas son gráficas circulares divididas en sectores
+que permiten comparar visualmente
+las frecuencias porcentuales de los valores observados de
+una variable.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-43}{}{\label{def:unnamed-chunk-43} }
+\textbf{Gráfico de barras:} las gráficas de barra ayudan a visualizar
+los valores de una variable que
+ocurren con mayor o menor frecuencia y a comparar
+cualitativamente estas
+frecuencias.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-44}{}{\label{def:unnamed-chunk-44} }\textbf{Histograma::} un histograma es una gráfica muy similar a una
+gráfica de barras. Adquiere este nombre cuando existe un orden
+entre los valores de la variable a graficar. Nuevamente, para cada
+valor, categoría o clase de la variable, se asocia una barra
+cuya altura es la frecuencia con la que se observa la
+categoría.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-45}{}{\label{def:unnamed-chunk-45} }\textbf{Boxplot:} para representar los datos con base en valores que
+dividan los datos en partes estratégicas es
+adecuado usar un gráfico de tallos y hojas. Para su
+diseño es necesario el valor mínimo, el primer
+(C1), segundo (C2), tercer cuartil (C3) y el máximo de
+los datos. La caja es formada por C1 y C3
+en cuyo centro se encuentra C2 (la mediana.)
+\end{definition}
+
+Presento algunos ejemplos de transformaciones de los datos mpg en
+gráficos.
+
+\begin{verbatim}
+## 
+##   The decimal point is at the |
+## 
+##   10 | 44
+##   12 | 3
+##   14 | 3702258
+##   16 | 438
+##   18 | 17227
+##   20 | 00445
+##   22 | 88
+##   24 | 4
+##   26 | 03
+##   28 | 
+##   30 | 44
+##   32 | 49
+\end{verbatim}
+
+\textbf{Interpretación:} el valor más frecuente de los valores observados
+de \emph{mpg} son las medidas cuya parte entera es \(14\). En menor cantidad,
+pero también frecuentes son los valores con parte entera igual a \(18\)
+y \(20\).
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-47-1.pdf}
+
+\textbf{Interpretación:} dentro de la base de datos mtcars, los autos con
+\(8\) y \(4\) ciclos son los más frecuentes.
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-48-1.pdf}
+
+\textbf{Interpretación:} en la base de datos \emph{mtcars} los autos con cambio
+de velocidad automático (\(0\)) es mayor que los autos con cambios
+manual (\(1\)). Los autos cambio de velocidad automático suman un mayor
+número de cilindros que los autos con cambios manuales. Las altas
+frecuencias de mpg se concentran en torno a \(20\) millas por galón.
+
+\hypertarget{operaciones-de-exploraciuxf3n-gruxe1fica-de-los-datos-por-grupos}{%
+\subsection{Operaciones de exploración gráfica de los datos: por grupos}\label{operaciones-de-exploraciuxf3n-gruxe1fica-de-los-datos-por-grupos}}
+
+Los gráficos por grupos nos ayudarán a comparar las
+características de los datos separados por unidades
+muestrales con alguna característica en común.
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-49-1.pdf}
+\textbf{Interpretación}: Los autos con \(4\) cilindros tienen
+un mayor nivel
+de \emph{mpg} que los otros casos (ver media representado por
+el punto
+morado). Los autos con \(4\) engranajes tienen mayor
+niveles de \emph{mpg}.
+Los autos con \(8\) cilindros concentran altas frecuencias
+en niveles
+más bajos que los de \(4\) y \(6\) cilindros.
+
+\hypertarget{operaciuxf3n-de-analisis-de-frecuencias}{%
+\subsection{Operación de analisis de frecuencias}\label{operaciuxf3n-de-analisis-de-frecuencias}}
+
+Una forma de resumir los datos es través del conteo de
+número de veces en las cuales aparecen
+ciertas observaciones en los datos.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-50}{}{\label{def:unnamed-chunk-50} }Consideremos una muestra \(x_1, \ldots, x_n\) de \(n\)
+valores en donde \(x_i\) representa la \(i\)-ésima
+observación.
+
+\begin{itemize}
+\item
+  La \textbf{frecuencia absoluta} de \(x_i\), simbolizado por
+  \(f_i\), es el número de veces que su valor
+  se repite en la muestra.
+\item
+  La \textbf{frecuencia absoluta acumulada} de \(x_i\),
+  simbolizado por \(F_i\) , es la suma
+\end{itemize}
+
+\[F_i = \sum_{j: x_j \leq x_i} f_j,\]
+es decir la suma de las frecuencias absolutas de todos
+los valores menores o iguales a \(x_i\).
+
+\begin{itemize}
+\item
+  La \textbf{frecuencia relativa} de \(x_i\) es el porcentaje
+  \(h_i= (f_i/n)\times 100\), es decir el
+  porcentaje de la frecuencia absoluta en el total de la
+  muestra.
+\item
+  La \textbf{frecuencia relativa acumulada} de \(x_i\) es la
+  suma
+\end{itemize}
+
+\[H_i = \sum_{j: x_j \leq x_i} h_j,\]
+
+es decir la suma de los frecuencias relativas de todos
+los valores
+menores o iguales a \(x_i\).
+\end{definition}
+
+Las frecuencias \(h_i\) y \(H_i\) también pueden ser
+calculado con valores sobre el intervalo \([0,1]\) con
+interpretaciones equivalentes a los porcentajes en la
+escala \([0\% ; 100\%]\).
+
+Una forma de resumir los valores de la variable \emph{mpg} es
+mediante una operación que los transforme en tablas de
+frecuencia por los valores puntuales o por intervalo de
+clase.
+
+En el primer caso presentamos una tabla de frecuencia de
+los valores puntuales.
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{freqs}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{mpg)}
+\end{Highlighting}
+\end{Shaded}
+
+\begin{verbatim}
+##    data fi Fi    hi      Hi
+## 1  10.4  2  2 6.250   6.250
+## 2  13.3  1  3 3.125   9.375
+## 3  14.3  1  4 3.125  12.500
+## 4  14.7  1  5 3.125  15.625
+## 5  15.0  1  6 3.125  18.750
+## 6  15.2  2  8 6.250  25.000
+## 7  15.5  1  9 3.125  28.125
+## 8  15.8  1 10 3.125  31.250
+## 9  16.4  1 11 3.125  34.375
+## 10 17.3  1 12 3.125  37.500
+## 11 17.8  1 13 3.125  40.625
+## 12 18.1  1 14 3.125  43.750
+## 13 18.7  1 15 3.125  46.875
+## 14 19.2  2 17 6.250  53.125
+## 15 19.7  1 18 3.125  56.250
+## 16 21.0  2 20 6.250  62.500
+## 17 21.4  2 22 6.250  68.750
+## 18 21.5  1 23 3.125  71.875
+## 19 22.8  2 25 6.250  78.125
+## 20 24.4  1 26 3.125  81.250
+## 21 26.0  1 27 3.125  84.375
+## 22 27.3  1 28 3.125  87.500
+## 23 30.4  2 30 6.250  93.750
+## 24 32.4  1 31 3.125  96.875
+## 25 33.9  1 32 3.125 100.000
+\end{verbatim}
+
+\textbf{Interpretación:} El \(25\%\) de los medidas de \emph{mpg} en
+la muestra son menores o igual a \(15.2\) millas por
+galón.
+Aproximadamente el \(53.13\%\) de los medidas de \emph{mpg} son
+menores a \(19.2\) millas por galón. Aproximadamente el
+\(78.13\%\) de los medidas de \emph{mpg} son menores a \(22.8\)
+millas por galón.
+
+En segundo lugar, presentamos una tabla de frecuencia
+de los los intervalos presentados anteriormente.
+
+\begin{verbatim}
+##   marca fi Fi     hi      Hi
+## 1   2.2  0  0  0.000   0.000
+## 2   6.6  0  0  0.000   0.000
+## 3  11.0  2  2  6.250   6.250
+## 4  15.4 10 12 31.250  37.500
+## 5  19.8 11 23 34.375  71.875
+## 6  24.2  4 27 12.500  84.375
+## 7  30.4  5 32 15.625 100.000
+\end{verbatim}
+
+\textbf{Interpretación:}
+
+\hypertarget{operaciuxf3n-de-resumen-de-datos-univariados}{%
+\section{Operación de resumen de datos univariados}\label{operaciuxf3n-de-resumen-de-datos-univariados}}
+
+\hypertarget{medidas-de-tendencia-central}{%
+\subsection{Medidas de tendencia central}\label{medidas-de-tendencia-central}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-54}{}{\label{def:unnamed-chunk-54} }La media o \textbf{media} aritmética es simplemente el
+\emph{promedio} de la muestra
+\(x_1, \ldots , x_n\) simbolizado por \(\bar{x}_n\) y dada
+por:
+
+\[\bar{x}_n = \frac{1}{n} \sum_{i=1}^n x_i . \]
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-55}{}{\label{def:unnamed-chunk-55} }
+La \textbf{moda} es el valor que aparece con mayor frecuencia
+en el conjunto de
+datos, si lo hubiera. En general, los datos pueden ser
+uni, bi o multimodales (varias modas).
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-56}{}{\label{def:unnamed-chunk-56} }
+Simbolisemos por \(x_{(k)}\) el valor de la muestra
+ordenada que esta en el \(k\)-ésimo lugar. La
+\textbf{mediana} es el dato ordenado de en medio, esto es:
+
+\begin{enumerate}
+\def\labelenumi{(\alph{enumi})}
+\item
+  Si el número de datos \(n\) es par, entonces existen
+  dos datos ordenados de en medio y la
+  mediana es el promedio de estos dos números, esto es
+  \((x_{(n/2)} + x_{(n/2)+1})/2\).
+\item
+  Si el número de datos \(n\) es impar, entonces el dato
+  ordenado de en medio es \(x_{(n-1)/2}\) y
+  esta es la mediana.
+\end{enumerate}
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-57}{}{\label{exm:unnamed-chunk-57} }Presentamos la media, moda y mediana de la los datos
+\emph{hp} (caballos de fuerza) de la base de datos
+\emph{mtcars}: \(\bar{x}_n= 146.7\) ; Mediana \(= 123\) ; Moda
+\(=(110, 175, 180)\) los cuales con una
+frecuencia absoluta iguala \(3\).
+\end{example}
+
+\hypertarget{medidas-de-dispersiuxf3n}{%
+\subsection{Medidas de dispersión}\label{medidas-de-dispersiuxf3n}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-58}{}{\label{def:unnamed-chunk-58} }
+La \textbf{varianza} \(s_x^2\) es un promedio de la distancia
+al cuadrado de cada uno de los
+datos \(x_i\) respecto de la media \(\bar{x}_n\) y es la
+medida de dispersión más comúnmente
+usada calculada por:
+
+\[s_x^2 = \frac{1}{n}\sum_{i=1}^{n} (x_i - \bar{x}_n)^2.
+  \]
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-59}{}{\label{def:unnamed-chunk-59} }
+A la raíz cuadrada positiva de la varianza se le llama
+\textbf{desviación estándar} o
+desviación típica, y se le simboliza por la letra
+\(s_x^2\). Así, para su cálculo se usa la
+siguiente fórmula:
+
+\[s_x = \sqrt{ \frac{1}{n}\sum_{i=1}^{n} (x_i - 
+                  \bar{x}_n)^2}.  \]
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-60}{}{\label{def:unnamed-chunk-60} }
+Al promedio de los valores absolutos de las diferencias
+entre los datos y la
+media se le llama \textbf{desviación media}. Más
+específicamente, supongamos que \(\bar{x}_n\)
+es la media de los datos numéricos \(x1, \ldots , x_n\),
+entonces la desviación media
+se denota por \(dm_x\) y se define como el siguiente
+promedio
+
+\[\mbox{dm}_x = \frac{1}{n}\sum_{i=1}^{n} |x_i -
+     \bar{x}_n|.  \]
+\end{definition}
+
+\begin{remark}
+\iffalse{} {Enfasis.} \fi{}
+Cuando en \(s_x^2\), \(s_x\) y \(dm_x\) dividimos por \((n-1)\)
+en lugar de n, decimos que \(s_x^2\),
+\(s_x\) y dm son las versiones \textbf{modificadas} de la
+variancia, desviación estandar y dm.
+\end{remark}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-62}{}{\label{def:unnamed-chunk-62} }
+Ahora definiremos el rango de una colección de números
+\(x_1, \ldots, x_n\). Para
+calcular esta cantidad es necesario identificar el dato
+más pequeño \(x_{(1)}\) y el
+dato más grande \(x_{(n)}\). El rango de la colección de
+números dada se denota
+por Ran y es simplemente el dato mayor menos el dato
+menor:
+
+\[ \mbox{Ran} = x_{(n)} - x_{(1)}.   \]
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-63}{}{\label{def:unnamed-chunk-63} }
+Sea \(x_1, \ldots , x_n\) una colección de \(n\)
+observaciones de una variable cuantitativa.
+Sea \(\bar{x}_n\) su media y sea \(s_x\) su desviación
+estándar. Al cociente de variación se le llama
+coeficiente de variación y se le denota por \(cv_x\),
+suponiendo por supuesto que \(\bar{x}_n \neq 0\). Es decir:
+\[ cv_x = \frac{s_x}{\bar{x}_n} \times 100.\]
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-64}{}{\label{exm:unnamed-chunk-64} }Presentamos las anteriores medidas de dispersión para
+los datos \emph{hp} (caballos de fuerza) de la
+base de datos \emph{mtcars}: \(s_x^2 = 4700.87\); \(s_x =68.56\);
+\(dm_x= 56.48\), Ran\(= 283\) y \(cv_x= 46.74\).\\
+\end{example}
+
+\hypertarget{percentiles-cuantiles-cuartiles-y-deciles}{%
+\subsection{Percentiles, cuantiles, cuartiles y deciles}\label{percentiles-cuantiles-cuartiles-y-deciles}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-65}{}{\label{def:unnamed-chunk-65} }
+El valor númerico de los datos ordenados que deja a su
+izquierda (o son menores que) el \(p \times 100\%\) de los datos es llamado de \textbf{percentiles} de
+orden a \(p\times 100\), para una proporción
+\(p\in (0,1)\). El equivalente a un percentil de orden
+\(p\times 100\) es el \textbf{cuantil} de orden \(p\), el cual es
+el
+valores de la muestra que deja a su izquerda la
+proporción \(p\) de los datos menores a el. Percentiles y
+cuantiles son valores equivalentes. en este texto nos
+trabajaremos con el termino PERCENTIL.
+
+Los percentiles de orden \(0.25\%\), \(0.50\%\) y \(0.75\%\)
+son llamos de \textbf{primer cuartil} simbolizado por \(C_1\),
+\textbf{segundo cuartil} simbolizado por \(C_2\) y \textbf{tercer
+cuartil} simbolizdo por \(C_3\), respectivamente. Los
+\textbf{cuartiles}
+dividen a los datos ordenados en \(4\) partes con
+aproximadamente el
+mismo porcentaje de datos.
+
+Cuando \(p = 0.1, 0.2, \ldots , 0.9\), a los percentiles
+correspondientes se les llama \textbf{deciles}. Los
+\textbf{deciles} dividen a
+los datos ordenados en \(4\) partes con aproximadamente el
+mismo
+porcentaje de datos.
+
+En otras ocasiones se requiere dividir al conjunto de
+datos en cien porcentajes iguales, y
+entonces cuando \(p = 0.01, 0.02, \ldots , 0.99\) a los
+cuantiles correspondientes se les llama
+percentiles.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-66}{}{\label{exm:unnamed-chunk-66} }Presentamos los valores extremos y los cuartiles de la
+variable \(hp\).
+\(x_{(1)}= 52\), \(Q_1= 96.5\), \(Q_2 = 123\) , \(Q_3 = 180\) y
+\(x_{(n)}= 335\).
+\end{example}
+
+\hypertarget{medidas-de-asimetruxeda-y-curtosis}{%
+\subsection{Medidas de asimetría y curtosis}\label{medidas-de-asimetruxeda-y-curtosis}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-67}{}{\label{def:unnamed-chunk-67} }La cantidad que llamaremos \textbf{coeficiente de asimetría}
+\(\kappa\) (en inglés \emph{skewness})
+es una medida de la asimetría (falta de simetría) de un
+conjunto de datos dados por:
+\[ \kappa = \frac{1}{n \times s_x^3} \sum_{i=1}^n (x_i -
+                                      \bar{x}_m)^3. \]
+
+Si \(\kappa < 0\), la distribución de frecuencias es
+\textbf{asimétrica a la izquerda}. Si \(\kappa >0\),
+la distribución de frecuencias es \textbf{asimétrica a la
+derecha}. Si \(\kappa=0\), la distribución de
+frecuencias es \textbf{simétrica}.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-68}{}{\label{def:unnamed-chunk-68} }
+Sea \(x_1, \ldots , x_n\) una colección de datos numéricos
+con media \(\bar{x}_n\) y desviación
+estándar \(s_x\). La \textbf{curtosis}, que denotaremos por la
+letra \(\nu\), es un número que
+se define de la siguiente manera:
+
+\[ \nu =  \frac{1}{n \times s_x^4} \sum_{i=1}^n (x_i -
+                                      \bar{x}_m)^4.\]
+
+Si \(\nu<0\), la distribución de frecuencias es
+\textbf{platicúrtica}, decaimiento lento, colas largas.
+Si \(\nu>0\), la distribución de frecuencias
+\textbf{leptocúrtica}, decaimiento rápido, colas cortas. Si
+\(\nu=0\), la distribución de frecuencias es
+\textbf{mesocúrtica}, frecuencia aproximada por la densidad
+Gaussiana.
+\end{definition}
+
+La siguiente figura muestra seis gráficos demostrativos de los
+posibles casos de formas de asimetria y curtosis que podrian tomar los
+datos representados histogramas.
+
+\begin{verbatim}
+## Loading required package: stats4
+\end{verbatim}
+
+\begin{verbatim}
+## 
+## Attaching package: 'sn'
+\end{verbatim}
+
+\begin{verbatim}
+## The following object is masked from 'package:stats':
+## 
+##     sd
+\end{verbatim}
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-69-1.pdf}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-70}{}{\label{exm:unnamed-chunk-70} }Coeficiente de asimetría y curtosis para los datos
+\(hp\) de la base \emph{mtcars} son \(\kappa = 0.73\)
+(asimetría a la derecha) y \(\nu = -0.135\)
+(platocúrtica), respectivamente.
+\end{example}
+
+Vemos esto en un histograma
+
+\begin{Shaded}
+\begin{Highlighting}[]
+\KeywordTok{hist}\NormalTok{(mtcars}\OperatorTok{$}\NormalTok{hp, }\DataTypeTok{main =} \StringTok{"Histograma para hp"}\NormalTok{, }\DataTypeTok{xlab =}
+       \StringTok{"hp"}\NormalTok{, }\DataTypeTok{col =} \StringTok{"gray"}\NormalTok{ )}
+\end{Highlighting}
+\end{Shaded}
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-71-1.pdf}
+
+\hypertarget{operaciuxf3n-de-resumen-de-datos-bivariados}{%
+\section{Operación de resumen de datos bivariados}\label{operaciuxf3n-de-resumen-de-datos-bivariados}}
+
+En esta sección presentaron un análisis de asociación de
+dos tipos: correlación lineal entre dos variables
+continuas y analisis de
+asociación entre dos variables categóricas.
+
+\hypertarget{gruxe1ficos-de-dispersiuxf3n}{%
+\section{Gráficos de dispersión}\label{gruxe1ficos-de-dispersiuxf3n}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-72}{}{\label{def:unnamed-chunk-72} }Sea \((x_1, y_1), \ldots, (x_n, y_n)\) una muestra
+de tamaño \(n\) de
+datos pareados en que \((x_i,y_i)\) fueron
+observados desde una
+misma unidad o individuo para las variables \(X\) e
+\(Y\),
+respectivamente. Un \textbf{gráfico de dispersión} para
+esta muestra es
+la representación de estos puntos en el plano
+Cartesiano. En
+general, el objetivo es determinar si existe
+alguna relación
+funcional \(y=f(x)\) evidenciada por los datos.
+\end{definition}
+
+Presentamos ejemplos de posibles tendencia de
+asociaciones entre variables.
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-73-1.pdf}
+
+\textbf{Interpretación:} La figura (A) muestra un caso
+donde no existe una clara asociación entre las
+variables. La figura (B) muestra una fuerte
+asociación lineal (directamente proporcional). La
+figura (C) muestra una fuerta asociación linea
+negativa (inversamente proporcional). La figura
+(D) muestra un caso de asociación NO LINEAL del
+tipo inversa.
+
+Presentamos una matriz de correlaciones para las
+variables mpg,
+disp, drat y wt la base de datos \emph{mtcars}. Este
+tipo de gráfico es útil para identificar posibles
+relaciones lineales o no lineales entre variables
+de una base de datos.
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-74-1.pdf}
+
+Notamos una asociación lineal entre mpg (millas
+recorridas por galón lleno) y drat\footnote{La relación del eje
+  es el número de revoluciones que el eje de salida o el
+  eje de transmisión necesita hacer para hacer girar el
+  eje una vuelta completa.} (revoluciones del eje)la
+cual exploramos
+de forma especifica a seguir.
+
+\begin{verbatim}
+## `geom_smooth()` using formula 'y ~ x'
+\end{verbatim}
+
+\includegraphics{Introduccion_prob_estad_bookdown_files/figure-latex/unnamed-chunk-75-1.pdf}
+
+Unos de los objetivos consiste en determinar la
+fórmula de la
+recta que pasa por ``en medio de los puntos''.
+
+\hypertarget{medidas-de-asociaciuxf3n-entre-dos-variables}{%
+\section{Medidas de asociación entre dos variables}\label{medidas-de-asociaciuxf3n-entre-dos-variables}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-76}{}{\label{def:unnamed-chunk-76} }Sea \(\bar{x}_n\) y \(\bar{y}_n\) la
+media de los datos observados de X e Y,
+respectivamente. La
+covarianza entre estas dos variables es un
+número que se denota por cov\((x,y)\) calculado por:
+
+\[ \operatorname{cov}(x,y)=\frac{1}{n}\sum_{i=1}^
+{n}\left(x_{i}-
+ \bar{x}\right)\left(y_{i}-\bar{y}\right). \]
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-77}{}{\label{def:unnamed-chunk-77} }El \textbf{coeficiente de correlación muestral} entre
+estas dos
+variables \(X\) e \(Y\) es un número que se denota
+por \(r(x, y)=r\).
+Este
+coeficiente se define de la siguiente forma.
+\[r(x,y)= r =\frac{\operatorname{cov}(x,y)}{\sqrt
+  { s_x^2  \times s_y^2}} \mbox{ donde
+    } -1 < r < 1.\]
+El coeficiente \(r\) mide la asociación lineal entre
+los datos
+observados de \(X\) e \(Y\).
+Si \(r = 0\), decimos que \textbf{no existe} asociación
+lineal entre
+los datos. Si \(r<0\), decimos que existe una
+\textbf{correlaciónlineal
+negativa} o inversamente proporcional entre los
+datos. Si, \(r > 0\), decimos que existe una \textbf{correlación lineal
+positiva} entre
+los datos o directamente proporcional.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-78}{}{\label{exm:unnamed-chunk-78} }
+Para los datos de mpg y drat, la covariancia es
+\(2.20\) y el
+coeficiente \(r=0.68\) es decir existe una
+asociación lineal
+positiva (o directamente proporcional) en mpg y
+drat.
+Interpretación: si los valores de mpg crecen,
+también lo hace
+drat. Si los valores de mpg decrecen, también lo
+hacen drat.
+\end{example}
+
+\hypertarget{recta-media-estimada}{%
+\section{Recta media estimada}\label{recta-media-estimada}}
+
+Consideremos un par de variables, una de las
+cuales será denominada variable de entrada, y la
+otra, variable de respuesta.
+Supongamos que para un valor dado, \(x\), de la
+variable de
+entrada, la variable de respuesta, \(y\), se puede
+expresar en la forma
+
+\[ Y = \beta_0 + \beta_1 x + e.\]
+Los coeficientes \(\beta_0\) y \(\beta_1\) son
+llamados los
+parámetros del modelo. Se asume que la variable
+\(e\), denominada
+error aleatorio, es una variable aleatoria con
+media \(0\), es
+decir, asume valores muy cercano a \(0\).
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-79}{}{\label{def:unnamed-chunk-79} }La relación entre la variable de \textbf{\emph{respuesta
+(dependiente,output)}}, \(Y\), y la variable de
+\textbf{\emph{entrada
+(independiente, input)}}, \(x\), especificadas
+ambas en la anterior
+ecuación, se denomina regresión lineal simple.
+\end{definition}
+
+Para los pares de datos dados \((x_i, y_i), i = 1, . . . , n,\) los
+estimadores de (por) mínimos cuadrados son los
+valores de
+\(\beta_0\) y \(\beta_1\) que hacen lo más pequeño
+posible.
+
+\[ \sum_{i=1}^{n}
+\epsilon_{i}^{2}=\sum_{i=1}^{n}\left(y_{i}-
+\beta_0-\beta_1
+x_{i}\right)^{2} \]
+
+lo más pequeño posible.
+
+Se puede demostrar que los estimadores de mínimos
+cuadrados de
+\(\beta_0\) y \(\beta_1\) dados por
+
+\[
+\hat{\beta}_0=\frac{\sum_{i=1}^{n}\left(x_{i}-
+\bar{x}\right)\left(y_
+{i}-\bar{y}\right)}{\sum_{i=1}^{n}\left(x_{i}-
+\bar{x}\right)^{2}}
+\text{ y } 
+\hat{\beta}_1=\bar{y}-\hat{\beta} \bar{x}
+\]
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-80}{}{\label{def:unnamed-chunk-80} }La recta
+\[ \widehat{y} = \widehat{\beta}_0 +
+\widehat{\beta}_1x.\]
+se denomina \textbf{recta de regresión media estimada}:
+\(\widehat{\beta}_1\) es la pendiente y
+\(\widehat{\beta}_0\) es el
+intercepto constante (o término independiente) de
+la recta.
+\end{definition}
+
+\textbf{Interpretación:} Para valores cercanos a cero
+de \(x\), observamos un valore medio cercano a
+\(\widehat{\beta_0}\) de \(y\). Por cada incremento
+(o decrecimo) de \(x\), observamos un incremento (o
+decrecimo) medio de \(\widehat{\beta_1}\) unidades
+en \(y\).
+
+Preveer una nueva observación de las variables respuesta
+\(y_{n+1}\) dado una variable de entrada \(x_{n+1}\) es
+posible directamente simplemente evaluando la ecuación
+de la recta, es decir:
+
+\[ \widehat{y}_{n+1} = \widehat{\beta}_0 +
+\widehat{\beta}_1x_{n+1}.
+\]
+
+\hypertarget{diagnostico-de-la-recta-lineal}{%
+\section{Diagnostico de la recta lineal}\label{diagnostico-de-la-recta-lineal}}
+
+\hypertarget{anuxe1lisis-de-asociaciuxf3n-entre-variables-categuxf3ricas}{%
+\section{Análisis de asociación entre variables categóricas}\label{anuxe1lisis-de-asociaciuxf3n-entre-variables-categuxf3ricas}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-81}{}{\label{def:unnamed-chunk-81} }Una \textbf{tabla de contingencia:} contiene las frecuencias
+conjuntas observadas en la muestra de pares de atributos
+expresadas por las unidades muestrales.
+\end{definition}
+
+Presentamos ejemplos de dos formas que podria tomar una
+tabla de contingencia de dimensión \(2\times 3\).
+
+\begin{table}[!htbp]
+\centering
+\caption{Tabla en frecuencia absoluta}
+\label{mm}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+s/r  &                 &  &  & \mbox{Suma}  \\ \hline
+  &        $N_{11}$ & $N_{12}$  & $N_{13}$  & $N_{1+}$  \\ \hline
+ &        $N_{21}$ & $N_{22}$  & $N_{23}$  &  $N_{2+}$ \\ \hline
+\mbox{Suma} & $N_{+1}$ & $N_{+2}$ & $N_{+3}$  &  n \\ \hline
+\end{tabular}
+\end{table}
+
+\begin{table}[!htbp]
+\centering
+\caption{Tabla en frecuencia relativa}
+\label{m}
+\begin{tabular}{|l|l|l|l|l|}
+\hline
+  s/r&                 &  &  & \mbox{Suma}  \\ \hline
+   &        $p_{11}$ & $p_{12}$  & $p_{13}$  &  $p_{1+}$ \\ \hline
+ &        $p_{21}$ & $p_{22}$  & $p_{23}$  & $p_{2+}$  \\ \hline
+\mbox{Suma} & $p_{+1}$ & $p_{+2}$    & $p_{+3}$  & 1  \\ \hline
+\end{tabular}
+\end{table}
+
+\textbf{Relación entre categorias de variables nominales}: la probabilidad de que una categria \(A\) ocurra es condicional (depende) o no depende (independiente) de otra categoria \(B\).
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-82}{}{\label{def:unnamed-chunk-82} }Estadística \textbf{chi-cuadrado} es dada por para una tabla de congencia de
+\(2\times 3\) es dada por:
+
+\begin{equation*}
+ Q= \sum_{i=1}^2 \sum_{j=1}^3 \frac{(N_{ij} - np_{i+}p_{+j})^2
+  }{np_{i+}p_{+j} }
+\end{equation*}
+
+en que \(Q>0\).
+
+\textbf{Coeficiente de contingencia} de Pearson es dado por:
+
+\begin{equation*}
+C= \sqrt{  \frac{Q}{Q+n}}  \in \left[0, \sqrt{\frac{k-1}{k}} \right]
+\mbox{en que } k = \min \{s,r \} .
+\end{equation*}
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-83}{}{\label{def:unnamed-chunk-83} }
+\textbf{Coeficiente de contingencia} de Pearson CORREGIDO es dado por:
+
+\begin{equation*}
+C^{\prime}= \sqrt{\frac{k}{k-1}}\times C \in [0,1].
+\end{equation*}
+
+Un \(C^{'}\) cercano a \(0\) indica características independientes. \(C'\)
+cerca de \(1\) señala una mayor medida de dependencia entre las
+características.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-84}{}{\label{exm:unnamed-chunk-84} }
+Consideremos la base de datos \emph{mtcars} y las variables nominales vs (tipo
+de motor en forma de v o recto) y am (cambio automatico o manual). Para
+este caso obtenemos un \(C'=0.235\). Es decir, la probabilidad de que un
+auto escogido al azar sea automatico o mecánico no depende de la forma de
+su motor.
+\end{example}
+
+\hypertarget{ejercicios}{%
+\section{Ejercicios}\label{ejercicios}}
+
+\begin{enumerate}
+\def\labelenumi{\arabic{enumi}.}
+\item
+  texto.
+\item
+  texto.
+\item
+  Texto.
+\end{enumerate}
+
+\hypertarget{prob}{%
+\chapter{Calculo de probabilidades}\label{prob}}
+
+\hypertarget{operaciones-con-eventos-posibles-de-experimentos}{%
+\section{Operaciones con eventos posibles de experimentos}\label{operaciones-con-eventos-posibles-de-experimentos}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-85}{}{\label{def:unnamed-chunk-85} }
+\textbf{Experimento científico}: es un experimento que se
+ejecuta controlando
+las circunstancias del entorno de manera de que este sea
+\textbf{replicable} y
+que las propiedades de los resultados posibles se
+mantengan constantes.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-86}{}{\label{def:unnamed-chunk-86} }
+El \textbf{espacio muestral} de un experimento es el conjunto
+(propuesto por el
+investigador) que incluye todos los posibles resultados
+de un experimento. Un caso que forma parte del espacio
+muestral es llamado de \textbf{evento posible} del
+experimento.
+Un \textbf{evento elemental} es un evento mínimo que puede de
+ocurrir.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-87}{}{\label{exm:unnamed-chunk-87} }
+Considere el experimento que consiste en lanzar un dado de seis caras al
+aire sobre una superficie plana y observar la cara superior para registrar
+el número que muestre. Incertidumbre: el dado podría mostrar un número del
+uno al seis. El espacio muestral son los números del \(1\) al \(6\). Ejemplo
+de eventos obtenemos un número par, obtenemos un número impar, obtenemos
+un 5 y obtenemos un múltiplo de \(3\). Un evento imposible seria
+obtenemos un número mayor a 7. Un evento elemental es obtenemos el número \(5\).
+\end{example}
+
+Una herramienta para representar eventos de un experimento es la teoría
+ingenua de conjuntos. Usaremos la letra \(S\) para representar el espacio
+muestral. Un evento elemental es simbolizado por \(\omega \in S\). Un evento
+\(A\) del experimento será un subconjunto de \(S\), es decir \(A\subseteq S\).
+Los eventos se pueden describir por \emph{extensión} o por \emph{comprensión}.
+
+Presentamos un ejemplo:
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-88}{}{\label{exm:unnamed-chunk-88} }
+- Por compresión: \(\omega\in S\) tal que \(\omega=1,\ldots, 6\). Un evento
+\(\omega \in A\) siempre que \(\omega=2,4,6\) (números pares). Evento elemental
+\(\omega \in B\) siempre que \(\omega=5\). Otra forma de escribir \(S\) por comprensión es
+
+\[S =\{\omega: \omega=1,\ldots,6 \} . \]
+
+\begin{itemize}
+\tightlist
+\item
+  Por extensión: \(S=\{1,2,3,4,5,6\}\), \(A= \{2, 4, 6 \}\) y \(B=\{5\}\).
+\end{itemize}
+\end{example}
+
+Operaciones con eventos (conjuntos). Las operaciones de eventos de un
+experimento son transformaciones de uno o más eventos en otros eventos del
+experimento. Consideramos las siguientes:
+
+\begin{itemize}
+\tightlist
+\item
+  La union de \(A\) y \(B\), simbolizado por \(A\cup B\), transforma \(A\) y \(B\) en
+  el evento \(A\cup B\) que contiene todos los eventos elementales de \(A\) y
+  \(B\) juntos. Es decir,
+\end{itemize}
+
+\[A \cup B = \{\omega \in S: \omega \in A \mbox{ o también } \omega \in B
+\}. \]
+
+\begin{itemize}
+\tightlist
+\item
+  La intersección de \(A\) y \(B\), simbolizado por \(A \cap B\), transforma \(A\)
+  y \(B\) en el evento \(A\cap B\) que contiene todos los eventos elementales
+  en común de \(A\) y \(B\).
+\end{itemize}
+
+\[A \cap B = \{\omega \in S: \omega \in A \mbox{ y a su vez } \omega \in B
+\}. \]
+
+\begin{itemize}
+\tightlist
+\item
+  El complemento de A, simbolizado por \(A^c\), transforma \(A\) en el evento
+  \(A^c\) que contiene todos los eventos elementales que no están en \(A\), pero
+  si están en \(S\).
+\end{itemize}
+
+\[ A^c = \{\omega\in S: \omega \notin A \}. \]
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-89}{}{\label{def:unnamed-chunk-89} }
+Una lista \(A_1, \ldots, A_k\) de eventos de \(S\) , simbolizada por
+\(\mathcal{A}\) es llamada de una \textbf{clase de eventos} de \(S\).
+La clase \(\mathcal{A}\) es una álgebra de sucesos si cumple las siguientes
+condiciones:
+
+\begin{itemize}
+\item
+  \(S \in \mathcal{A}\).
+\item
+  Todas las uniones finitas de eventos de \(S\) estan también en \(S\).
+\item
+  El complemento de todos los eventos de \(S\) también están en \(S\).
+\end{itemize}
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-90}{}{\label{def:unnamed-chunk-90} }Sigma álgebra de Borel (pendiente).
+\end{definition}
+
+\hypertarget{medida-de-probabilidad-y-experimentos-aleatorios}{%
+\section{Medida de probabilidad y experimentos aleatorios}\label{medida-de-probabilidad-y-experimentos-aleatorios}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-91}{}{\label{def:unnamed-chunk-91} }
+Sea \(\mathcal{A}\) una álgebra de eventos de \(S\). Una función \(\mbox{Pr}: \mathcal{A}\to [0,1]\) que le asigna a cada evento de \(\mathcal{A}\) un
+número dentro del intervalo \([0,1]\) es llamada de \textbf{medida de
+probabilidad finita} siempre que satisfaga las siguientes condiciones:
+
+\begin{itemize}
+\item
+  1 \(\mbox{Pr}(A)\geq 0\).
+\item
+  2 \(\mbox{Pr}(S) =1\).
+\item
+  3 \(A_1,\ldots, A_n\in \mathcal{A}\) disjuntos (\(2\) a \(2\)), entonces
+
+  \[ \mbox{Pr}\left(\bigcup_{k=1}^{n} A_k \right)=
+  \sum_{k=1}^{n}\mbox{Pr}(A_k). \]
+\end{itemize}
+\end{definition}
+
+Una medida de probabilidad es una operación que mide la incertidumbre del
+evento \(A\) en un número en \([0,1]\). Esta medida le da el máximo valor
+al espacio muestral. La suma de probabilidades de eventos disjuntos es la
+probabilidad de las uniones.
+
+Propiedades de la medida de probabilidad. Una medida de probabilidad que
+satisface 1 a 3 satisface las siguientes propiedades:
+
+\begin{itemize}
+\tightlist
+\item
+  Pr\((A \cup B)\)= Pr\((A)\)+ \(\mbox{Pr}(B)\) - Pr\((A\cap B)\).
+\item
+  Pr\((A^c)= 1-\mbox{Pr}(A)\).
+\end{itemize}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-92}{}{\label{def:unnamed-chunk-92} }
+Sea \(A\) un evento de un experimento con espacio muestral \(S\) de
+con un número de eventos elementales finito. Se define la \textbf{probabilidad
+clásica} del evento \(A\) como
+el cociente
+
+\[\mbox{Pr}(A)=\frac{ \mbox{Número de casos a favor de } A}{ \mbox{Número
+  de casos totales (a favor de $S$)}}.\]
+
+Este cálculo de probabilidad también es conocida como la \textbf{regla de
+Laplace}.
+\end{definition}
+
+\textbf{Principio de razón insuficiente:} sino tenemos información previa o no
+queremos asumir un sesgo personal sobre la incertidumbre de una propiedad
+muestral, entonces debemos asignar la \emph{misma probabilidad} a cada evento
+puntual de \(\Omega\). La medida de probabilidad de un evento \(A\) es la razón
+entre el número de casos a favor de \(A\) y el número tal de casos posibles.
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-93}{}{\label{def:unnamed-chunk-93} }
+Un \textbf{modelo de probabilidad} para un experimento es
+formado por el espacio muestral \(S\), una álgebra
+\(\mathcal{A}\) de eventos de \(S\) y
+una medida de probabilidad de Pr. Esto puede ser
+representado por la tripla \((S, \mathcal{A}, \mbox{Pr})\)
+
+Un \textbf{experimento aleatorio} es un \emph{experimento} si y
+solmente si en cuya construcción tiene asociado una
+medida de probabilidad
+para sus eventos.
+\end{definition}
+
+\hypertarget{interpretaciuxf3n-frecuentista-de-una-medida-de-probabilidad}{%
+\subsection{Interpretación frecuentista de una medida de probabilidad}\label{interpretaciuxf3n-frecuentista-de-una-medida-de-probabilidad}}
+
+Supongamos que repetimos un mismo experimento
+secuencialmente. Los primeros \(n\) resultados posibles
+son representados por \(\omega_1 , \omega_2, \ldots, \omega_n\) y que \(\mathbb{I}_A (\omega_i)= 1\)
+cuando \(\omega_i \in A\). Luego, según la interpretación
+frecuentista, para un máximo de diferencia absoluta
+\(\epsilon\) siempre va a existir un momento de repetición
+\(n_0\) del experimento tal que:
+
+\[\big | 1/n\sum_{i=1}^{n} \mathbb{I}_A(\omega_i) -
+\mbox{Pr}(A)\big |
+< \epsilon, \forall n\geq n_0\].
+
+Es decir, a partir de una repetición finita del
+experimento, la diferencia entre \(\mbox{Pr}(A)\) y
+\(1/n\sum_{i=1}^{n} \mathbb{I}_A(\omega_i)\) es tan
+pequeña
+como querramos. Es decir Pr\((A)\) es el \textbf{límite de las
+frecuencias relativas} de observar eventos elementales
+de \(A\) en la replicación secuencial de un mismo
+experimento.
+
+\hypertarget{propiedades-buxe1sicas-de-la-medida-de-probabilidad}{%
+\section{Propiedades básicas de la medida de probabilidad}\label{propiedades-buxe1sicas-de-la-medida-de-probabilidad}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-94}{}{\label{def:unnamed-chunk-94} }Probabilidad conjunta, marginal y condicional.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-95}{}{\label{def:unnamed-chunk-95} }Eventos estocasticamente independientes.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-96}{}{\label{def:unnamed-chunk-96} }Probabilidad total.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-97}{}{\label{def:unnamed-chunk-97} }Teorema de Bayes.
+\end{definition}
+
+\hypertarget{resultados-buxe1sicos-de-combinatoria}{%
+\section{Resultados básicos de combinatoria}\label{resultados-buxe1sicos-de-combinatoria}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-98}{}{\label{def:unnamed-chunk-98} }Principio básico del conteo.
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-99}{}{\label{def:unnamed-chunk-99} }Principio básico del conteo generalizado.
+\end{definition}
+
+\hypertarget{var}{%
+\chapter{Variables aleatorias y sus distribuciones}\label{var}}
+
+\hypertarget{elementos-buxe1sicos}{%
+\section{Elementos básicos}\label{elementos-buxe1sicos}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-100}{}{\label{def:unnamed-chunk-100} }Sea \(S\) el espacio muestral de un experimento. Una función \(X\) con valores reales que le otorga a cada elemento de \(S\) un valor numérico es \textbf{variable aleatoria}. El conjunto de todos los valores posibles que puede asumir \(X\) es llamado de espacio muestral de \(X\) y es denotado por \(\mathcal{X}\). Usaremos la notación \(X:S\to \mathcal{X}\).
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-101}{}{\label{exm:unnamed-chunk-101} }
+- \(X_1\): número de caras que resultan al lanzar \(10\) veces un
+monedas al aire.
+
+\begin{itemize}
+\item
+  \(X_2\): el número de seis al lanzar un dado \(15\) veces.
+\item
+  \(X_3\): el número de accidentes por semana que ocurren una
+  empresa.
+\item
+  \(X_4\): el consumo de leña por casas en una ciudad.
+\end{itemize}
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-102}{}{\label{def:unnamed-chunk-102} }
+La función de densidad \(f\) para una variable aleatoria
+continua \(X\) cuyo espacio muestral es \(\mathcal{X}\) es
+una función que modela la variabilidad de los posibles
+valores de \(X\) y nos ayuda a calcular la probabilidad de
+que ella asuma determinados valores. Esta función
+satisface las siguientes propiedades.
+
+\begin{itemize}
+\tightlist
+\item
+  \(f(x)\geq 0\) para todo \(x\).
+\item
+  \(\int_{\mathcal{X}}f(x)dx=1\).
+\end{itemize}
+
+La probabilidad de que \(X\in (a,b)\) es el área bajo la
+curva de \(f\) limitado al intervalo \((a,b)\).
+\end{definition}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-103}{}{\label{def:unnamed-chunk-103} }
+Por otro lado, la función de probabilidad \(p\) para una
+variable aleatoria discreta \(X\) cuyo espacio muestral es
+\(\mathcal{X}\) es una función que modela la variabilidad
+de los posibles valores de \(X\) y nos ayuda a calcular la
+probabilidad de que ella asuma determinados valores.
+Esta función satisface las siguientes propiedades.
+
+\begin{itemize}
+\tightlist
+\item
+  \(p(x)\geq 0\) para todo \(x\).
+\item
+  \(\sum_{x\in \mathcal{X}}p(x)=1\).
+\end{itemize}
+
+La probabilidad de que \(X\in \{a_1, \ldots, a_k \}\) es
+la suma \(\sum_{x \in \{a_1, \ldots, a_k \}}p(x)\).
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-104}{}{\label{exm:unnamed-chunk-104} }
+Consideremos la función de densidad \(f\) dada por
+\[f(x)= \frac{1}{\pi(1+x^2)}, \quad x\in R, \]
+
+en que \(\pi\) es la constante pi.
+
+La función de densidad \(p\) dada por
+\[p(x)=(1-1/6)^{x-1}1/6, \quad x=1,2,\ldots. \]
+\end{example}
+
+Cuando \(f\) o \(p\) esta totalmente especificada, ambas son
+llamados de \textbf{modelo de probabilidad} para \(X\). Cuando \(f\) o
+\(p\) depende una constante \(\theta\) asumida como
+desconocida, entonces ellas son llamadas de \textbf{modelo
+estadístico} para \(X\). El objetivo de los métodos de
+inferencia es determinar valores plausibles de \(\theta\)
+desde una muestra observada.
+
+En el último caso \(f(x)\) es representada por
+\(f(x;\theta)\) indicando que \(f\) es una función de \(x\)
+para un valor de \(\theta\) que debe ser especificado. En el
+caso discreto, \(p(x)\) es representado por \(p(x;\theta)\).
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-105}{}{\label{def:unnamed-chunk-105} }
+La función de distribución acumulada de una variable
+aleatoria \(X\) es la funcion \(F(x)= \mbox{Prob}(X\leq x)\), en
+el caso
+continuo, es definida por
+\[ F(x)= \int_{-\infty}^x f(t;\theta)dt \]
+y en el caso discreto
+\[ F(x)=\sum_{t=-\infty}^{x}p(t;\theta).\]
+
+Propiedades de \(F(x)\):
+
+\begin{itemize}
+\tightlist
+\item
+  Pr\((a<X<b) = F(b)- F(a)\),
+\item
+  Pr\((X>a) = 1- F(a)\),
+\item
+  \(\lim_{x\to + \infty}F(x) =1\),\\
+\item
+  \(\lim_{x\to - \infty}F(x)=0\).
+\end{itemize}
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-106}{}{\label{exm:unnamed-chunk-106} }Para la función f y P antes presentadas, las respectivas funciones de
+probabilidad acumulada son,
+
+\[F(x)= \int_{-\infty}^{x} \frac{1}{\pi(1+t^2)} dt \]
+y
+\[ F(x)= \sum_{t= 0}^{x} (1-\pi)^{t-1}\pi  \]
+
+respectivamente.
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-107}{}{\label{def:unnamed-chunk-107} }
+Una variable aleatoria \(X\) es \textbf{discreta} si el conjunto de
+sus posibles
+resultados \(\mathcal{X}\) es finito o puede ser enumerados en
+la forma
+\(\{a_1,a_2,\ldots, a_n, \ldots\}\). Una variable aleatoria \(X\)
+es \textbf{continua} si existe una función de densidad para ella.
+\end{definition}
+
+\hypertarget{distribuciones-de-probabilidad-de-variables-aleatorias-discreta}{%
+\section{Distribuciones de probabilidad de variables aleatorias discreta}\label{distribuciones-de-probabilidad-de-variables-aleatorias-discreta}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-108}{}{\label{def:unnamed-chunk-108} }
+Una variable aleatoria \textbf{Bernoulli} es una indicadora de la
+ocurrencia de evento \(A \subseteq S\). Es decir, \(X=1\) cuando
+\(\omega \in A\) (ocurre \(A\)) con probabilidad \(p\) y \(X=0\)
+cuando \(\omega \notin A\) (no ocurre \(A\)) con probabilidad
+\(p\). Esto se representa por \(X \sim \mbox{Bernoulli}(p)\).
+
+La función de probabilidad de \(X\) es:
+\[p(x;\theta)= \theta^{x}(1-\theta)^{x-1} \mbox{ para } x=0,1
+  \mbox{ y } \theta \in (0,1). \]
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-109}{}{\label{exm:unnamed-chunk-109} }
+Consideremos el experimento del lanzamiento de una moneda al
+aire. Sea \(X=1\) cuando obtenemos una cara con
+probabilidad \(p=1/2\) y \(X=0\) cuando obtenemos un sello con
+probabilidad \(1-1/2\).
+
+Consideremos el experimento del lanzamiento de un dado al
+aire. Sea \(X=1\) cuando obtenemos una seis con
+probabilidad \(p=1/6\) y \(X=0\) cuando no con
+probabilidad \(1-1/6\).
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-110}{}{\label{def:unnamed-chunk-110} }
+Considere una repetición de mismo experimento \(n\) y sea
+\(X_1, X_2, \ldots,X_n\) una secuencia independiente de
+variables Bernoulli, en que \(X_i=1\) cuando \(\omega \in A\) con
+probabilidad \(\theta\) para \(i=1, \ldots, n\). Una variable
+\textbf{Binomial} \(Z\) es el número de caso a favor de \(A\) al
+repetir el experimento \(n\) veces, es decir:
+
+\[ Z = \sum_{i=1}^n X_i . \]
+
+Esto se representa por \(Z \sim \mbox{Binomial}(n,\theta)\). Su
+función de probabilidades es:
+
+\[ p(z;n,\theta)=\frac{n!}{z!(n-z)!}\theta^{z}(1-\theta)^{n-
+    z}.    \]
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-111}{}{\label{exm:unnamed-chunk-111} }
+En primer caso, considere el experimento de lanzar una moneda
+\(n=15\) veces y observar los lanzamientos de cara. Sea
+\(X_1=x_1,\ldots, X_n=x_n\) las indicadoras de observar este
+evento en cada repetición. Luego \(Z= \sum_{i=1}^{15}x_i\) es
+el número de caras observar al lanzar la moneda \(15\) veces.
+En este caso \(Z \sim \mbox{Binomial}(15, 1/2)\)
+
+En segundo caso, considere el experimento de lanzar un dado
+\(n=20\) veces y observar los números un seis. Sea
+\(X_1=x_1,\ldots, X_n=x_n\) las indicadoras de observar este
+evento en cada repetición. Luego \(Z= \sum_{i=1}^{20}x_i\) es
+el número de seis que observamos al lanzar el dado \(20\)
+veces. En este caso \(Z \sim \mbox{Binomial}(20, 1/6)\).
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-112}{}{\label{exm:unnamed-chunk-112} }
+Distribución multinomial (pendiente).
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-113}{}{\label{exm:unnamed-chunk-113} }
+Cuando \(X\) es una variable que mide el número eventos que
+ocurren en un determinado intervalo de tiempo \([c,c+t]\) de
+longitud \(t\). Sobre ciertas suposiciones, una de las opciones es
+el modelo de \textbf{Poisson} con un promedio de ocurrencias por
+intervalo igual a \(\lambda\).
+
+Una variable Poisson tiene función de probabilidad dada por:
+
+\[ p(x;\lambda)=\frac{ \mbox{e}^{-\lambda}\lambda^{x} }{x!}
+   \mbox{ para } x\in \mathbb{N} \mbox{ y } \lambda >0. \]
+
+y función de distribución acumulada dada por:
+
+\[F(x; \lambda)= \sum_{k=0}^{x}
+  \frac{\mbox{e}^{-\lambda}\lambda^{k}}{k!}.   \]
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-114}{}{\label{exm:unnamed-chunk-114} }
+- \(X\): número de accidentes por semana que ocurren en una
+industria papelera. Para \(\lambda=3\), si observamos repetidas
+observaciones de \(X\), luego observaríamos en promedio \(3\)
+accidentes por semana.
+
+\begin{itemize}
+\item
+  \(X\): número de accidentes en una carretera por día. Para
+  \(\lambda=4\), si observamos repetidas observaciones de \(X\), luego
+  observaríamos \(4\) accidentes en la carretera por día.
+\item
+  \(X\): número de partículas por minuto que emite una
+  sustancia radiactiva. Para \(\lambda=17\), si observamos
+  repetidas observaciones de \(X\), luego observaríamos en promedio
+  \(17\) partículas por minuto.
+\end{itemize}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-115}{}{\label{exm:unnamed-chunk-115} }
+Distribución geométrica (pendiente).
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-116}{}{\label{exm:unnamed-chunk-116} }
+Distribución binomial negativa (pendiente).
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-117}{}{\label{exm:unnamed-chunk-117} }
+Distribución hipergeométrica (pendiente).
+\end{example}
+
+\hypertarget{distribuciones-de-probabilidad-de-variables-aleatorias-continuas.}{%
+\section{Distribuciones de probabilidad de variables aleatorias continuas.}\label{distribuciones-de-probabilidad-de-variables-aleatorias-continuas.}}
+
+En esta sección presentamos algunos modelos para variables
+aleatorias continuas.
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-118}{}{\label{exm:unnamed-chunk-118} }
+Una variable \(X>0\) sigue un modelo \textbf{Exponencial} con taza de
+concentración \(1/\lambda\) cuando su función de densidad es dada
+por:
+
+\[ f(x;\lambda)= \lambda \mbox{e}^{-x\lambda}, \mbox{ para }
+     x>0,\ \lambda>0.     \]
+
+La taza de concentración \(1/\lambda\) indica el promedio de tiempo
+medio de \(X\). El parámetro de decaimiento \(\lambda\) nos indica la
+forma de la densidad en el sentido de que indica que tan rápido decae
+(va hacia cero) la cola izquierda de \(f(x;\lambda)\).
+
+Su función de probabilidad acumulada es dada por:
+
+\[F(x;\lambda)= \int_{-\infty}^{x} \lambda \mbox{e}^{-t\lambda}dt=
+    1- \mbox{e}^{-x\lambda}.   \]
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-119}{}{\label{exm:unnamed-chunk-119} }
+Una variable aleatoria se suele considerar Exponencial cuando esta
+es contínua y mide el tiempo de ``vida'' o de ``duración'' de vida
+útil de objetos. Por ejemplo:
+
+\begin{itemize}
+\item
+  \(X\): tiempo de funcionamiento de una máquina procesadora
+  de leche en miles de horas. Para \(\lambda= 1/10\), si
+  observásemos repetidos tiempos de funcionamiento de
+  muchas máquinas del mismo tipo, observaríamos un promedio
+  de \(10\) mil horas.
+\item
+  \(X\): tiempo de vida de circuitos eléctricos en miles de horas.
+  Para \(\lambda=1/5\), si observásemos repetidos
+  tiempos de vida de circuitos, observaríamos un promedio
+  de \(5\) mil horas.
+\item
+  \(X\): tiempos de llegada en minutos de clientes a una fila de
+  banco. Para \(\lambda= 1/4\), si observásemos una gran
+  cantidad de observaciones de esta, observaríamos un
+  promedio de \(4\) minutos.
+\end{itemize}
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-120}{}{\label{def:unnamed-chunk-120} }
+Una variable normal \(X\) se usa para modelar variables límites o
+aproximadamente simetricas. Su función de densidad es dada por
+
+\[ f(x;\mu, \sigma) =
+\frac{1}{\sigma\sqrt{2\pi}}\exp\left[-\frac{(x -
+\mu)^2}{2\sigma^2}  \right],  \]
+
+donde \(\mu \in \mathbb{R}\) es el parámetro posición,
+\(\sigma>0\) es la varianza y \(x\in \mathbb{R}\).
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-121}{}{\label{exm:unnamed-chunk-121} }
+- \(X\): puntajes de pruebas estandarizadas.
+
+\begin{itemize}
+\tightlist
+\item
+  \(X\): promedios de variables con más de \(30\) datos observados.
+\end{itemize}
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-122}{}{\label{exm:unnamed-chunk-122} }Distribución Beta.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-123}{}{\label{exm:unnamed-chunk-123} }
+Distribución Gumbel.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-124}{}{\label{exm:unnamed-chunk-124} }Distribución Weibull.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-125}{}{\label{exm:unnamed-chunk-125} }Distribución uniforme.
+\end{example}
+
+\hypertarget{varbi}{%
+\chapter{Distribuciones bidimensionales}\label{varbi}}
+
+\hypertarget{uno}{%
+\section{Uno}\label{uno}}
+
+\hypertarget{dos}{%
+\section{Dos}\label{dos}}
+
+\hypertarget{expected}{%
+\chapter{Valor esperado}\label{expected}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-126}{}{\label{def:unnamed-chunk-126} }Media y variancia poblacional.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-127}{}{\label{exm:unnamed-chunk-127} }Ejemplos media y variancia poblacional.
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-128}{}{\label{def:unnamed-chunk-128} }Función generadora de probabilidad y momentos.
+\end{definition}
+
+\hypertarget{valor-esperado-de-modelos-discretos}{%
+\section{Valor esperado de modelos discretos}\label{valor-esperado-de-modelos-discretos}}
+
+\hypertarget{valor-esperado-de-modelos-discretos-1}{%
+\section{Valor esperado de modelos discretos}\label{valor-esperado-de-modelos-discretos-1}}
+
+\hypertarget{ass}{%
+\chapter{Resultados asintóticos.}\label{ass}}
+
+\hypertarget{xmuestras}{%
+\chapter{Funciones de muestras aleatorias}\label{xmuestras}}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-129}{}{\label{def:unnamed-chunk-129} }Muestras aleatorias.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-130}{}{\label{exm:unnamed-chunk-130} }
+Muestras aleatorias ejemplo.
+\end{example}
+
+\begin{definition}
+\protect\hypertarget{def:unnamed-chunk-131}{}{\label{def:unnamed-chunk-131} }
+Distribuciones de muestreo de estadísticas.
+\end{definition}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-132}{}{\label{exm:unnamed-chunk-132} }La distribución de muestreo de \(\chi_n^2\).
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-133}{}{\label{exm:unnamed-chunk-133} }
+La distribución de muestreo de S2.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-134}{}{\label{exm:unnamed-chunk-134} }
+La distribución \(t\) de Student.
+\end{example}
+
+\begin{example}
+\protect\hypertarget{exm:unnamed-chunk-135}{}{\label{exm:unnamed-chunk-135} }
+La distribución F.
+\end{example}
+
+\hypertarget{puntual}{%
+\chapter{Estimadores Puntuales}\label{puntual}}
+
+\hypertarget{propuesta-de-informe}{%
+\section{Propuesta de informe}\label{propuesta-de-informe}}
+
+\textbf{Algo para definir}
+
+\hypertarget{intervalo}{%
+\chapter{Estimadres intervalares}\label{intervalo}}
+
+\hypertarget{hipo}{%
+\chapter{Prueba/contraste de hipótesis}\label{hipo}}
+
+\hypertarget{regre}{%
+\chapter{Regresión lineal}\label{regre}}
+
+\hypertarget{anova}{%
+\chapter{ANOVA de un factor.}\label{anova}}
+
+\hypertarget{apendices-formulas-y-calculos-algebraicos}{%
+\chapter*{Apendices: formulas y calculos algebraicos}\label{apendices-formulas-y-calculos-algebraicos}}
+\addcontentsline{toc}{chapter}{Apendices: formulas y calculos algebraicos}
+
+\hypertarget{referencias}{%
+\chapter*{Referencias}\label{referencias}}
+\addcontentsline{toc}{chapter}{Referencias}
+
+\bibliography{book.bib,packages.bib}
+
+\end{document}
