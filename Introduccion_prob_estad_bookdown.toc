@@ -1,0 +1,74 @@
+\babel@toc {spanish}{}
+\babel@toc {spanish}{}
+\contentsline {chapter}{OBJETIVOS Y ESTILO DEL DOCUMENTO}{5}{chapter*.2}
+\contentsline {section}{Ejemplo de operaciones aritmeticas}{5}{section*.3}
+\contentsline {section}{\numberline {0.1}Operaciones de representaciones gr\IeC {\'a}ficas}{7}{section.0.1}
+\contentsline {section}{\numberline {0.2}Operaciones Probabilisticas y Estad\IeC {\'\i }sticas}{7}{section.0.2}
+\contentsline {section}{Organizaci\IeC {\'o}n del documento}{8}{section*.4}
+\contentsline {chapter}{\numberline {1}OPERACIONES DE AN\IeC {\'A}LISIS EXPLORATORIO Y DE RESUMEN DE DATOS}{9}{chapter.1}
+\contentsline {section}{\numberline {1.1}Conceptos elementales}{9}{section.1.1}
+\contentsline {section}{\numberline {1.2}Variables observadas en experimentos}{13}{section.1.2}
+\contentsline {section}{\numberline {1.3}Agrupamiento de variables}{15}{section.1.3}
+\contentsline {section}{\numberline {1.4}Operaci\IeC {\'o}n de an\IeC {\'a}lisis exploratorio de datos}{15}{section.1.4}
+\contentsline {subsection}{\numberline {1.4.1}Operaciones de exploraci\IeC {\'o}n grafica de los datos: sin grupos}{16}{subsection.1.4.1}
+\contentsline {subsection}{\numberline {1.4.2}Operaciones de exploraci\IeC {\'o}n gr\IeC {\'a}fica de los datos: por grupos}{18}{subsection.1.4.2}
+\contentsline {subsection}{\numberline {1.4.3}Operaci\IeC {\'o}n de analisis de frecuencias}{18}{subsection.1.4.3}
+\contentsline {section}{\numberline {1.5}Operaci\IeC {\'o}n de resumen de datos univariados}{20}{section.1.5}
+\contentsline {subsection}{\numberline {1.5.1}Medidas de tendencia central}{20}{subsection.1.5.1}
+\contentsline {subsection}{\numberline {1.5.2}Medidas de dispersi\IeC {\'o}n}{20}{subsection.1.5.2}
+\contentsline {subsection}{\numberline {1.5.3}Percentiles, cuantiles, cuartiles y deciles}{21}{subsection.1.5.3}
+\contentsline {subsection}{\numberline {1.5.4}Medidas de asimetr\IeC {\'\i }a y curtosis}{22}{subsection.1.5.4}
+\contentsline {section}{\numberline {1.6}Operaci\IeC {\'o}n de resumen de datos bivariados}{23}{section.1.6}
+\contentsline {section}{\numberline {1.7}Gr\IeC {\'a}ficos de dispersi\IeC {\'o}n}{23}{section.1.7}
+\contentsline {section}{\numberline {1.8}Medidas de asociaci\IeC {\'o}n entre dos variables}{24}{section.1.8}
+\contentsline {section}{\numberline {1.9}Recta media estimada}{25}{section.1.9}
+\contentsline {section}{\numberline {1.10}Diagnostico de la recta lineal}{26}{section.1.10}
+\contentsline {section}{\numberline {1.11}An\IeC {\'a}lisis de asociaci\IeC {\'o}n entre variables categ\IeC {\'o}ricas}{26}{section.1.11}
+\contentsline {section}{\numberline {1.12}Ejercicios}{27}{section.1.12}
+\contentsline {chapter}{\numberline {2}OPERACIONES DE C\IeC {\'A}LCULO DE PROBABILIDADES}{29}{chapter.2}
+\contentsline {section}{\numberline {2.1}Operaciones con eventos posibles de experimentos}{29}{section.2.1}
+\contentsline {section}{\numberline {2.2}Medida de probabilidad y experimentos aleatorios}{31}{section.2.2}
+\contentsline {subsection}{\numberline {2.2.1}Interpretaci\IeC {\'o}n frecuentista de una medida de probabilidad}{32}{subsection.2.2.1}
+\contentsline {section}{\numberline {2.3}Propiedades b\IeC {\'a}sicas de la medida de probabilidad}{32}{section.2.3}
+\contentsline {section}{\numberline {2.4}Resultados b\IeC {\'a}sicos de combinatoria}{32}{section.2.4}
+\contentsline {chapter}{\numberline {3}VARIABLES ALEATORIAS Y SUS DISTRIBUCIONES}{33}{chapter.3}
+\contentsline {section}{\numberline {3.1}Elementos b\IeC {\'a}sicos}{33}{section.3.1}
+\contentsline {section}{\numberline {3.2}Distribuciones de probabilidad de variables aleatorias discreta}{35}{section.3.2}
+\contentsline {section}{\numberline {3.3}Distribuciones de probabilidad de variables aleatorias continuas.}{37}{section.3.3}
+\contentsline {chapter}{\numberline {4}DISTRIBUCIONES BIDEMENSIONALES}{39}{chapter.4}
+\contentsline {section}{\numberline {4.1}Uno}{39}{section.4.1}
+\contentsline {section}{\numberline {4.2}Dos}{39}{section.4.2}
+\contentsline {chapter}{\numberline {5}VALOR ESPERADO}{41}{chapter.5}
+\contentsline {section}{\numberline {5.1}Valor esperado de modelos discretos}{41}{section.5.1}
+\contentsline {section}{\numberline {5.2}Valor esperado de modelos discretos}{41}{section.5.2}
+\contentsline {chapter}{\numberline {6}Resultados asint\IeC {\'o}ticos.}{43}{chapter.6}
+\contentsline {chapter}{\numberline {7}Variables aleatorias funciones de una muestra aleatoria}{45}{chapter.7}
+\contentsline {section}{\numberline {7.1}Ejemplos de funciones de una muestra aleatoria}{45}{section.7.1}
+\contentsline {section}{\numberline {7.2}Variables aleatorias funciones de una muestra aleatoria normal}{46}{section.7.2}
+\contentsline {chapter}{\numberline {8}Estimadores Puntuales}{49}{chapter.8}
+\contentsline {section}{\numberline {8.1}Modelo estad\IeC {\'\i }stico para una muestra y sus par\IeC {\'a}metros}{49}{section.8.1}
+\contentsline {chapter}{\numberline {9}ESTIMADORES INTERVALARES}{51}{chapter.9}
+\contentsline {section}{\numberline {9.1}Estad\IeC {\'\i }sticos ancilares}{51}{section.9.1}
+\contentsline {section}{\numberline {9.2}Intervalos de confianza basados en estadisticos ancilares}{51}{section.9.2}
+\contentsline {subsection}{\numberline {9.2.1}Intervalos para un par\IeC {\'a}metro}{51}{subsection.9.2.1}
+\contentsline {subsection}{\numberline {9.2.2}Intervalos para la comparaci\IeC {\'o}n de dos par\IeC {\'a}metros}{51}{subsection.9.2.2}
+\contentsline {section}{\numberline {9.3}Tama\IeC {\~n}o muestral}{51}{section.9.3}
+\contentsline {section}{\numberline {9.4}Intervalos de confianza asint\IeC {\'o}ticos}{51}{section.9.4}
+\contentsline {section}{\numberline {9.5}Ejercicios}{51}{section.9.5}
+\contentsline {chapter}{\numberline {10}PRUEBA/ CONTRASTE DE HIP\IeC {\'O}TESIS}{53}{chapter.10}
+\contentsline {section}{\numberline {10.1}Elementos en contraste de hip\IeC {\'o}tesis.}{54}{section.10.1}
+\contentsline {section}{\numberline {10.2}Tipo de prueba de hip\IeC {\'o}tesis}{54}{section.10.2}
+\contentsline {subsection}{\numberline {10.2.1}Hipotesis unilaterales}{54}{subsection.10.2.1}
+\contentsline {subsection}{\numberline {10.2.2}Hipotesis bilaterales}{54}{subsection.10.2.2}
+\contentsline {subsection}{\numberline {10.2.3}Hipotesis compuestas (caso general)}{54}{subsection.10.2.3}
+\contentsline {section}{\numberline {10.3}Regi\IeC {\'o}n critica y p-valor}{54}{section.10.3}
+\contentsline {subsection}{\numberline {10.3.1}Relaci\IeC {\'o}n entre IC y contraste de hip\IeC {\'o}tesis}{54}{subsection.10.3.1}
+\contentsline {section}{\numberline {10.4}Tipo de errores y sus tama\IeC {\~n}os}{54}{section.10.4}
+\contentsline {subsection}{\numberline {10.4.1}Error del tipo I y II}{54}{subsection.10.4.1}
+\contentsline {subsection}{\numberline {10.4.2}Tama\IeC {\~n}os de los errores}{54}{subsection.10.4.2}
+\contentsline {subsection}{\numberline {10.4.3}Poder de los contrastes y el Lema de Neyman-Pearson}{54}{subsection.10.4.3}
+\contentsline {chapter}{\numberline {11}Regresi\IeC {\'o}n lineal}{55}{chapter.11}
+\contentsline {chapter}{\numberline {12}ANOVA de un factor.}{57}{chapter.12}
+\contentsline {chapter}{Apendices: algoritmos, f\IeC {\'o}rmulas y demostracioness}{59}{chapter*.5}
+\contentsline {section}{\numberline {12.1}Hola}{59}{section.12.1}
+\contentsline {chapter}{Referencias}{61}{chapter*.6}

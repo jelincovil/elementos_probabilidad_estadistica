@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Capítulo7 Funciones de muestras aleatorias | Introducción a la Probabilidad y la Estadística</title>
-  <meta name="description" content="Capítulo7 Funciones de muestras aleatorias | Introducción a la Probabilidad y la Estadística" />
+  <title>Capítulo7 Variables aleatorias funciones de una muestra aleatoria | ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA</title>
+  <meta name="description" content="Capítulo7 Variables aleatorias funciones de una muestra aleatoria | ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Capítulo7 Funciones de muestras aleatorias | Introducción a la Probabilidad y la Estadística" />
+  <meta property="og:title" content="Capítulo7 Variables aleatorias funciones de una muestra aleatoria | ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Capítulo7 Funciones de muestras aleatorias | Introducción a la Probabilidad y la Estadística" />
+  <meta name="twitter:title" content="Capítulo7 Variables aleatorias funciones de una muestra aleatoria | ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Jaime Lincovil C." />
 
 
-<meta name="date" content="2020-11-10" />
+<meta name="date" content="2021-02-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,18 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2.9001/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.9000/grViz.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.6.9000/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -131,11 +143,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Objetivos de la monografía</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dinámica-de-nuestra-comunicación"><i class="fa fa-check"></i>Dinámica de nuestra comunicación</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-de-la-monorafía"><i class="fa fa-check"></i>Organización de la monorafía</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>OBJETIVOS Y ESTILO DEL DOCUMENTO</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación"><i class="fa fa-check"></i>Operación</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-cotideana"><i class="fa fa-check"></i>Operación cotideana</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-aritmética"><i class="fa fa-check"></i>Operación aritmética</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-compuesta"><i class="fa fa-check"></i>Operación compuesta</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-compuesta-cotideana"><i class="fa fa-check"></i>Operación compuesta cotideana</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Operaciones de análisis exploratorio y resumen de datos</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-sobre-puntos"><i class="fa fa-check"></i>Operación sobre puntos</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-cotideanas-sobre-puntos"><i class="fa fa-check"></i>Operación cotideanas sobre puntos</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-multivaria"><i class="fa fa-check"></i>Operación multivaria</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-matricial"><i class="fa fa-check"></i>Operación matricial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-probabilistica-o-estadística"><i class="fa fa-check"></i>Operación probabilistica o estadística</a></li>
+<li><a href="index.html#operación-función-matemática">Operación <span class="math inline">\(=\)</span> función matemática</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-del-documento"><i class="fa fa-check"></i>Organización del documento</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Reducir y gráficar</a><ul>
 <li class="chapter" data-level="1.1" data-path="datos.html"><a href="datos.html#conceptos-elementales"><i class="fa fa-check"></i><b>1.1</b> Conceptos elementales</a></li>
 <li class="chapter" data-level="1.2" data-path="datos.html"><a href="datos.html#variables-observadas-en-experimentos"><i class="fa fa-check"></i><b>1.2</b> Variables observadas en experimentos</a></li>
 <li class="chapter" data-level="1.3" data-path="datos.html"><a href="datos.html#agrupamiento-de-variables"><i class="fa fa-check"></i><b>1.3</b> Agrupamiento de variables</a></li>
@@ -158,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11" data-path="datos.html"><a href="datos.html#análisis-de-asociación-entre-variables-categóricas"><i class="fa fa-check"></i><b>1.11</b> Análisis de asociación entre variables categóricas</a></li>
 <li class="chapter" data-level="1.12" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>1.12</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Calculo de probabilidades</a><ul>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Evento aleatório</a><ul>
 <li class="chapter" data-level="2.1" data-path="prob.html"><a href="prob.html#operaciones-con-eventos-posibles-de-experimentos"><i class="fa fa-check"></i><b>2.1</b> Operaciones con eventos posibles de experimentos</a></li>
 <li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#medida-de-probabilidad-y-experimentos-aleatorios"><i class="fa fa-check"></i><b>2.2</b> Medida de probabilidad y experimentos aleatorios</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#interpretación-frecuentista-de-una-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.2.1</b> Interpretación frecuentista de una medida de probabilidad</a></li>
@@ -166,29 +190,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#propiedades-básicas-de-la-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Propiedades básicas de la medida de probabilidad</a></li>
 <li class="chapter" data-level="2.4" data-path="prob.html"><a href="prob.html#resultados-básicos-de-combinatoria"><i class="fa fa-check"></i><b>2.4</b> Resultados básicos de combinatoria</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias y sus distribuciones</a><ul>
+<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> VARIABLES ALEATORIAS Y SUS DISTRIBUCIONES</a><ul>
 <li class="chapter" data-level="3.1" data-path="var.html"><a href="var.html#elementos-básicos"><i class="fa fa-check"></i><b>3.1</b> Elementos básicos</a></li>
 <li class="chapter" data-level="3.2" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-discreta"><i class="fa fa-check"></i><b>3.2</b> Distribuciones de probabilidad de variables aleatorias discreta</a></li>
 <li class="chapter" data-level="3.3" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-continuas."><i class="fa fa-check"></i><b>3.3</b> Distribuciones de probabilidad de variables aleatorias continuas.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> Distribuciones bidimensionales</a><ul>
+<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> DISTRIBUCIONES BIDEMENSIONALES</a><ul>
 <li class="chapter" data-level="4.1" data-path="varbi.html"><a href="varbi.html#uno"><i class="fa fa-check"></i><b>4.1</b> Uno</a></li>
 <li class="chapter" data-level="4.2" data-path="varbi.html"><a href="varbi.html#dos"><i class="fa fa-check"></i><b>4.2</b> Dos</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a><ul>
+<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> VALOR ESPERADO</a><ul>
 <li class="chapter" data-level="5.1" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos"><i class="fa fa-check"></i><b>5.1</b> Valor esperado de modelos discretos</a></li>
 <li class="chapter" data-level="5.2" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos-1"><i class="fa fa-check"></i><b>5.2</b> Valor esperado de modelos discretos</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="ass.html"><a href="ass.html"><i class="fa fa-check"></i><b>6</b> Resultados asintóticos.</a></li>
-<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Funciones de muestras aleatorias</a></li>
-<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
-<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#propuesta-de-informe"><i class="fa fa-check"></i><b>8.1</b> Propuesta de informe</a></li>
+<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Variables aleatorias funciones de una muestra aleatoria</a><ul>
+<li class="chapter" data-level="7.1" data-path="xmuestras.html"><a href="xmuestras.html#ejemplos-de-funciones-de-una-muestra-aleatoria"><i class="fa fa-check"></i><b>7.1</b> Ejemplos de funciones de una muestra aleatoria</a></li>
+<li class="chapter" data-level="7.2" data-path="xmuestras.html"><a href="xmuestras.html#variables-aleatorias-funciones-de-una-muestra-aleatoria-normal"><i class="fa fa-check"></i><b>7.2</b> Variables aleatorias funciones de una muestra aleatoria normal</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> Estimadres intervalares</a></li>
-<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> Prueba/contraste de hipótesis</a></li>
+<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
+<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#modelo-estadístico-para-una-muestra-y-sus-parámetros"><i class="fa fa-check"></i><b>8.1</b> Modelo estadístico para una muestra y sus parámetros</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> ESTIMADORES INTERVALARES</a><ul>
+<li class="chapter" data-level="9.1" data-path="intervalo.html"><a href="intervalo.html#estadísticos-ancilares"><i class="fa fa-check"></i><b>9.1</b> Estadísticos ancilares</a></li>
+<li class="chapter" data-level="9.2" data-path="intervalo.html"><a href="intervalo.html#intervalos-de-confianza-basados-en-estadisticos-ancilares"><i class="fa fa-check"></i><b>9.2</b> Intervalos de confianza basados en estadisticos ancilares</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="intervalo.html"><a href="intervalo.html#intervalos-para-un-parámetro"><i class="fa fa-check"></i><b>9.2.1</b> Intervalos para un parámetro</a></li>
+<li class="chapter" data-level="9.2.2" data-path="intervalo.html"><a href="intervalo.html#intervalos-para-la-comparación-de-dos-parámetros"><i class="fa fa-check"></i><b>9.2.2</b> Intervalos para la comparación de dos parámetros</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="intervalo.html"><a href="intervalo.html#tamaño-muestral"><i class="fa fa-check"></i><b>9.3</b> Tamaño muestral</a></li>
+<li class="chapter" data-level="9.4" data-path="intervalo.html"><a href="intervalo.html#intervalos-de-confianza-asintóticos"><i class="fa fa-check"></i><b>9.4</b> Intervalos de confianza asintóticos</a></li>
+<li class="chapter" data-level="9.5" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>9.5</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> PRUEBA/ CONTRASTE DE HIPÓTESIS</a><ul>
+<li class="chapter" data-level="10.1" data-path="hipo.html"><a href="hipo.html#elementos-en-contraste-de-hipótesis."><i class="fa fa-check"></i><b>10.1</b> Elementos en contraste de hipótesis.</a></li>
+<li class="chapter" data-level="10.2" data-path="hipo.html"><a href="hipo.html#tipo-de-prueba-de-hipótesis"><i class="fa fa-check"></i><b>10.2</b> Tipo de prueba de hipótesis</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="hipo.html"><a href="hipo.html#hipotesis-unilaterales"><i class="fa fa-check"></i><b>10.2.1</b> Hipotesis unilaterales</a></li>
+<li class="chapter" data-level="10.2.2" data-path="hipo.html"><a href="hipo.html#hipotesis-bilaterales"><i class="fa fa-check"></i><b>10.2.2</b> Hipotesis bilaterales</a></li>
+<li class="chapter" data-level="10.2.3" data-path="hipo.html"><a href="hipo.html#hipotesis-compuestas-caso-general"><i class="fa fa-check"></i><b>10.2.3</b> Hipotesis compuestas (caso general)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="hipo.html"><a href="hipo.html#región-critica-y-p-valor"><i class="fa fa-check"></i><b>10.3</b> Región critica y p-valor</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="hipo.html"><a href="hipo.html#relación-entre-ic-y-contraste-de-hipótesis"><i class="fa fa-check"></i><b>10.3.1</b> Relación entre IC y contraste de hipótesis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="hipo.html"><a href="hipo.html#tipo-de-errores-y-sus-tamaños"><i class="fa fa-check"></i><b>10.4</b> Tipo de errores y sus tamaños</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="hipo.html"><a href="hipo.html#error-del-tipo-i-y-ii"><i class="fa fa-check"></i><b>10.4.1</b> Error del tipo I y II</a></li>
+<li class="chapter" data-level="10.4.2" data-path="hipo.html"><a href="hipo.html#tamaños-de-los-errores"><i class="fa fa-check"></i><b>10.4.2</b> Tamaños de los errores</a></li>
+<li class="chapter" data-level="10.4.3" data-path="hipo.html"><a href="hipo.html#poder-de-los-contrastes-y-el-lema-de-neyman-pearson"><i class="fa fa-check"></i><b>10.4.3</b> Poder de los contrastes y el Lema de Neyman-Pearson</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="regre.html"><a href="regre.html"><i class="fa fa-check"></i><b>11</b> Regresión lineal</a></li>
 <li class="chapter" data-level="12" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>12</b> ANOVA de un factor.</a></li>
-<li class="chapter" data-level="" data-path="apendices-formulas-y-calculos-algebraicos.html"><a href="apendices-formulas-y-calculos-algebraicos.html"><i class="fa fa-check"></i>Apendices: formulas y calculos algebraicos</a></li>
+<li class="chapter" data-level="" data-path="apendices-algoritmos-fórmulas-y-demostracioness.html"><a href="apendices-algoritmos-fórmulas-y-demostracioness.html"><i class="fa fa-check"></i>Apendices: algoritmos, fórmulas y demostracioness</a><ul>
+<li class="chapter" data-level="12.1" data-path="apendices-algoritmos-fórmulas-y-demostracioness.html"><a href="apendices-algoritmos-fórmulas-y-demostracioness.html#hola"><i class="fa fa-check"></i><b>12.1</b> Hola</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -202,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a la Probabilidad y la Estadística</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA</a>
           </h1>
         </div>
 
@@ -211,19 +264,35 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="xmuestras" class="section level1">
-<h1><span class="header-section-number">Capítulo7</span> Funciones de muestras aleatorias</h1>
+<h1><span class="header-section-number">Capítulo7</span> Variables aleatorias funciones de una muestra aleatoria</h1>
+<div id="ejemplos-de-funciones-de-una-muestra-aleatoria" class="section level2">
+<h2><span class="header-section-number">7.1</span> Ejemplos de funciones de una muestra aleatoria</h2>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-129" class="definition"><strong>Definición.7.1  </strong></span>
-Una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> un modelo de probabilidad cualquiera,
+<p><span id="def:unnamed-chunk-159" class="definition"><strong>Definición.7.1  </strong></span>
+Una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> de un modelo de probabilidad cualquiera,
 simbolizada por <span class="math inline">\(X_1,\ldots, X_n\)</span>, es una secuencia de variables aleatorias
-en que (i) <span class="math inline">\(X_i\)</span> sigue el mismo modelo en cuestion para <span class="math inline">\(i=1,\ldots,n\)</span> y (ii)
+en que (i) <span class="math inline">\(X_i\)</span> sigue el mismo modelo en cuestion para <span class="math inline">\(i=1,\ldots,n\)</span> y
+(ii) <span class="math inline">\(X_i\)</span> y <span class="math inline">\(X_j\)</span> son independientes para cada <span class="math inline">\(i \neq j\)</span>.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-160" class="example"><strong>Ejemplo.7.1  </strong></span>
+Supongamos que lanzo <span class="math inline">\(n\)</span> veces una moneda al aire tal que la probabilidad
+<span class="math inline">\(\pi\)</span> muestra cara. Simbolicemos por <span class="math inline">\(X_i=1\)</span> cuando la moneda muestre cara
+en el <span class="math inline">\(i\)</span>-ésimo lanzamiento, para <span class="math inline">\(i=1,\ldots,n\)</span>. El resultado será una
+muestra aleatoria de un modelo Bernoulli.</p>
+<p>Una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> un modelo de
+<span class="math inline">\(\mbox{Bernoulli}(\pi)\)</span>,
+simbolizada por <span class="math inline">\(X_1,\ldots, X_n\)</span>, es una secuencia de variables aleatorias
+en que (i) <span class="math inline">\(X_i \sim \mbox{Bernoulli}(\pi)\)</span> para <span class="math inline">\(i=1,\ldots,n\)</span> y (ii)
 <span class="math inline">\(X_i\)</span> y <span class="math inline">\(X_j\)</span> son independientes para cada <span class="math inline">\(i \neq j\)</span>.</p>
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-130" class="example"><strong>Ejemplo.7.1  </strong></span>
+<p><span id="exm:unnamed-chunk-161" class="example"><strong>Ejemplo.7.2  </strong></span>
 Una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> un modelo de
 <span class="math inline">\(\mbox{Normal}(\mu,\sigma^2)\)</span>,
 simbolizada por <span class="math inline">\(X_1,\ldots, X_n\)</span>, es una secuencia de variables aleatorias
@@ -233,14 +302,42 @@ en que (i) <span class="math inline">\(X_i \sim \mbox{Normal}(\mu,\sigma^2)\)</s
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-131" class="definition"><strong>Definición.7.2  </strong></span>
-Distribuciones de muestreo de estadísticas.
+<p><span id="def:unnamed-chunk-162" class="definition"><strong>Definición.7.2  </strong></span>
+Una variable aleatoria <span class="math inline">\(Z\)</span> es una función de una muestra aleatoria
+<span class="math inline">\(X_1,\ldots,X_n\)</span> si <span class="math inline">\(Z\)</span> se puede escribir como una función de esta, es
+decir
+<span class="math display">\[ Z(X_1,\ldots,X_n) = \phi(X_1,\ldots,X_n),   \]</span>
+en que <span class="math inline">\(\phi(\dot)\)</span> es una función de <span class="math inline">\(n\)</span> variables.</p>
+<p>La distribución o el modelo de probabilidad de <span class="math inline">\(Z\)</span> es llamada (o) de
+<strong>distribución muestral</strong>.</p>
+</div>
+
+<p>Presentamos dos ejemplos de funciones de variables aleatorias.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-163" class="example"><strong>Ejemplo.7.3  </strong></span>
+Sea <span class="math inline">\(X_1,\ldots, X_n\)</span> una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> un modelo de
+<span class="math inline">\(\mbox{Bernoulli}(\pi)\)</span>, luego</p>
+<p><span class="math display">\[  Z= Z(X_1,\ldots,X_n)= \sum_{i=1}^{n}X_i \sim \mbox{Binomial}(n\pi).  \]</span></p>
+</div>
+
+</div>
+<div id="variables-aleatorias-funciones-de-una-muestra-aleatoria-normal" class="section level2">
+<h2><span class="header-section-number">7.2</span> Variables aleatorias funciones de una muestra aleatoria normal</h2>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-164" class="example"><strong>Ejemplo.7.4  </strong></span>
+Sea <span class="math inline">\(X_1,\ldots, X_n\)</span> una muestra aleatoria de tamaño <span class="math inline">\(n\)</span> un modelo de
+<span class="math inline">\(\mbox{Normal}(\mu,\sigma^2)\)</span>, luego</p>
+<p><span class="math display">\[  \bar{X}_n= \bar{X}_n(X_1,\ldots,X_n)= \frac{1}{n}\sum_{i=1}^{n}X_i \sim
+  \mbox{Normal}(\mu, \sigma^2/n).  \]</span></p>
 </div>
 
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-132" class="definition"><strong>Definición.7.3  </strong></span>
-Una variables aleatoria chi-cuadrado <span class="math inline">\(X\)</span> tiene función de densidad dada por:</p>
+<p><span id="def:unnamed-chunk-165" class="definition"><strong>Definición.7.3  </strong></span></p>
+<p>Una variable aleatoria <strong>chi-cuadrado</strong> <span class="math inline">\(X\)</span> tiene función de
+densidad dada por:</p>
 <p><span class="math display">\[ f(x ; \nu)=
 \frac{x^{\frac{\nu}{2}-1} e^{-\frac{x}{2}}}{2^{\frac{\nu}{2}}
   \Gamma\left(\frac{\nu}{2}\right)},   \]</span>
@@ -251,30 +348,47 @@ gamma. Esto es simbolizado por <span class="math inline">\(X \sim \chi^2_{\nu}\)
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-133" class="example"><strong>Ejemplo.7.2  </strong></span>
+<p><span id="exm:unnamed-chunk-166" class="example"><strong>Ejemplo.7.5  </strong></span>
 Considere una muestra aleatoria <span class="math inline">\(X_1,\ldots, X_n\)</span> con modelo
 <span class="math inline">\(\mbox{Normal}(\mu,\sigma^2)\)</span>, luego</p>
 <p><span class="math display">\[\frac{(n-1)S^2}{\sigma^2} \sim \chi^2_{n-1}.\]</span></p>
-<p>Luego, podemos calcular la probabilidad de eventos asociados a la varianza
-<span class="math inline">\(\sigma^2\)</span> por medio de la distribución chi-cuadrado, por ejemplo, para un
-<span class="math inline">\(0\leq x_1 \leq x_2\)</span>:</p>
+<p>Luego, podemos calcular la probabilidad de eventos asociados a la variable
+<span class="math inline">\(\frac{(n-1)S^2}{\sigma^2}\)</span> cuando <span class="math inline">\(\sigma\)</span> es conocido. En inferencia
+clásica, es útil encontrar el intervalo de confianza para <span class="math inline">\(\sigma^2\)</span> cuando
+conocemos los cuantiles de orden <span class="math inline">\(\chi_{n-1,\alpha/2}\)</span> y
+<span class="math inline">\(\chi_{n-1,1-\alpha/2}\)</span> tal que
+<span class="math display">\[ \mbox{Pr}\left(  \chi_{n-1,\alpha/2}^2 \leq \frac{(n-1)S^2}{\sigma^2}
+\leq  \chi_{n-1,1-\alpha/2}^2 \right) =  1- \alpha.   \]</span></p>
+<p>Luego,</p>
 <p><span class="math display">\[\begin{eqnarray*}
-\mbox{Pr} \left( x_1 \leq \frac{(n-1)S^2}{\sigma^2}  \leq x_2 \right) &amp;=&amp;  
-\mbox{Pr}\left(\frac{1}{x_1} \geq \frac{ \sigma^2 }{(n-1)S^2}  \geq 
-           \frac{1}{x_2} \right) \\
-&amp;=&amp; \mbox{Pr}\left(\frac{(n-1)S^2}{x_1} \geq \sigma^2  \geq 
-           \frac{(n-1)S^2}{x_2} \right)\\
-&amp;=&amp; \mbox{Pr}\left(\frac{(n-1)S^2}{x_2} \leq \sigma^2  \leq 
-           \frac{(n-1)S^2}{x_1} \right)\\
-&amp;=&amp; \int_{x_2^{*}}^{x_1^{*}} f(x;\nu) dx, 
+\mbox{Pr}\left(  \chi_{n-1,\alpha/2}^2 \leq \frac{(n-1)S^2}{\sigma^2} \leq 
+          \chi_{n-1,1-\alpha/2}^2 \right) &amp;=&amp; 
+\mbox{Pr}\left(\frac{1}{ \chi_{n-1,\alpha/2}^2 } \geq 
+                \frac{  \sigma^2}{(n-1)S^2}  \geq 
+           \frac{1}{ \chi_{n-1,1-\alpha/2}^2 } \right) \\
+&amp;=&amp; \mbox{Pr}\left(\frac{(n-1)S^2}{\chi_{n-1,\alpha/2}^2} \geq \sigma^2 
+                    \geq 
+           \frac{(n-1)S^2}{  \chi_{n-1,1-\alpha/2}^2 } \right)\\
+&amp;=&amp; \mbox{Pr}\left(\frac{(n-1)S^2}{ \chi_{n-1,1-\alpha/2}^2} \leq \sigma^2 
+                    \leq 
+           \frac{(n-1)S^2}{ \chi_{n-1,\alpha/2}^2} \right)\\
+&amp;=&amp; 1 - \alpha. 
 \end{eqnarray*}\]</span></p>
-<p>en que <span class="math inline">\(x_i^{*}=\frac{(n-1)S^2}{x_i}\)</span>.</p>
+<p>Luego, para <span class="math inline">\(\alpha= 0.05\)</span> y <span class="math inline">\(n=30\)</span>, tenemos que <span class="math inline">\(\chi_{n-1,\alpha/2}^2=  16.05\)</span> y <span class="math inline">\(\chi_{n-1,\alpha/2}^2= 45.72\)</span> y <span class="math inline">\(s^2=34\)</span>, tenemos que:</p>
+<p><span class="math display">\[\begin{eqnarray*}  
+\mbox{Pr}\left(\frac{29*34}{ 45.72} \leq \sigma^2 
+                    \leq 
+             \frac{(29*34}{16.05}\right) 
+&amp;=&amp; \mbox{Pr}\left( 21.57 \leq \sigma^2 
+                    \leq  61.43 \right) \\
+&amp;=&amp; 0.95 (95\%).  
+\end{eqnarray*}\]</span></p>
 </div>
 
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-134" class="definition"><strong>Definición.7.4  </strong></span>Una variable aleatoria <span class="math inline">\(T\)</span> tiene un modelo t-student cuando su función de
-densidad es dada por:</p>
+<p><span id="def:unnamed-chunk-167" class="definition"><strong>Definición.7.4  </strong></span>Una variable aleatoria <span class="math inline">\(T\)</span> tiene un modelo <strong>t-student</strong> cuando su función
+de densidad es dada por:</p>
 <p><span class="math display">\[ f(t;\nu)=\frac{\Gamma[(v+1) / 2]}{\Gamma(v / 2) \sqrt{\pi
     v}}\left(1+\frac{t^{2}}{v}\right)^{-(v+1) / 2}, \]</span></p>
 <p>en donde el parámetro <span class="math inline">\(\nu\)</span> es llamado de <strong>grados de libertad</strong> de
@@ -283,25 +397,79 @@ densidad es dada por:</p>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-135" class="example"><strong>Ejemplo.7.3  </strong></span>
+<p><span id="exm:unnamed-chunk-168" class="example"><strong>Ejemplo.7.6  </strong></span>
 Considere una muestra aleatoria <span class="math inline">\(X_1,\ldots, X_n\)</span> con modelo
 <span class="math inline">\(\mbox{Normal}(\mu,\sigma^2)\)</span>, luego</p>
-<p><span class="math display">\[\frac{sqrt(n)(\bar{X}_n - \mu)}{S} \sim \mbox{t}_{n-1}.\]</span></p>
+<p><span class="math display">\[\frac{\sqrt{n}(\bar{X}_n - \mu)}{S} \sim \mbox{t}_{n-1}.\]</span></p>
 <p>Luego, podemos calcular la probabilidad de eventos asociados el promedio
 poblacional <span class="math inline">\(\mu\)</span> por medio de la distribución t-student, por ejemplo,
-para un <span class="math inline">\(-\infty&lt;x&lt;\infty\)</span>:</p>
-<span class="math display">\[\begin{eqnarray*}
-\mbox{Pr}(\mu&lt;x)
-  \end{eqnarray*}\]</span>
+para un <span class="math inline">\(t_{n-1, \alpha/2}\)</span> and <span class="math inline">\(t_{n-1, 1-\alpha/2}\)</span> tal que <span class="math inline">\(t_{n-1, \alpha/2}= - t_{n-1, 1-\alpha/2}\)</span></p>
+<p><span class="math display">\[
+\mbox{Pr}\left(t_{n-1, \alpha/2} \leq  \frac{\sqrt{n}(\bar{X}_n
+- \mu)}{S} \leq         t_{n-1, 1-\alpha/2} \right) = 1 -\alpha
+\]</span></p>
+<p>Luego,
+<span class="math display">\[\begin{eqnarray*}  
+\mbox{Pr}(t_{n-1, \alpha/2} \leq  \frac{\sqrt{n}(\bar{X}_n - \mu)}{S} \leq
+          t_{n-1, 1-\alpha/2}) &amp;= &amp;  
+  \mbox{Pr} \left(  \frac{t_{n-1, \alpha/2}S}{\sqrt{n}} - \bar{X}_n \leq
+                  -\mu \leq   \frac{t_{n-1, 1- \alpha/2}S}{\sqrt{n}} -
+                    \bar{X}_n     \right) \\
+&amp;=&amp; \mbox{Pr} \left(  \bar{X}_n -  \frac{t_{n-1, \alpha/2}S}{\sqrt{n}} \geq
+\mu \geq     \bar{X}_n -\frac{t_{n-1, 1- \alpha/2}S}{\sqrt{n}}    \right) \\
+&amp;=&amp; \mbox{Pr} \left(  \bar{X}_n -  \frac{t_{n-1, 1- \alpha/2}S}{\sqrt{n}}
+            \leq \mu \leq     \bar{X}_n -\frac{t_{n-1, \alpha/2}S}{\sqrt{n}}
+            \right)\\
+&amp;=&amp; \mbox{Pr} \left(  \bar{X}_n -  \frac{t_{n-1, 1- \alpha/2}S}{\sqrt{n}}
+            \leq \mu \leq     \bar{X}_n +\frac{t_{n-1, 1- \alpha/2}S}{\sqrt{n}}
+            \right)\\
+\end{eqnarray*}\]</span></p>
+<p>Por ejemplo, para <span class="math inline">\(\alpha=0.05\)</span> y <span class="math inline">\(n=30\)</span>, tenemos que
+<span class="math inline">\(t_{n-1, 1- \alpha /2} = 2.05\)</span> y <span class="math inline">\(S=34\)</span> y <span class="math inline">\(\bar{x}_n=12\)</span>,
+tenemos que:</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\mbox{Pr} \left( 12- \frac{2.05*34}{\sqrt{30}}
+  \leq \mu \leq 12+ \frac{2.05*34}{\sqrt{30}}
+  \right)
+&amp;=&amp; \mbox{Pr} \left( -0.73   \leq \mu \leq  24.73 \right) \\
+&amp;=&amp; 0.95 \ (95\%).
+\end{eqnarray*}\]</span></p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-169" class="definition"><strong>Definición.7.5  </strong></span>
+Una variable <span class="math inline">\(Z\)</span> sigue un modelo <strong>F de Snedector</strong> siempre
+que su función de densidad sea:</p>
+<p><span class="math display">\[\begin{equation}
+f(z;n,m)=\frac{m^{\frac{m}{2}} \cdot n^{\frac{n}{2} \cdot
+\Gamma}\left(\frac{m+n}{2}\right) \cdot}{\Gamma\left(\frac{m}{2}\right) \cdot
+\Gamma\left(\frac{n}{2}\right)} \cdot z^{\frac{m}{2}-1}(n+mx)^{-\frac{m+n}{2}}.
+\end{equation}\]</span></p>
 </div>
 
 
 <div class="example">
-<span id="exm:unnamed-chunk-136" class="example"><strong>Ejemplo.7.4  </strong></span>
-La distribución F.
+<p><span id="exm:unnamed-chunk-170" class="example"><strong>Ejemplo.7.7  </strong></span>
+Para un factor (variable categorica) que divide los datos en <span class="math inline">\(m\)</span> grupos.
+Simbolizemos por <span class="math inline">\(S_1^2,\ldots, S_m^2\)</span> y <span class="math inline">\(\bar{X}_1, \ldots, \bar{X}_m\)</span> las
+respectivas desviaciones típicas modificadas y medias muestrales de cada grupo.
+También, simbolizemos
+<span class="math display">\[\begin{equation*}
+\overline{S}^{2}=\frac{\sum_{i=1}^{m}\left(\bar{X}_{i}-\overline{\bar{X}}\right)^{2}}{m-1} \ \&amp; \ \overline{\bar{X}}=\frac{1}{m} \sum_{i=1}^{m} \bar{X}_{i}.
+\end{equation*}\]</span>
+a las varianzas de las varianzas. Luego</p>
+<p><span class="math display">\[\begin{equation}
+ \frac{n\overline{S}^{2} }{\sum_{i=1}^{m} S_{i}^{2} / m} \sim F_{m-1, m(n-1)}.
+ \end{equation}\]</span></p>
+<p>Como consecuencia de esto, podemos establecer</p>
+<span class="math display">\[ \mbox{Prob} 
+\left(\frac{s_{1}^{2}}{s_{2}^{2}}\frac{1}{f_{\alpha /2}
+(v_{1},v_{2})}&lt; \frac{\sigma_{1}^{2}}{\sigma_{2}^{2}}&lt;\frac{s_{1}^{2}}{s_{2}^{2}}f_{\alpha / 2}(v_{2}, v_{1}) \right)= 1-\alpha. \]</span>
 </div>
 
 
+</div>
 </div>
             </section>
 

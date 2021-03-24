@@ -4,11 +4,11 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>Introducción a la Probabilidad y la Estadística</title>
-  <meta name="description" content="Introducción a la Probabilidad y la Estadística" />
+  <title>ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA</title>
+  <meta name="description" content="ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA" />
   <meta name="generator" content="bookdown 0.20 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="Introducción a la Probabilidad y la Estadística" />
+  <meta property="og:title" content="ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA" />
   <meta property="og:type" content="book" />
   
   
@@ -16,7 +16,7 @@
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="Introducción a la Probabilidad y la Estadística" />
+  <meta name="twitter:title" content="ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA" />
   
   
   
@@ -24,7 +24,7 @@
 <meta name="author" content="Dr. Jaime Lincovil C." />
 
 
-<meta name="date" content="2020-11-10" />
+<meta name="date" content="2021-02-16" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -50,6 +50,18 @@
 
 
 
+<link href="libs/anchor-sections-1.0/anchor-sections.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.0/anchor-sections.js"></script>
+<script src="libs/htmlwidgets-1.5.2.9001/htmlwidgets.js"></script>
+<script src="libs/viz-1.8.2/viz.js"></script>
+<link href="libs/DiagrammeR-styles-0.2/styles.css" rel="stylesheet" />
+<script src="libs/grViz-binding-1.0.6.9000/grViz.js"></script>
+<script src="libs/d3-3.3.8/d3.min.js"></script>
+<script src="libs/dagre-0.4.0/dagre-d3.min.js"></script>
+<link href="libs/mermaid-0.3.0/dist/mermaid.css" rel="stylesheet" />
+<script src="libs/mermaid-0.3.0/dist/mermaid.slim.min.js"></script>
+<script src="libs/chromatography-0.1/chromatography.js"></script>
+<script src="libs/DiagrammeR-binding-1.0.6.9000/DiagrammeR.js"></script>
 
 
 <style type="text/css">
@@ -131,11 +143,23 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li><a href="./">A Minimal Book Example</a></li>
 
 <li class="divider"></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>Objetivos de la monografía</a><ul>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#dinámica-de-nuestra-comunicación"><i class="fa fa-check"></i>Dinámica de nuestra comunicación</a></li>
-<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-de-la-monorafía"><i class="fa fa-check"></i>Organización de la monorafía</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>OBJETIVOS Y ESTILO DEL DOCUMENTO</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación"><i class="fa fa-check"></i>Operación</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-cotideana"><i class="fa fa-check"></i>Operación cotideana</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-aritmética"><i class="fa fa-check"></i>Operación aritmética</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-compuesta"><i class="fa fa-check"></i>Operación compuesta</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-compuesta-cotideana"><i class="fa fa-check"></i>Operación compuesta cotideana</a></li>
 </ul></li>
-<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Operaciones de análisis exploratorio y resumen de datos</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-sobre-puntos"><i class="fa fa-check"></i>Operación sobre puntos</a><ul>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-cotideanas-sobre-puntos"><i class="fa fa-check"></i>Operación cotideanas sobre puntos</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-multivaria"><i class="fa fa-check"></i>Operación multivaria</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-matricial"><i class="fa fa-check"></i>Operación matricial</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#operación-probabilistica-o-estadística"><i class="fa fa-check"></i>Operación probabilistica o estadística</a></li>
+<li><a href="index.html#operación-función-matemática">Operación <span class="math inline">\(=\)</span> función matemática</a></li>
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html#organización-del-documento"><i class="fa fa-check"></i>Organización del documento</a></li>
+</ul></li>
+<li class="chapter" data-level="1" data-path="datos.html"><a href="datos.html"><i class="fa fa-check"></i><b>1</b> Reducir y gráficar</a><ul>
 <li class="chapter" data-level="1.1" data-path="datos.html"><a href="datos.html#conceptos-elementales"><i class="fa fa-check"></i><b>1.1</b> Conceptos elementales</a></li>
 <li class="chapter" data-level="1.2" data-path="datos.html"><a href="datos.html#variables-observadas-en-experimentos"><i class="fa fa-check"></i><b>1.2</b> Variables observadas en experimentos</a></li>
 <li class="chapter" data-level="1.3" data-path="datos.html"><a href="datos.html#agrupamiento-de-variables"><i class="fa fa-check"></i><b>1.3</b> Agrupamiento de variables</a></li>
@@ -158,7 +182,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="1.11" data-path="datos.html"><a href="datos.html#análisis-de-asociación-entre-variables-categóricas"><i class="fa fa-check"></i><b>1.11</b> Análisis de asociación entre variables categóricas</a></li>
 <li class="chapter" data-level="1.12" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>1.12</b> Ejercicios</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Calculo de probabilidades</a><ul>
+<li class="chapter" data-level="2" data-path="prob.html"><a href="prob.html"><i class="fa fa-check"></i><b>2</b> Evento aleatório</a><ul>
 <li class="chapter" data-level="2.1" data-path="prob.html"><a href="prob.html#operaciones-con-eventos-posibles-de-experimentos"><i class="fa fa-check"></i><b>2.1</b> Operaciones con eventos posibles de experimentos</a></li>
 <li class="chapter" data-level="2.2" data-path="prob.html"><a href="prob.html#medida-de-probabilidad-y-experimentos-aleatorios"><i class="fa fa-check"></i><b>2.2</b> Medida de probabilidad y experimentos aleatorios</a><ul>
 <li class="chapter" data-level="2.2.1" data-path="prob.html"><a href="prob.html#interpretación-frecuentista-de-una-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.2.1</b> Interpretación frecuentista de una medida de probabilidad</a></li>
@@ -166,29 +190,58 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 <li class="chapter" data-level="2.3" data-path="prob.html"><a href="prob.html#propiedades-básicas-de-la-medida-de-probabilidad"><i class="fa fa-check"></i><b>2.3</b> Propiedades básicas de la medida de probabilidad</a></li>
 <li class="chapter" data-level="2.4" data-path="prob.html"><a href="prob.html#resultados-básicos-de-combinatoria"><i class="fa fa-check"></i><b>2.4</b> Resultados básicos de combinatoria</a></li>
 </ul></li>
-<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> Variables aleatorias y sus distribuciones</a><ul>
+<li class="chapter" data-level="3" data-path="var.html"><a href="var.html"><i class="fa fa-check"></i><b>3</b> VARIABLES ALEATORIAS Y SUS DISTRIBUCIONES</a><ul>
 <li class="chapter" data-level="3.1" data-path="var.html"><a href="var.html#elementos-básicos"><i class="fa fa-check"></i><b>3.1</b> Elementos básicos</a></li>
 <li class="chapter" data-level="3.2" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-discreta"><i class="fa fa-check"></i><b>3.2</b> Distribuciones de probabilidad de variables aleatorias discreta</a></li>
 <li class="chapter" data-level="3.3" data-path="var.html"><a href="var.html#distribuciones-de-probabilidad-de-variables-aleatorias-continuas."><i class="fa fa-check"></i><b>3.3</b> Distribuciones de probabilidad de variables aleatorias continuas.</a></li>
 </ul></li>
-<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> Distribuciones bidimensionales</a><ul>
+<li class="chapter" data-level="4" data-path="varbi.html"><a href="varbi.html"><i class="fa fa-check"></i><b>4</b> DISTRIBUCIONES BIDEMENSIONALES</a><ul>
 <li class="chapter" data-level="4.1" data-path="varbi.html"><a href="varbi.html#uno"><i class="fa fa-check"></i><b>4.1</b> Uno</a></li>
 <li class="chapter" data-level="4.2" data-path="varbi.html"><a href="varbi.html#dos"><i class="fa fa-check"></i><b>4.2</b> Dos</a></li>
 </ul></li>
-<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> Valor esperado</a><ul>
+<li class="chapter" data-level="5" data-path="expected.html"><a href="expected.html"><i class="fa fa-check"></i><b>5</b> VALOR ESPERADO</a><ul>
 <li class="chapter" data-level="5.1" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos"><i class="fa fa-check"></i><b>5.1</b> Valor esperado de modelos discretos</a></li>
 <li class="chapter" data-level="5.2" data-path="expected.html"><a href="expected.html#valor-esperado-de-modelos-discretos-1"><i class="fa fa-check"></i><b>5.2</b> Valor esperado de modelos discretos</a></li>
 </ul></li>
 <li class="chapter" data-level="6" data-path="ass.html"><a href="ass.html"><i class="fa fa-check"></i><b>6</b> Resultados asintóticos.</a></li>
-<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Funciones de muestras aleatorias</a></li>
-<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
-<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#propuesta-de-informe"><i class="fa fa-check"></i><b>8.1</b> Propuesta de informe</a></li>
+<li class="chapter" data-level="7" data-path="xmuestras.html"><a href="xmuestras.html"><i class="fa fa-check"></i><b>7</b> Variables aleatorias funciones de una muestra aleatoria</a><ul>
+<li class="chapter" data-level="7.1" data-path="xmuestras.html"><a href="xmuestras.html#ejemplos-de-funciones-de-una-muestra-aleatoria"><i class="fa fa-check"></i><b>7.1</b> Ejemplos de funciones de una muestra aleatoria</a></li>
+<li class="chapter" data-level="7.2" data-path="xmuestras.html"><a href="xmuestras.html#variables-aleatorias-funciones-de-una-muestra-aleatoria-normal"><i class="fa fa-check"></i><b>7.2</b> Variables aleatorias funciones de una muestra aleatoria normal</a></li>
 </ul></li>
-<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> Estimadres intervalares</a></li>
-<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> Prueba/contraste de hipótesis</a></li>
+<li class="chapter" data-level="8" data-path="puntual.html"><a href="puntual.html"><i class="fa fa-check"></i><b>8</b> Estimadores Puntuales</a><ul>
+<li class="chapter" data-level="8.1" data-path="puntual.html"><a href="puntual.html#modelo-estadístico-para-una-muestra-y-sus-parámetros"><i class="fa fa-check"></i><b>8.1</b> Modelo estadístico para una muestra y sus parámetros</a></li>
+</ul></li>
+<li class="chapter" data-level="9" data-path="intervalo.html"><a href="intervalo.html"><i class="fa fa-check"></i><b>9</b> ESTIMADORES INTERVALARES</a><ul>
+<li class="chapter" data-level="9.1" data-path="intervalo.html"><a href="intervalo.html#estadísticos-ancilares"><i class="fa fa-check"></i><b>9.1</b> Estadísticos ancilares</a></li>
+<li class="chapter" data-level="9.2" data-path="intervalo.html"><a href="intervalo.html#intervalos-de-confianza-basados-en-estadisticos-ancilares"><i class="fa fa-check"></i><b>9.2</b> Intervalos de confianza basados en estadisticos ancilares</a><ul>
+<li class="chapter" data-level="9.2.1" data-path="intervalo.html"><a href="intervalo.html#intervalos-para-un-parámetro"><i class="fa fa-check"></i><b>9.2.1</b> Intervalos para un parámetro</a></li>
+<li class="chapter" data-level="9.2.2" data-path="intervalo.html"><a href="intervalo.html#intervalos-para-la-comparación-de-dos-parámetros"><i class="fa fa-check"></i><b>9.2.2</b> Intervalos para la comparación de dos parámetros</a></li>
+</ul></li>
+<li class="chapter" data-level="9.3" data-path="intervalo.html"><a href="intervalo.html#tamaño-muestral"><i class="fa fa-check"></i><b>9.3</b> Tamaño muestral</a></li>
+<li class="chapter" data-level="9.4" data-path="intervalo.html"><a href="intervalo.html#intervalos-de-confianza-asintóticos"><i class="fa fa-check"></i><b>9.4</b> Intervalos de confianza asintóticos</a></li>
+<li class="chapter" data-level="9.5" data-path="datos.html"><a href="datos.html#ejercicios"><i class="fa fa-check"></i><b>9.5</b> Ejercicios</a></li>
+</ul></li>
+<li class="chapter" data-level="10" data-path="hipo.html"><a href="hipo.html"><i class="fa fa-check"></i><b>10</b> PRUEBA/ CONTRASTE DE HIPÓTESIS</a><ul>
+<li class="chapter" data-level="10.1" data-path="hipo.html"><a href="hipo.html#elementos-en-contraste-de-hipótesis."><i class="fa fa-check"></i><b>10.1</b> Elementos en contraste de hipótesis.</a></li>
+<li class="chapter" data-level="10.2" data-path="hipo.html"><a href="hipo.html#tipo-de-prueba-de-hipótesis"><i class="fa fa-check"></i><b>10.2</b> Tipo de prueba de hipótesis</a><ul>
+<li class="chapter" data-level="10.2.1" data-path="hipo.html"><a href="hipo.html#hipotesis-unilaterales"><i class="fa fa-check"></i><b>10.2.1</b> Hipotesis unilaterales</a></li>
+<li class="chapter" data-level="10.2.2" data-path="hipo.html"><a href="hipo.html#hipotesis-bilaterales"><i class="fa fa-check"></i><b>10.2.2</b> Hipotesis bilaterales</a></li>
+<li class="chapter" data-level="10.2.3" data-path="hipo.html"><a href="hipo.html#hipotesis-compuestas-caso-general"><i class="fa fa-check"></i><b>10.2.3</b> Hipotesis compuestas (caso general)</a></li>
+</ul></li>
+<li class="chapter" data-level="10.3" data-path="hipo.html"><a href="hipo.html#región-critica-y-p-valor"><i class="fa fa-check"></i><b>10.3</b> Región critica y p-valor</a><ul>
+<li class="chapter" data-level="10.3.1" data-path="hipo.html"><a href="hipo.html#relación-entre-ic-y-contraste-de-hipótesis"><i class="fa fa-check"></i><b>10.3.1</b> Relación entre IC y contraste de hipótesis</a></li>
+</ul></li>
+<li class="chapter" data-level="10.4" data-path="hipo.html"><a href="hipo.html#tipo-de-errores-y-sus-tamaños"><i class="fa fa-check"></i><b>10.4</b> Tipo de errores y sus tamaños</a><ul>
+<li class="chapter" data-level="10.4.1" data-path="hipo.html"><a href="hipo.html#error-del-tipo-i-y-ii"><i class="fa fa-check"></i><b>10.4.1</b> Error del tipo I y II</a></li>
+<li class="chapter" data-level="10.4.2" data-path="hipo.html"><a href="hipo.html#tamaños-de-los-errores"><i class="fa fa-check"></i><b>10.4.2</b> Tamaños de los errores</a></li>
+<li class="chapter" data-level="10.4.3" data-path="hipo.html"><a href="hipo.html#poder-de-los-contrastes-y-el-lema-de-neyman-pearson"><i class="fa fa-check"></i><b>10.4.3</b> Poder de los contrastes y el Lema de Neyman-Pearson</a></li>
+</ul></li>
+</ul></li>
 <li class="chapter" data-level="11" data-path="regre.html"><a href="regre.html"><i class="fa fa-check"></i><b>11</b> Regresión lineal</a></li>
 <li class="chapter" data-level="12" data-path="anova.html"><a href="anova.html"><i class="fa fa-check"></i><b>12</b> ANOVA de un factor.</a></li>
-<li class="chapter" data-level="" data-path="apendices-formulas-y-calculos-algebraicos.html"><a href="apendices-formulas-y-calculos-algebraicos.html"><i class="fa fa-check"></i>Apendices: formulas y calculos algebraicos</a></li>
+<li class="chapter" data-level="" data-path="apendices-algoritmos-fórmulas-y-demostracioness.html"><a href="apendices-algoritmos-fórmulas-y-demostracioness.html"><i class="fa fa-check"></i>Apendices: algoritmos, fórmulas y demostracioness</a><ul>
+<li class="chapter" data-level="12.1" data-path="apendices-algoritmos-fórmulas-y-demostracioness.html"><a href="apendices-algoritmos-fórmulas-y-demostracioness.html#hola"><i class="fa fa-check"></i><b>12.1</b> Hola</a></li>
+</ul></li>
 <li class="chapter" data-level="" data-path="referencias.html"><a href="referencias.html"><i class="fa fa-check"></i>Referencias</a></li>
 <li class="divider"></li>
 <li><a href="https://github.com/rstudio/bookdown" target="blank">Published with bookdown</a></li>
@@ -202,7 +255,7 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
       <div class="body-inner">
         <div class="book-header" role="navigation">
           <h1>
-            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">Introducción a la Probabilidad y la Estadística</a>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA</a>
           </h1>
         </div>
 
@@ -211,89 +264,458 @@ code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warni
 
             <section class="normal" id="section-">
 <div id="header">
-<h1 class="title">Introducción a la Probabilidad y la Estadística</h1>
+<h1 class="title">ELEMENTOS DE PROBABILIDAD E INFERENCIA ESTADÍSTICA</h1>
 <p class="author"><em>Dr. Jaime Lincovil C.</em></p>
-<p class="date"><em>2020-11-10</em></p>
+<p class="date"><em>2021-02-16</em></p>
 </div>
-<div id="objetivos-de-la-monografía" class="section level1 unnumbered">
-<h1>Objetivos de la monografía</h1>
-<div id="dinámica-de-nuestra-comunicación" class="section level2 unnumbered">
-<h2>Dinámica de nuestra comunicación</h2>
-<p>Proceso (operaciones) de inferencia estadística.</p>
+<div id="objetivos-y-estilo-del-documento" class="section level1 unnumbered">
+<h1>OBJETIVOS Y ESTILO DEL DOCUMENTO</h1>
+<ol style="list-style-type: decimal">
+<li>ESTE LIBRO ES UN EXPERIMENTO RESPONSABLE.</li>
+</ol>
+<p>Mediante este documento busco presentarte algunos
+elementos de La Teoría de Probabilidad e
+Inferencia Estadística que un estudiantes de ciencias básicas
+aplicas debería conocer. Todos los elementos a los cuales haré
+referencia serán presentados como “acciones” o
+“transformaciones” de determinados objetos.</p>
+<p>El estilo de la forma de presentar los elementos, ejemplos y
+resultados formales tendrá por objetivo de acostumbrarte a
+pensar de una forma “computacional”. Los análisis siempre
+serán realizados empleando una lista de acciones que puede
+ser reproducido por cualquier otro lector. Es decir siempre
+actuaremos sobre lista de acciones u operaciones
+escritas en términos de funciones mátematicas que sean
+reproduciblesmediante algun software por cualquier estudiante
+en un pc.</p>
+<div id="operación" class="section level2 unnumbered">
+<h2>Operación</h2>
+<p><em>Una operación es una transformación única de un
+objeto</em>. Este objeto puede ser una lista de números naturales o
+reales, un conjunto de puntos del plano cartesiano o funciones
+matemáticas, entre otros. Una operación de un objeto <span class="math inline">\(x\)</span> en un unico objeto <span class="math inline">\(y\)</span> es graficado por:</p>
+<div id="htmlwidget-043bb419cbc44ec08e95" style="width:672px;height:150px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-043bb419cbc44ec08e95">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  rec1 [label = \"Op: x\"]\n  rec2 [label = \"y\"]\n  \n  # vectores a nodos ids  \n  rec1 -> rec2\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="htmlwidget-e2dbcd81f818921e6b72" style="width:672px;height:480px;" class="DiagrammeR html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e2dbcd81f818921e6b72">{"x":{"diagram":"\n   graph LR\n     A-->B\n     A-->C\n      "},"evals":[],"jsHooks":[]}</script>
 
 <div class="definition">
-<p><span id="def:unnamed-chunk-1" class="definition"><strong>Definición.0.1  </strong></span>Una <strong>operación</strong> Op aplicada sobre un objeto <span class="math inline">\(A\)</span> lo transforma en
-un único objeto <span class="math inline">\(B\)</span>. La aplicación de Op
-sobre <span class="math inline">\(A\)</span> produciendo <span class="math inline">\(B\)</span> es simbolizado por:
-<span class="math display">\[\mbox{Op}(A)=B.\]</span></p>
-<p>Una <strong>lista de aplicaciones operaciones</strong> <span class="math inline">\(\mbox{Op}_1, \ldots, \mbox{Op}_n\)</span> aplicadas sobre <span class="math inline">\(A\)</span> de forma secuencial e
-independintes produciendo <span class="math inline">\(B_1, \ldots, B_n\)</span> es simbolizado por</p>
-<p><span class="math display">\[ \mbox{Op}_1 (A)=B_1, \ldots, \mbox{Op}_n (A) = B_n.  \]</span></p>
+<p><span id="def:unnamed-chunk-4" class="definition"><strong>Definición.0.1  </strong></span>
+Una <strong>operación</strong> Op transforma un objeto x de forma única en un
+objeto y. Esta operación es representado por:</p>
+<p><span class="math display">\[\mbox{Op}: x \mapsto y. \]</span></p>
+<p>Escribimos
+<span class="math display">\[ y = \mbox{Op}(x) \]</span>
+para simbolizar que y es el resultado de aplicar Op sobre x.</p>
+<p>Estas simbologías enfatizan dos aspectos diferentes. El primero, de
+izquierda a derecha, enfatiza: Op
+transforma de x en y. La segunda, de derecha a izquierda,
+enfatiza: y es un resultado de operar Op sobre x.</p>
 </div>
 
-<p>Formalmente, una operación Op puede ser representada por una
-función:</p>
-<p><span class="math display">\[
-\begin{aligned}
-\mbox{Op}: \mbox{Dom} \to \mbox{Rec}, &amp; \\
-A \mapsto \mbox{Op}(A),&amp;
-\end{aligned}
-\]</span>
-en donde Dom y Rec son el dominio y recorrido de Op,
-respectivamente.</p>
+<p>La siguiente notación es necesaria. Considera una lista de
+operaciones <span class="math inline">\(\mbox{Op}_1, \ldots, \mbox{Op}_n\)</span>. Simbolizaré por
+<span class="math display">\[  \mbox{Op}_1: x \mapsto  y_1 \wedge \ldots \wedge  
+   \mbox{Op}_n: x  \mapsto y_n,  \]</span>
+la <strong>aplicación independiente</strong> de las
+operaciones <span class="math inline">\(\mbox{Op}_1, \ldots, \mbox{Op}_n\)</span> <strong>sobre</strong> x, por
+<span class="math display">\[  \mbox{Op}_i: x \mapsto y \ \checkmark \]</span>
+la aplicación <strong>exitosa</strong> de <span class="math inline">\(\mbox{Op}_i\)</span> sobre x, y además</p>
+<p><span class="math display">\[  \mbox{Op}_i: x \mapsto y \ \sim\checkmark \]</span>
+en el caso contrario.</p>
+<p>Una forma usual de describir una operación es en terminos de una
+<strong>ecuación</strong> o <strong>algoritmo</strong>, es decir:</p>
+<p><span class="math display">\[ \mbox{Op}(x): x \mapsto \mbox{``una ecuación o algoritmo que depende de $x$&#39;&#39;.}   \]</span></p>
+</div>
+<div id="operación-cotideana" class="section level2 unnumbered">
+<h2>Operación cotideana</h2>
+</div>
+<div id="operación-aritmética" class="section level2 unnumbered">
+<h2>Operación aritmética</h2>
+<p>Comienzo mostrando que una operación aritmética
+es una transformación de número(s) a un número.</p>
+<div id="htmlwidget-3d7b9df81378efae9d50" style="width:672px;height:150px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-3d7b9df81378efae9d50">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  rec1 [label = \"Op: número(s)\"]\n  rec2 [label =  \"número\"]  \n\n  # edge definitions with the node IDs\n  rec1 -> rec2 \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Las operaciones aritmeticas que comunmente utilizamos son
+operaciones de transformación de números. Por ejemplo, la división
+por <span class="math inline">\(2\)</span> transforma un número <span class="math inline">\(x\)</span> en <span class="math inline">\(x/2\)</span>. Asi también, la
+exponencializacion por <span class="math inline">\(2\)</span> transforma un número <span class="math inline">\(x\)</span> en <span class="math inline">\(x^2\)</span>.</p>
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-2" class="example"><strong>Ejemplo.0.1  </strong></span>Considere la operación de división por <span class="math inline">\(2\)</span> simbolizada por
-<span class="math inline">\(\mbox{Op}_1\)</span> y exponencializacion <span class="math inline">\(\{ \}^2\)</span> simbolizada por
-<span class="math inline">\(\mbox{Op}_2\)</span>. Luego <span class="math inline">\(\mbox{Op}_1\)</span> y <span class="math inline">\(\mbox{Op}_2\)</span> aplicadas sobre
-el número <span class="math inline">\(A=10\)</span> produce:
-<span class="math display">\[ \mbox{Op}_1(10) = 5/2= 5  \]</span><br />
-y
-<span class="math display">\[ \mbox{Op}_1(10) =10^2 =100.  \]</span></p>
-Es decir, <span class="math inline">\(\mbox{Op}_1\)</span> transforma <span class="math inline">\(10\)</span> en <span class="math inline">\(5\)</span> y <span class="math inline">\(\mbox{Op}_1\)</span>
-transforma <span class="math inline">\(10\)</span> en <span class="math inline">\(100\)</span>.
+<p><span id="exm:unnamed-chunk-6" class="example"><strong>Ejemplo.0.1  </strong></span>
+Considere la operación de
+división por <span class="math inline">\(2\)</span> <span class="math inline">\(\mbox{Op}_1: x \mapsto x/2\)</span> y la operación
+de exponencializacion por <span class="math inline">\(2\)</span> <span class="math inline">\(\mbox{Op}_2: x \mapsto x^2\)</span>.</p>
+<p>Luego, la aplicación independiente de <span class="math inline">\(\mbox{Op}_1\)</span> y
+<span class="math inline">\(\mbox{Op}_2\)</span> sobre 10 resulta:</p>
+<p><span class="math display">\[ \mbox{Op}_1: 10 \mapsto 5/2= 5 \ \checkmark \wedge
+          \mbox{Op}_2: 10 \mapsto 10^2  =100 \ \checkmark. \]</span></p>
+<p>Aunque podría parecer trivial, realizaré
+interpretaciones de estos resultados para destacar el uso de este
+simbología. Primero, <span class="math inline">\(\mbox{Op}_1: 10 \mapsto 5\)</span> simboliza:
+<span class="math inline">\(\mbox{Op}_1\)</span> transforma <span class="math inline">\(10\)</span> en <span class="math inline">\(5\)</span>, en cambio,
+<span class="math inline">\(5 = \mbox{Op}_1(10)\)</span> simboliza: <span class="math inline">\(5\)</span> es el resultado de
+aplicar <span class="math inline">\(\mbox{Op}_1(10)\)</span> sobre <span class="math inline">\(10\)</span>. Segundo,
+<span class="math inline">\(\mbox{Op}_2: 10 \mapsto 100\)</span> simboliza: <span class="math inline">\(\mbox{Op}_2\)</span><br />
+transforma <span class="math inline">\(10\)</span> en <span class="math inline">\(100\)</span>, en cambio, <span class="math inline">\(100=\mbox{Op}_2(10)\)</span>: 100
+es el resultado de aplicar <span class="math inline">\(\mbox{Op}_2\)</span> sobre 10.</p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-7" class="example"><strong>Ejemplo.0.2  </strong></span>
+EJEMPLO DE SUMA Y RESTA.</p>
+</div>
+
+</div>
+<div id="operación-compuesta" class="section level2 unnumbered">
+<h2>Operación compuesta</h2>
+<div id="operación-compuesta-cotideana" class="section level3 unnumbered">
+<h3>Operación compuesta cotideana</h3>
+
+<div class="example">
+<span id="exm:unnamed-chunk-8" class="example"><strong>Ejemplo.0.3  </strong></span>EJEMPLO
 </div>
 
 
 <div class="definition">
-<span id="def:unnamed-chunk-3" class="definition"><strong>Definición.0.2  </strong></span>La <strong>aplicación compuesta de dos operaciones</strong> <span class="math inline">\(\mbox{Op}_1\)</span> y
-<span class="math inline">\(\mbox{Op}_2\)</span> sobre <span class="math inline">\(A\)</span> es la composición
-<span class="math display">\[ \mbox{Op}_2 \big(\mbox{Op}_1 (A)\big). 
-  \]</span>
-Dado que <span class="math inline">\(\mbox{Op}_1\)</span> y <span class="math inline">\(\mbox{Op}_2\)</span> son funciones, formalmente,
-esta aplicación secuencial de estas sobre <span class="math inline">\(A\)</span> es la composición de
-funciones <span class="math inline">\(\mbox{Op}_2 \circ \mbox{Op}_1(A)\)</span>.
+<p><span id="def:unnamed-chunk-9" class="definition"><strong>Definición.0.2  </strong></span>
+La <strong>aplicación secuencial independiente</strong> de dos operaciones
+<span class="math inline">\(\mbox{Op}_1\)</span> y <span class="math inline">\(\mbox{Op}_2\)</span> sobre <span class="math inline">\(x\)</span> es la secuencia ordenada
+<span class="math display">\[  (\mbox{Op}_1: x \mapsto y) \hookrightarrow  (\mbox{Op}_2: x \mapsto z) , \]</span></p>
+<p>interpretado por: aplicamos primero <span class="math inline">\(\mbox{Op}_1\)</span> sobre <span class="math inline">\(x\)</span> para
+en segundo lugar aplicar <span class="math inline">\(\mbox{Op}_2\)</span> sobre <span class="math inline">\(x\)</span>. El símbolo
+<span class="math inline">\(\hookrightarrow\)</span> es llamado de <em>operador de transición</em>
+interpretado <span class="math inline">\(\mbox{Op}_1 \hookrightarrow \mbox{Op}_2\)</span>:
+“aplicamos <span class="math inline">\(\mbox{Op}_1\)</span> y luego aplicamos <span class="math inline">\(\mbox{Op}_2\)</span>”.</p>
+</div>
+
+
+<div class="definition">
+<p><span id="def:unnamed-chunk-10" class="definition"><strong>Definición.0.3  </strong></span>
+La <strong>operación secuencial dependiente</strong> (recurrente) <span class="math inline">\(\mbox{Op}_2 \circ \mbox{Op}_1\)</span> es la operación compuesta por <span class="math inline">\(\mbox{Op}_1\)</span>
+y <span class="math inline">\(\mbox{Op}_2\)</span> es:</p>
+<p><span class="math display">\[ \mbox{Op}_2 \circ \mbox{Op}_1: x \mapsto \left( \mbox{Op}_1: x \mapsto y
+  \ \hookrightarrow \ \mbox{Op}_2: y \mapsto  z \right) \]</span>
+o de forma escalonada
+<span class="math display">\[ \begin{aligned}
+ \mbox{Op}_{2}\circ \mbox{Op}_1&amp;: x \mapsto\\
+ (\mbox{Op}_1 &amp;:  x \mapsto y \\
+ \hookrightarrow  \mbox{Op}_2 &amp;: y \mapsto z) \\
+\end{aligned} \]</span>
+la cúal es interpretada por “x es transformado a y por
+<span class="math inline">\(\mbox{Op}_1\)</span> para que despúes y sea su vez transformado a z
+por <span class="math inline">\(\mbox{Op}_2\)</span>”.</p>
+La aplicación de <span class="math inline">\(\mbox{Op}_2 \circ \mbox{Op}_1\)</span> sobre <span class="math inline">\(x\)</span> es
+simbolizado por <span class="math inline">\(\mbox{Op}_2 \circ \mbox{Op}_1(x)\)</span>.
 </div>
 
 
 <div class="example">
-<p><span id="exm:unnamed-chunk-4" class="example"><strong>Ejemplo.0.2  </strong></span>La aplicación secuencial de las aplicaciones <span class="math inline">\(/2\)</span> y y luego
-<span class="math inline">\(\{\}^2\)</span> sobre <span class="math inline">\(10\)</span> es
-<span class="math display">\[ \{\}^2 \rightarrow ( /2 \rightarrow 10)= (10/2)^2= 25.  \]</span></p>
+<p><span id="exm:unnamed-chunk-11" class="example"><strong>Ejemplo.0.4  </strong></span>
+La operación secuencial dependiente de <span class="math inline">\(\mbox{Op}_1\)</span> y
+<span class="math inline">\(\mbox{Op}_2\)</span> sobre <span class="math inline">\(10\)</span>, simbolizada por <span class="math inline">\(\mbox{Op}_2 \circ \mbox{Op}_1(10)\)</span>, es la aplicación en orden secuencial<br />
+<span class="math display">\[ \mbox{Op}_1: 10 \mapsto 10/2  \hookrightarrow  \mbox{Op}_2: 10/2 \mapsto (10/2)^2 = 25 \ \checkmark .
+\]</span></p>
 </div>
 
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-12" class="example"><strong>Ejemplo.0.5  </strong></span>
+EJEMPLO DE SUMA Y RESTA CASO COMPUESTO.</p>
+</div>
+
+<p>Veamos un caso finito general. La operación secuencial dependiente
+de una secuencia de operaciones <span class="math inline">\(\mbox{Op}_1, \ldots, \mbox{Op}_n\)</span> sobre <span class="math inline">\(x\)</span> representada por</p>
+<p><span class="math display">\[ \begin{aligned}
+ \mbox{Op}_{n}\circ \ldots \circ \mbox{Op}_1&amp;: x \mapsto \\ 
+ (\mbox{Op}_1 &amp;: x \mapsto y_1 \\
+  \hookrightarrow  \mbox{Op}_2 &amp;: y_1 \mapsto y_2 \\
+  \hookrightarrow \quad \quad &amp;: \ldots  \\
+  \hookrightarrow  \mbox{Op}_n &amp;: y_{n-1} \mapsto y_n) 
+   \end{aligned} \]</span></p>
+<p>simboliza que “aplicaremos <span class="math inline">\(\mbox{Op}_1\)</span> sobre <span class="math inline">\(x\)</span> para obtener <span class="math inline">\(y1\)</span>, luego aplicaremos <span class="math inline">\(\mbox{Op}_2\)</span> sobre <span class="math inline">\(y_1\)</span> para
+obtener <span class="math inline">\(y_2\)</span>, asi sucesivamente hasta obtener <span class="math inline">\(y_n\)</span> de <span class="math inline">\(\mbox{Op}_n\)</span>”.</p>
+<p>Eso es representado en el siguiente diagrama.</p>
+<div id="htmlwidget-69ac74218a52725a3951" style="width:672px;height:100px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-69ac74218a52725a3951">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  rec1 [label = \"Op1:x\"]\n  rec2 [label = \"y1\"]\n  rec3 [label =  \"Op2:y1\"]\n  rec4 [label =  \"y2\"]\n  rec5 [label =  \"...\"]\n  rec6 [label =  \"yn\"]\n  # edge definitions with the node IDs\n  rec1 -> rec2 -> rec3 -> rec4 -> rec5 -> rec6 }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>Hasta el momento hemos definidos las operaciones de división por
+<span class="math inline">\(2\)</span> y exponensialización por <span class="math inline">\(2\)</span> las cuales fueron aplicadas
+sobre <span class="math inline">\(10\)</span>. Esto es un ejemplo de un <em>dominio de operaciones (PENSAR)</em>
+sobre <span class="math inline">\(10\)</span>, es decir la lista</p>
+<p><span class="math display">\[  10, \mbox{Op}_1, \mbox{Op}_2 \]</span></p>
+<p>que comprende el objeto y las operaciones a ser aplicadas sobre.
+El domino de operaciones nos habilita a trabajar con datos. Sumado
+a <span class="math inline">\(\wedge\)</span> y <span class="math inline">\(\hookrightarrow\)</span> realizamos operaciones de forma
+ordena (* arreglar).</p>
+<p>Esta lista puede ser reproducible en el software <em>R</em> (o en
+<em>Python</em> o <em>C</em><span class="math inline">\(++\)</span>) definiendo <span class="math inline">\(\mbox{Op}_1(x)=\)</span><code>function(x) x/2</code> y <span class="math inline">\(\mbox{Op}_2(x)=\)</span><code>function(x) x^2</code>. En la práctica, este
+dominio de operaciones debe existir en la <em>memoria temporal</em> de un
+programa computacional. En este ejemplo con R, esto puede ser
+ejecutado mediante los códigos</p>
+<pre><code>x = 10  # definimos que x será 10,
+op1=function(x) x/2 # creamos Op1 ,  
+Op2=function(x) x^2 # creamos Op2,</code></pre>
+<p>los cuales quedarán guardados en nuestra memoria temporal de <em>R</em></p>
+
+<div class="definition">
+<span id="def:unnamed-chunk-14" class="definition"><strong>Definición.0.4  </strong></span>Un <strong>dominio de operaciones</strong> sobre objeto <span class="math inline">\(x\)</span> es una lista de
+operaciones que pueden ser aplicadas sobre <span class="math inline">\(x\)</span> y el propio
+elemento, es decir:
+<span class="math display">\[ x, \mbox{Op}_1, \ldots, \mbox{Op}_n. \]</span>
+</div>
+
+</div>
+</div>
+<div id="operación-sobre-puntos" class="section level2 unnumbered">
+<h2>Operación sobre puntos</h2>
+<p>Un tipo de operaciones que consideraremos en este trabajo es la de
+representar un conjunto de puntos en el plano cartesiano o en el
+espacio Euclineado tridimensionaL o un simple número.</p>
+<div id="htmlwidget-e7ec964849fc699e0a75" style="width:672px;height:150px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-e7ec964849fc699e0a75">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  rec1 [label = \"Op:puntos\"]\n  rec2 [label =  \"gráfico o número\"]\n\n  # edge definitions with the node IDs\n  rec1 -> rec2\n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<div id="operación-cotideanas-sobre-puntos" class="section level3 unnumbered">
+<h3>Operación cotideanas sobre puntos</h3>
+<p>Destaco que funciones, como
+la logaritmica <span class="math inline">\(\log: (0,\infty) \to \mathbb{R}\)</span> es un
+conjunto de puntos del tipo<br />
+<span class="math inline">\(\{(x,y)\in \mathbb{R}\times \mathbb{R}: y=\log(x) \mbox{ para } x\in (0,\infty) \} \subseteq \mathbb{R} \times \mathbb{R}\)</span>.</p>
+<p>La función <span class="math inline">\(\log(x)\)</span> puede ser representada en una hoja de
+papel buscando sus puntos criticos y esbozando una dibujo. En
+este documento estaremos interesados en gráficas generada
+por programas computacionales. En el caso del programa <em>R</em>
+este puede ser representado por la operación <span class="math inline">\(Op_3(f)=\)</span>
+curve(f,from= x1, to= x2, col=“nombre color”), donde <span class="math inline">\(f\)</span> es la
+función de una variable que queremos graficar, x1 es valor
+inicial, x2 el valor final sobre el cúal evaluaremos <span class="math inline">\(f\)</span> y col es
+el color de la curva.</p>
+<p>En <em>R</em> este es implementado por:</p>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb2-1" data-line-number="1">   <span class="kw">curve</span>( <span class="kw">log</span>(x), <span class="dt">from =</span> <span class="fl">0.1</span>, <span class="dt">to =</span> <span class="dv">10</span> , <span class="dt">col =</span> <span class="st">&quot;green&quot;</span>, <span class="dt">main =</span> <span class="st">&quot;Gráfico función logarítmica&quot;</span>)</a></code></pre></div>
+<p>Lo cual produce la siguiente representación</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-17-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>Ademas de gráficar <span class="math inline">\(\log(x)\)</span>, podemos trasnformar esta
+función de una forma lineal en otra función que
+simbolizaremos por <span class="math inline">\(\log^{*}\)</span> la cual es dada por
+<span class="math display">\[ \mbox{Op}_4(\log(x)) = \log^{*}(x) = 2 + 5\log(x).\]</span></p>
+<p>En <em>R</em> esta transformación puede ser implementado por</p>
+<div class="sourceCode" id="cb3"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb3-1" data-line-number="1">  log<span class="op">*</span><span class="st"> </span><span class="er">&lt;</span><span class="op">-</span><span class="st"> </span><span class="cf">function</span>(x) <span class="dv">2</span> <span class="op">+</span><span class="st"> </span><span class="dv">5</span><span class="op">*</span><span class="kw">log</span>(x).</a></code></pre></div>
+<p>Otra operación que podemos realizar con <span class="math inline">\(\log\)</span> es calcular el
+área bajo la curva en el intervalo
+<span class="math inline">\((1,3)\)</span>, es decir, la integral <span class="math display">\[\int_{1}^{3} \log(x)dx\]</span>
+representado gráficamente</p>
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-19-1.png" width="672" style="display: block; margin: auto;" /></p>
+<p>La cual puede ser calculado via la operación
+<span class="math inline">\(\mbox{Op}_5(f)\)</span>=integrate(f, lower=, upper=), en que <span class="math inline">\(f\)</span> es la
+función a ser integrada, lower y upper son las cotas del
+intervalo de integración.</p>
+<div class="sourceCode" id="cb4"><pre class="sourceCode r"><code class="sourceCode r"><a class="sourceLine" id="cb4-1" data-line-number="1">  <span class="kw">integrate</span>(log, <span class="dt">lower=</span><span class="dv">1</span>, <span class="dt">upper=</span><span class="dv">3</span>)</a></code></pre></div>
+<p>obteniendo el resultado</p>
+<pre><code>
+  1.295837 with absolute error &lt; 1.4e-14,
+  
+</code></pre>
+<p>Es decir el área es aproximadamnete igual a <span class="math inline">\(1.29\)</span> con un error
+(absoluto) menor a <span class="math inline">\(1.4e-14\)</span>.</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-21" class="example"><strong>Ejemplo.0.6  </strong></span>
+En este caso, nuestro dominio de operaciones sobre el conjunto
+<span class="math inline">\(\log(x)\)</span> es la lista:</p>
+<p><span class="math display">\[   \log(x), \mbox{Op}_3, \mbox{Op}_4.    \]</span></p>
+</div>
+
+</div>
+</div>
+<div id="operación-multivaria" class="section level2 unnumbered">
+<h2>Operación multivaria</h2>
+<p>Una operación artimetica en general es una operación multivariada
+que transforma una lista ordenada de números <span class="math inline">\(x_1, \ldots, x_n\)</span> en un
+número <span class="math inline">\(x\)</span>, para <span class="math inline">\(n=1,2,...\)</span>.</p>
+<div id="htmlwidget-b7ee6c8e8c34c343187c" style="width:672px;height:150px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-b7ee6c8e8c34c343187c">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  rec1 [label = \"Op: (x1, x2,...,xn)\"]\n  rec2 [label =  \"número\"]\n\n  # edge definitions with the node IDs\n  rec1 -> rec2 \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+<p>La suma, el producto y la
+exponencialización por dos puden ser
+definidos de esta manera. Veamos los siguientes ejemplos</p>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-23" class="example"><strong>Ejemplo.0.7  </strong></span>
+La suma de <span class="math inline">\(n\)</span> números naturales es una operación
+<span class="math display">\[\begin{eqnarray*}
+\mbox{Op}_5: \mathbb{N} \times \ldots \times \mathbb{N} ( \mbox{n-veces})  \to \mathbb{N}\\
+  (x_1,\ldots,x_n) \mapsto x_1 + \ldots + x_n. 
+\end{eqnarray*}\]</span></p>
+<p>La multiplicación de <span class="math inline">\(n\)</span> números naturales es una operación<br />
+<span class="math display">\[\begin{eqnarray*}
+\mbox{Op}_6: \mathbb{N}\times \ldots \times \mathbb{N} ( \mbox{n-veces})  \to \mathbb{N}\\
+  (x_1,\ldots,x_n) \mapsto x_1 \times \ldots \times x_n.
+\end{eqnarray*}\]</span></p>
+<p>Un ejemplo de exponensialización de <span class="math inline">\(n\)</span> números naturales es una operación</p>
+<p><span class="math display">\[\begin{eqnarray*}
+\mbox{Op}_7: \mathbb{N}\times \ldots \times \mathbb{N} ( \mbox{n-veces})  \to \mathbb{N}\\
+  (x_1,\ldots,x_n) \mapsto x_1^2 + \ldots + x_n^2.
+\end{eqnarray*}\]</span></p>
+</div>
+
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-24" class="example"><strong>Ejemplo.0.8  </strong></span>Otro ejemplo de operación es la composición:
+<span class="math display">\[ \mbox{Op}_7 \circ \mbox{Op}_5 (x_1,\ldots, x_n)= (x_1+\ldots
+                                                       x_n)^2.\]</span>
+El dominio de aplicaciones
+<span class="math display">\[(x_1,\ldots, x_n), \mbox{Op}_5, \mbox{Op}_6, \mbox{Op}_7.\]</span></p>
+</div>
+
+</div>
+<div id="operación-matricial" class="section level2 unnumbered">
+<h2>Operación matricial</h2>
+<p>Una operación matrices transforma una matriz en otra matriz, en un
+vector o en un escalar.</p>
+<div id="htmlwidget-861e78d736bf54d62379" style="width:672px;height:150px;" class="grViz html-widget"></div>
+<script type="application/json" data-for="htmlwidget-861e78d736bf54d62379">{"x":{"diagram":"digraph {\n  graph [layout = dot, rankdir = LR]\n  \n  node [shape = rectangle]        \n  rec1 [label = \"Op: matriz\"]\n  rec2 [label =  \"matriz o vector\"]\n\n  # vectora nodos ids\n  rec1 -> rec2 \n  }","config":{"engine":"dot","options":null}},"evals":[],"jsHooks":[]}</script>
+</div>
+<div id="operación-probabilistica-o-estadística" class="section level2 unnumbered">
+<h2>Operación probabilistica o estadística</h2>
 <p>En este trabajo estaremos interesados en <strong>operaciones
-estadísticas</strong>, es decir, operaciones transformen <strong>datos</strong> en
+probabilisticas y estadísticas</strong>, las cuales
+transforman <strong>eventos aleatorios</strong> y <strong>muestras de variables</strong> en
 resumenes, gráficos e inferencias. Mencionamos aquellas que serán
 de nuestro interes.</p>
 <ol style="list-style-type: decimal">
-<li><p>Ejecutar la planificación de un experimento de tal manera de<br />
-obtener información parcial <span class="math inline">\(x\)</span> de un fenomeno de interes. La
-información <span class="math inline">\(x\)</span> puede ser registrad como un vector o una matriz.</p></li>
-<li><p>Cuantificar la incertidumbre de un evento <span class="math inline">\(A\)</span> que podría
-ocurrir al ejecutar un experimento, simbolizado por “Prob<span class="math inline">\((A)\)</span>”.</p></li>
-<li><p>Estructurar datos <span class="math inline">\(x\)</span>, simbolizado por “Estr <span class="math inline">\((x)\)</span>”.</p></li>
-<li><p>Explorar los datos <span class="math inline">\(x\)</span>, simbolizado por “Plot <span class="math inline">\((x)\)</span>”.</p></li>
-<li><p>Resumir los datos <span class="math inline">\(x\)</span>, simbolizado por “Res <span class="math inline">\((x)\)</span>”.</p></li>
-<li><p>Estimar un parámetros poblacionales <span class="math inline">\(\theta\)</span> en base a la
-muesra <span class="math inline">\(x\)</span>, simbolizado por “<span class="math inline">\(\widehat{\theta}(x)\)</span>”.</p></li>
-<li><p>Predecir nuevas observaciones del experimento a partir de <span class="math inline">\(x\)</span>,
-simbolizado por “Pred<span class="math inline">\((x)\)</span>”.</p></li>
-<li><p>Contrastar hipótesis <span class="math inline">\(H_0\)</span> contra <span class="math inline">\(H_1\)</span>.</p></li>
+<li><strong>Experimentar</strong>: transformar una serie de pasos estipulados
+por la literatura científica en una observación empírica o
+subjetiva desde un objeto de estudio.</li>
 </ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-26" class="example"><strong>Ejemplo.0.9  </strong></span>
+El curso de Elementos de Probabilidad e Inferencia Estadistica (EPIE) de este año tendrá dos secciones con un total
+de 100 alumnos quienes aprobaron
+el curso de Estadistica básica durante el semestre pasado.</p>
+<p>El profesor EPIE quiere tener información previa de su curso con
+respecto a su desempeño en el curso anterior. Para esto, ejecuta
+un péqueño experimento: usa un generador de números aleatorio y
+elige 30 de los 100 alumnos a los cuales les envia un correo
+preguntando su carrera y promedio en el curso anterior.</p>
+<p>El profesor obtiene una muestra <span class="math inline">\(x=(x_1,\ldots,x_{30})\)</span> de
+promedios y la lista <span class="math inline">\(c=(c_1,\ldots, c_{30})\)</span> de sus
+correspondientes carreras encontrando: ingenieria cívil industrial, ingenieria química e
+ingeniería en recursos naturales.</p>
 </div>
-<div id="organización-de-la-monorafía" class="section level2 unnumbered">
-<h2>Organización de la monorafía</h2>
+
+<ol start="2" style="list-style-type: decimal">
+<li><strong>Cuantificar</strong> y <strong>categorizar</strong>: codificar una observación por un
+número o una categoría (clasificación conceptual).</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-27" class="example"><strong>Ejemplo.0.10  </strong></span>
+Podemos contar el número de repeticiones de cada carrera, por ejemplo: ingenieria cívil industrial (8), ingenieria
+química (11) e ingeniería en recursos naturales (11).</p>
+<p>También podemos categorizar cada promedio según sea mayor o menor a 5.8, obteniendo la transformación de los promedios
+<span class="math inline">\(y=(y_1,\ldots,y_{30})\)</span> en que <span class="math inline">\(y_i=1\)</span> si <span class="math inline">\(x_i\leq 5.8\)</span> y <span class="math inline">\(y_i=0\)</span> en el caso contrario.</p>
+</div>
+
+<ol start="3" style="list-style-type: decimal">
+<li><strong>Reducir</strong>: transformar un objeto en otro menor dimensión y/o
+complejidad.</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-28" class="example"><strong>Ejemplo.0.11  </strong></span>Podemos reducir la muestra de los promedios al promedio de los promedios
+<span class="math inline">\((x_1,\ldots,x_{30}) \mapsto \frac{1}{30}(x_1+\ldots+x_{30})\)</span> obteniendo <span class="math inline">\(\bar{x}= 5 .5\)</span>.</p>
+<p>Podemos reducir las categorias <span class="math inline">\(y\)</span> a la proporción de notas mayores y menores a <span class="math inline">\(5 .8\)</span>
+<span class="math inline">\((y_1,\ldots,y_{30}) \mapsto (p1,p2)\)</span>, en que <span class="math inline">\(p1= 45\%\)</span>
+y <span class="math inline">\(p2= 55\%\)</span>, mayor o menor, respectivamente.</p>
+</div>
+
+<ol start="4" style="list-style-type: decimal">
+<li><strong>Graficar</strong>: transformar una lista de puntos en un objeto
+visual.</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-29" class="example"><strong>Ejemplo.0.12  </strong></span>
+Para la muestra de promedio <span class="math inline">\(x\)</span> podemos representarlos en un gráfico de caja y bigotes. Para las categorías
+<span class="math inline">\(y\)</span> un gráfico de barras.</p>
+</div>
+
+<p><img src="Introduccion_prob_estad_bookdown_files/figure-html/unnamed-chunk-31-1.png" width="672" /></p>
+<ol start="5" style="list-style-type: decimal">
+<li><strong>Describir</strong>: transformar una observación y/o cuantificación
+y/o categorización en una característica
+de un objeto sin pretender deducir o inducir.</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-32" class="example"><strong>Ejemplo.0.13  </strong></span>
+El centroide de los promedios observados es igual a 5.5, es decir, la muestra de promedios gravita entorno al centro 5.5. Los promedios más frecuente son menores a 5.8.</p>
+</div>
+
+<ol start="6" style="list-style-type: decimal">
+<li><strong>Estimar</strong>: cuantificar o categorizar un fenomeno desconocido con base a la observación
+parcial acerca de él desde un experimento.</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-33" class="example"><strong>Ejemplo.0.14  </strong></span>
+En base a la muestra, estimo que el promedio de notas del curso Estadística es aproximadamente 5.5.
+En base a la muestra, la proporción de promedios menores a 5.8 es igual a a 55%.</p>
+</div>
+
+<ol start="7" style="list-style-type: decimal">
+<li><strong>Inferir</strong>: deducir o inducir conclusiones sobre un fenomeno desconocido con base a la observación
+parcial acerca de él desde un experimento.</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-34" class="example"><strong>Ejemplo.0.15  </strong></span>
+En base a la muestra, estimo que el promedio de notas del curso Estadística es aproximadamente 5.5.
+En base a la muestra, la proporción de promedios menores a 5.8 es igual a a 55%.</p>
+</div>
+
+<ol start="8" style="list-style-type: decimal">
+<li>Componer: elaborar un objeto tomando partes o propiedades de otros.</li>
+</ol>
+
+<div class="example">
+<p><span id="exm:unnamed-chunk-35" class="example"><strong>Ejemplo.0.16  </strong></span>
+Pensar.</p>
+</div>
+
+</div>
+<div id="operación-función-matemática" class="section level2 unnumbered">
+<h2>Operación <span class="math inline">\(=\)</span> función matemática</h2>
+<p>La propiedad de una operación Op se estudia al escribirla como
+una función:<br />
+<span class="math display">\[  \begin{aligned}
+  \mbox{Op}: \mbox{Dom} \to \mbox{Rec}, &amp; \\
+  A \mapsto \mbox{Op}(A),&amp;
+  \end{aligned}
+  \]</span> en donde Dom y Rec son el dominio y recorrido de Op,
+respectivamente. En términos simples, Dom es la lista de los
+objetos sobre los cuales actua Op y Rec es la lista de las
+transformaciones que Op puede realizar.</p>
+<p>Ambas operaciones pueden ser formalizadas como funciones
+consideremos el dominio y recorrido
+<span class="math inline">\(\mbox{Dom}=\mbox{Rec}=\mathbb{N}\)</span>. Por ejemplo:</p>
+<p><span class="math display">\[  \begin{aligned}
+  \mbox{Op}_1: \mathbb{N} \to \mathbb{N}, &amp; \\
+  x \mapsto \mbox{Op}_1(x)= x/2,&amp;
+  \end{aligned} \]</span></p>
+<p>Formalmente, dado que <span class="math inline">\(\mbox{Op}_1\)</span> y <span class="math inline">\(\mbox{Op}_2\)</span> son funciones,
+formalmente, la aplicación secuencial de estas operaciones sobre
+<span class="math inline">\(A\)</span> es la composición de funciones<br />
+<span class="math display">\[
+  \begin{aligned}
+  \mbox{Op}_2 \circ \mbox{Op}_1: \mbox{Dom}_1 \to \mbox{Rec}_1=\mbox{Dom}_2
+  \to \mbox{Rec}&amp; \\
+  A \mapsto    \mbox{Op}_2\left( 
+    \mbox{Op}_1(A) \right).&amp;
+  \end{aligned}
+  \]</span></p>
+</div>
+<div id="organización-del-documento" class="section level2 unnumbered">
+<h2>Organización del documento</h2>
 <p>El Capitulo <span class="math inline">\(1\)</span> presenta los elementos básicos de análisis
 exploratorio y resumen de datos uni y bivariado.</p>
 
